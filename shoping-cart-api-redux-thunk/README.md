@@ -1,24 +1,22 @@
 # Topics covered
 
-react, 
+Redux, 
 
-redux, 
+Redux thunk, 
 
-redux-thunk, 
+Action Types, 
 
-ActionTypes, 
-
-ActionCreators, 
+Action Creators, 
 
 Reducer,
 
-redux-devtools-extension,
+Redux-devtools-extension,
 
 React router,
 
 BrowserRouter,
 
-Switch,Route,Link
+Switch, Route, Link
 
 ## API used: 
 
