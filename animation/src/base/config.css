@@ -1,10 +1,17 @@
 :root {
   --el-size: 60px;
-  --el-color: #fff
+  --el-color: #fff;
+
+  --icon-size: 300px;
+  --icon-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .animation_list {
-  list-style: none
+  list-style: none;
 }
 
 .center {
