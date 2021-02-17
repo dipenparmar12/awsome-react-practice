@@ -1,0 +1,40 @@
+.download {
+  color: var(--icon-color);
+  width: calc(var(--icon-size) * 0.95);
+  height: calc(var(--icon-size) * 0.35);
+  position: absolute;
+  margin-top: calc(var(--icon-size) * 0.5);
+
+  border-radius: 0 0 15px 15px;
+  border: calc(var(--icon-size) * 0.07) solid currentColor;
+  border-top: none;
+
+  /* background-color: rgba(140, 253, 117, 0.329); */
+}
+
+.download:before {
+  content: '';
+  width: 5%;
+  height: calc(var(--icon-size) * 0.4);
+  position: absolute;
+  top: -110%;
+  left: 45.5%;
+
+  background-color: currentColor;
+	/* background-color: rgba(226, 151, 207, 0.418); */
+}
+
+.download::after {
+  content: '';
+  padding: 10%;
+  position: absolute;
+  top: -50%;
+  left: 35%;
+
+  border-top: calc(var(--icon-size) * 0.05) solid currentColor;
+  border-right: calc(var(--icon-size) * 0.05) solid currentColor;
+
+  transform: rotate(135deg);
+
+  /* background-color: rgba(226, 151, 207, 0.418); */
+}
