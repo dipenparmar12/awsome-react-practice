@@ -1,6 +1,6 @@
 {
-  "name": "css-animations",
-  "version": "0.1.0",
+  "name": "hands-on-css",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^17.0.1",
@@ -13,7 +13,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "src:css_grid": "git clone --depth=1 git@github.com:wesbos/css-grid.git",
+    "src:css_flexbox": "git clone --depth=1 git@github.com:wesbos/What-The-Flexbox.git"
   },
   "eslintConfig": {
     "extends": [
