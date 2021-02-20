@@ -2,8 +2,16 @@
   --el-size: 60px;
   --el-color: #fff;
 
-  --icon-size: 400px;
-  --icon-color: #fff;
+  /* --icon-size: 50px; */
+  /* --icon-size: 100px; */
+  /* --icon-size: 150px; */
+  /* --icon-size: 200px; */
+  /* --icon-size: 260px; */
+  --icon-size: 300px;
+  /* --icon-size: 350px; */
+  /* --icon-size: 400px; */
+
+  --icon-color: rgba(255, 255, 255, 1);
 
   --pink: rgba(243, 186, 255, 0.548);
   --sky-blue: rgba(105, 234, 243, 0.5);
@@ -13,7 +21,9 @@
   --purple: rgba(175, 162, 253, 0.5);
 }
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -22,6 +32,7 @@ html {
 }
 
 body {
+  font-family: 'Open Sans', 'sans-serif';
   font-size: 1.8rem; /* 18px default size */
   /* margin: 1rem; */
 }

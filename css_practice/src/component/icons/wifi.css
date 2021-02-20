@@ -1,0 +1,51 @@
+.wifi {
+  padding: 20px;
+}
+
+.wifi,
+.wifi:before {
+  display: inline-block;
+  border: 60px double transparent;
+  border-top-color: #fff;
+  border-radius: 50%;
+}
+
+.wifi:before {
+  content: '';
+  width: 0;
+  height: 0;
+}
+
+/* .wifi,
+.wifi::after,
+.wifi::before {
+  border: calc(var(--icon-size) * 0.1) double transparent;
+  border-radius: 50% 50% 0 0;
+}
+.wifi {
+  color: var(--icon-color);
+  width: calc(var(--icon-size) * 1.3);
+  height: calc(var(--icon-size) * 1.3);
+
+  border-top: calc(var(--icon-size) * 0.1) solid currentColor;
+  position: relative;
+}
+.wifi::after {
+  content: 'A';
+  position: absolute;
+  width: calc(var(--icon-size) * 0.9);
+  height: calc(var(--icon-size) * 0.9);
+  top: calc(var(--icon-size) * 0.1);
+  left: 8%;
+  border-top: calc(var(--icon-size) * 0.1) solid currentColor;
+}
+
+.wifi::before {
+  content: 'B';
+  position: absolute;
+  width: calc(var(--icon-size) * 0.6);
+  height: calc(var(--icon-size) * 0.6);
+  top: calc(var(--icon-size) * 0.3);
+  left: 21%;
+  border-top: calc(var(--icon-size) * 0.1) solid currentColor;
+} */
