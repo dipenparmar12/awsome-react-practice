@@ -1,0 +1,20 @@
+.sidebar_item {
+  display: inline-block;
+  margin: 10px;
+}
+
+nav ul {
+  position: relative;
+  display: block;
+}
+
+ul li {
+	display: inline-block;
+	list-style-type: none;
+}
+
+h1 {
+  padding-left: 300px;
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,47 @@
+.post-preview {
+  padding: 15px;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  float: left;
+  margin-right: 10px;
+  width: 250px;
+  height: 450px;
+  margin-top: 50px;
+}
+ul li {
+  list-style-type: none;
+  display: inline;
+}
+
+.post_title {
+  font-size: 1em;
+  margin-top: 10px;
+  text-align: center;
+}
+.post_button {
+  position: relative;
+  display: inline-block;
+}
+.buttons {
+  position: absolute;
+  bottom: 0;
+}
+.post_body {
+  margin: 10px;
+  white-space: pre-wrap;
+  text-align: left;
+}
+.post_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.post_category {
+  text-align: center;
+}
+.post_datestamp {
+  text-align: center;
+}
