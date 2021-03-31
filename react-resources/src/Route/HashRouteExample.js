@@ -1,17 +1,17 @@
 import React from 'react'
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Switch,
   Link,
   useParams,
 } from 'react-router-dom'
 
-const RouteExample = (props) => {
+const HashRouteExample = (props) => {
   return (
     <div>
-      <h4> Simple Route Example</h4>
-      <BrowserRouter>
+      <h4> Hash Route Example</h4>
+      <HashRouter>
         <ul style={{ display: 'flex', listStyleType: 'none', margin: '10px' }}>
           <li style={{ margin: '5px' }}>
             <Link to='/'>Home</Link>
@@ -29,16 +29,18 @@ const RouteExample = (props) => {
 
         {/* // */}
         <Switch>
+          <Route exact path='/'>
+            <h5> HOME page</h5>
+          </Route>
           <Route exact path='/about'>
-            <h3> About page</h3>
+            <h5> About page</h5>
           </Route>
           <Route exact path='/dashboard'>
-            <h3> My Dashboard </h3>
+            <h5> My Dashboard </h5>
           </Route>
-
           <Route path='/user/:id' children={<Child />} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
@@ -54,4 +56,4 @@ function Child() {
     </div>
   )
 }
-export default RouteExample
+export default HashRouteExample

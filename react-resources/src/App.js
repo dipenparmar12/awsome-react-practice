@@ -1,15 +1,13 @@
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
 import './App.css'
-import RouteExample from './Route/RouteExample'
+import SwitchApp from './routes/SwitchApp'
 
 function App() {
   return (
-    <React.Fragment>
-      <div className='App'>
-        <RouteExample />
-      </div>
-      
-    </React.Fragment>
+    <HashRouter>
+      <SwitchApp />
+    </HashRouter>
   )
 }
 
