@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import ReactReduxApp from '../concepts/ReactReduxApp'
+import ReduxSaga from '../concepts/ReduxSaga'
+// import { Redirect } from 'react-router-dom'
 import HashRouteExample from '../Route/HashRouteExample'
 import RouteExample from '../Route/RouteExample'
 //
@@ -10,6 +13,18 @@ export const routes = {
     name: 'Home',
     path: '/home',
     render: (props) => <p> React Home </p>,
+  },
+
+  redux: {
+    name: 'react-redux',
+    path: '/redux',
+    render: (props) => <ReactReduxApp {...props} />,
+  },
+
+  reduxSaga: {
+    name: 'reduxSaga',
+    path: '/redux/saga',
+    render: (props) => <ReduxSaga {...props} />,
   },
 
   routeExample: {
@@ -24,6 +39,7 @@ export const routes = {
     render: (props) => <HashRouteExample {...props} />,
   },
 
+
   test: {
     name: 'testing',
     path: '/test/:component?',
@@ -32,7 +48,7 @@ export const routes = {
 }
 
 const SwitchApp = () => {
-  const appRoutes = { ...routes } // ...otherRoutes
+  const appRoutes = React.useMemo(() => ({ ...routes }), []) // ...otherRoutes
   React.useEffect(() => {
     ReactDOM.render(
       Object.values(appRoutes).map((route) => {
@@ -56,7 +72,6 @@ const SwitchApp = () => {
             />
           )
         })}
-
         {/* <Redirect to={appRoutes?.root?.path} /> */}
       </Switch>
     </>
@@ -70,8 +85,7 @@ const createMenuItem = (path, title) => {
     <React.Fragment key={Math.random()}>
       <li style={{ display: 'inline' }}>
         <a href={'#' + path} style={{ marginLeft: '10px' }}>
-          {' '}
-          {title}{' '}
+          {title}
         </a>
       </li>
     </React.Fragment>
