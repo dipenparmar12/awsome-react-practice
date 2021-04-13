@@ -52,9 +52,6 @@ const server = http.createServer(app)
 // Web socket
 const io = socketIo(server, { cors: { origin: '*' } })
 
-// Web socket
-const io = socketIo(server, { cors: { origin: '*' } })
-
 io.on('connection', (socket) => {
   socket.emit('TEST_INIT', ' Welcome User, From websocket server' + new Date())
 
