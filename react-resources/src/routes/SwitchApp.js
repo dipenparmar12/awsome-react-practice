@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Route, Switch } from 'react-router-dom'
 import ReactReduxApp from '../concepts/ReactReduxApp'
 import ReduxSaga from '../concepts/ReduxSaga'
+import WebSocket from '../concepts/WebSocket'
 // import { Redirect } from 'react-router-dom'
 import HashRouteExample from '../Route/HashRouteExample'
 import RouteExample from '../Route/RouteExample'
@@ -39,6 +40,11 @@ export const routes = {
     render: (props) => <HashRouteExample {...props} />,
   },
 
+  webSocket: {
+    name: 'Web-Socket',
+    path: '/webSocket',
+    render: (props) => <WebSocket {...props} />,
+  },
 
   test: {
     name: 'testing',

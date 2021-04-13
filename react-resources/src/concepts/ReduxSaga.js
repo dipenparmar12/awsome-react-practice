@@ -24,7 +24,7 @@ const initialState = {
 }
 
 const todoReducer = (state = initialState, action) => {
-//   console.log('ReduxSaga.js::[27] action', action)
+  //   console.log('ReduxSaga.js::[27] action', action)
   switch (action.type) {
     case RENDER_TODO_LIST:
       return {
@@ -68,7 +68,7 @@ sagaMiddleware.run(rootSaga)
 
 const ReduxSaga = (props) => {
   React.useEffect(() => {
-    console.log('ReduxSaga.js::[64] ', store.dispatch(loadTodoListDipatcher()))
+    console.log('ReduxSaga.js::[ReduxSaga] ', store.dispatch(loadTodoListDipatcher()))
   }, [])
 
   return (
