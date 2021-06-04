@@ -1,0 +1,12 @@
+[class^='hand_'] {
+  width: 45%;
+  height: 10px;
+  background-color: black;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 50%;
+
+
+  transform-origin: 100%;
+}

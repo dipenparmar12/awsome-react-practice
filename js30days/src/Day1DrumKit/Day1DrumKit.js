@@ -12,7 +12,6 @@ const Day1DrumKitWrapper = styled.div`
   background-size: cover;
   background-position: center;
   height: 100vh;
-  width: 100vw;
 `
 const KeyContainer = styled.div`
   display: flex;
