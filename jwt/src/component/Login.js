@@ -1,4 +1,5 @@
 import React from 'react'
+import { isDevEnv } from '../utils/environment'
 
 export default function Login() {
   const onSubmit = (e) => {
@@ -10,8 +11,18 @@ export default function Login() {
 
   return (
     <form className='login_form' onSubmit={onSubmit}>
-      <input type='text' placeholder='email' name='email' />
-      <input type='password' placeholder='password' name='password' />
+      <input
+        type='text'
+        placeholder='email'
+        name='email'
+        defaultValue={isDevEnv() ? process.env.REACT_APP_MY_EMAIL : null}
+      />
+      <input
+        type='password'
+        placeholder='password'
+        name='password'
+        defaultValue={isDevEnv() ? 'Admin@123' : null}
+      />
       <br />
       <button>Submit</button>
     </form>
