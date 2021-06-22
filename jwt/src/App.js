@@ -1,10 +1,11 @@
 import './App.css'
-import Test from './tests/Test'
+import Login from './component/Login'
 
 function App() {
   return (
     <>
-      <Test />
+      {/* <Test /> */}
+      <Login/>
     </>
   )
 }
