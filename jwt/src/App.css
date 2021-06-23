@@ -18,3 +18,26 @@
   padding: 10px 15px;
   cursor: pointer;
 }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.access_denied {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.mt {
+  margin-top: 100px;
+}
