@@ -1,8 +1,19 @@
 import axios from 'axios'
 import React from 'react'
+import useAuth from '../hooks/UseAuth'
+import redirect from '../utils/redirect'
 import { isDevEnv } from '../utils/environment'
 
 export default function Login() {
+  const { authToken, setToken, authLoading } = useAuth()
+
+  React.useEffect(() => {
+    console.log('Login.js::[10] authToken', authToken)
+    if (authToken) {
+      redirect('/admin')
+    }
+  }, [authToken, authLoading])
+
   const onSubmit = (e) => {
     e.preventDefault()
     const email = e.target['email'].value
@@ -14,11 +25,15 @@ export default function Login() {
 
     axios
       .post(url, { username: email, password })
-      .then((r) => console.log('Login.js::[11] r', r.data))
+      .then((r) => {
+        console.log('Login.js::[11] r', r.data)
+        setToken(r?.data?.accessToken)
+        redirect('/admin')
+      })
       .catch((e) => console.log('Login.js::[15] e', e?.message))
   }
 
-  return (
+  const renderLoginForm = (
     <form className='login_form' onSubmit={onSubmit}>
       <input
         type='text'
@@ -36,6 +51,8 @@ export default function Login() {
       <button>Submit</button>
     </form>
   )
+
+  return renderLoginForm
 }
 
 // fetch('http://localhost:2020/')
