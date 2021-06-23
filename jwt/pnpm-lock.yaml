@@ -5,6 +5,7 @@ specifiers:
   '@testing-library/jest-dom': ^5.11.4
   '@testing-library/react': ^11.1.0
   '@testing-library/user-event': ^12.1.10
+  axios: ^0.21.1
   react: ^17.0.2
   react-dom: ^17.0.2
   react-scripts: 4.0.3
@@ -16,6 +17,7 @@ dependencies:
   '@testing-library/jest-dom': 5.13.0
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 12.8.3
+  axios: 0.21.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-scripts: 4.0.3_react@17.0.2
@@ -2960,6 +2962,14 @@ packages:
   /axe-core/4.2.2:
     resolution: {integrity: sha512-OKRkKM4ojMEZRJ5UNJHmq9tht7cEnRnqKG6KyB/trYws00Xtkv12mHtlJ0SK7cmuNbrU8dPUova3ELTuilfBbw==}
     engines: {node: '>=4'}
+    dev: false
+
+  /axios/0.21.1:
+    resolution: {integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==}
+    dependencies:
+      follow-redirects: 1.14.1_debug@4.3.1
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /axobject-query/2.2.0:
