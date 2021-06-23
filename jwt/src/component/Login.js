@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React from 'react'
 import { isDevEnv } from '../utils/environment'
 
@@ -7,6 +8,14 @@ export default function Login() {
     const email = e.target['email'].value
     const password = e.target['password'].value
     console.log('Login.js::[9] email, password', email, password)
+
+    // const url = process.env.REACT_APP_API_URL + '/api/auth/signin'
+    const url = 'http://localhost:8001/api/auth/signin'
+
+    axios
+      .post(url, { username: email, password })
+      .then((r) => console.log('Login.js::[11] r', r.data))
+      .catch((e) => console.log('Login.js::[15] e', e?.message))
   }
 
   return (
@@ -15,7 +24,7 @@ export default function Login() {
         type='text'
         placeholder='email'
         name='email'
-        defaultValue={isDevEnv() ? process.env.REACT_APP_MY_EMAIL : null}
+        defaultValue={isDevEnv() ? 'dipenparmar12' : null}
       />
       <input
         type='password'
@@ -28,3 +37,8 @@ export default function Login() {
     </form>
   )
 }
+
+// fetch('http://localhost:2020/')
+//   .then(res => res.json())
+//   .then(data => console.log(data))
+//   .catch(err => console.error(err));

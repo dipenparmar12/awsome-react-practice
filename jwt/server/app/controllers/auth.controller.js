@@ -9,6 +9,15 @@ var jwt = require('jsonwebtoken')
 var bcrypt = require('bcryptjs')
 
 exports.signup = (req, res) => {
+
+  if (!req.body?.username || !req.body?.email || !req.body?.password) {
+    return res.status(200).send({
+      statusCode: 401,
+      accessToken: null,
+      message: 'Invalid username/email/password',
+    })
+  }
+
   // Save User to Database
   User.create({
     username: req.body.username,
@@ -41,6 +50,15 @@ exports.signup = (req, res) => {
 }
 
 exports.signin = (req, res) => {
+
+  if (!req.body?.username) {
+    return res.status(200).send({
+      statusCode: 401,
+      accessToken: null,
+      message: 'Invalid Username!',
+    })
+  }
+
   User.findOne({
     where: {
       username: req.body.username,
