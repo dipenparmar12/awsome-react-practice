@@ -1,0 +1,238 @@
+/* //////////////////
+ Grid 1
+/////////////////////// */
+.grid1_container {
+  display: grid;
+  gap: 2rem;
+
+  grid-template-columns: auto 20rem repeat(2, 9rem) 1fr 2fr;
+  grid-template-rows: 1fr 1.5fr;
+  grid-auto-rows: 2rem;
+
+  text-align: center;
+  margin: 1.5rem;
+  width: 90rem;
+  background-color: rgba(0, 255, 179, 0.596);
+
+  & .g1_item {
+    padding: 1rem;
+    background-color: rgba(0, 255, 34, 0.596);
+    /* border: 0.1rem solid rgba(0, 0, 0, 0.541); */
+  }
+}
+
+/* //////////////////
+ Grid 2
+/////////////////////// */
+.g2_container {
+  text-align: center;
+  margin: 1.5rem;
+  width: 100rem;
+  background-color: rgba(255, 68, 0, 0.596);
+  display: grid;
+
+  gap: 2rem;
+  grid-template-columns: auto 2fr 1fr;
+  grid-template-rows: 10rem 1fr 2fr;
+
+  grid-auto-columns: 1fr 3fr 3fr;
+  grid-auto-rows: 1fr 2fr 1fr;
+
+  /* grid-auto-flow: column; */
+  & .g2_item {
+    background-color: rgba(255, 68, 0, 0.596);
+  }
+}
+
+/* //////////////////
+ Grid 3
+/////////////////////// */
+.g3_container {
+  background-color: rgba(4, 0, 255, 0.164);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(4, 4fr);
+
+  .g3_items {
+    background-color: rgba(88, 181, 235, 0.329);
+  }
+  .g3_item3 {
+    background: rgb(244, 255, 185);
+    grid-column: span 2;
+  }
+
+  .g3_item7 {
+    background: rgba(0, 128, 128, 0.5);
+    grid-column: span 3;
+  }
+
+  .g3_item10 {
+    background: rgba(55, 0, 128, 0.425);
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* //////////////////
+ Grid 4
+/////////////////////// */
+.g4_container {
+  background-color: rgba(199, 199, 199, 0.164);
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(5, 4fr);
+
+  & .g4_items {
+    background-color: var(--pink);
+  }
+
+  & .g4_item3 {
+    background: var(--yellow-light);
+    grid-column: span 2;
+  }
+
+  & .g4_item10 {
+    background: var(--sky-blue);
+    grid-column: 2 / 4;
+    /* grid-column-start: 2; grid-column-end: 4; */
+  }
+
+  & .g4_item20 {
+    background: var(--green);
+    grid-column: 1 / -1; /* Full row */
+  }
+
+  & .g4_item11 {
+    background: var(--purple);
+    grid-row: 1 / 3;
+  }
+}
+
+/* //////////////////
+ Grid 5
+/////////////////////// */
+.g5_container {
+  background-color: rgba(199, 199, 199, 0.164);
+  padding: 1rem;
+  display: grid;
+  gap: 2rem;
+
+  /* grid-template-columns: repeat(auto-fill, 10rem); */
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  /* grid-template-columns: fit-content(20rem) 1fr; */
+
+  .g5_items {
+    background-color: var(--green);
+    font-size: 2rem;
+  }
+
+  .g5_item4 {
+    background-color: var(--sky-blue);
+    grid-column: auto / -1;
+  }
+
+  .g5_item5 {
+    background-color: var(--sky-blue);
+    grid-column: 2 / span 3;
+  }
+}
+
+/* //////////////////
+ Grid 6
+/////////////////////// */
+#grid6 {
+  display: grid;
+  width: 100%;
+  height: 25rem;
+  grid-template-columns: minmax(1.2rem, 1fr) minmax(8rem, 4fr);
+  grid-template-rows: 5rem 1fr 3rem;
+
+  grid-template-areas:
+    'head 	main'
+    'nav  	main'
+    'nav  	foot';
+
+  & > header {
+    grid-area: head;
+    background-color: #8ca0ff;
+  }
+
+  & > nav {
+    grid-area: nav;
+    background-color: #ffa08c;
+  }
+
+  & > main {
+    grid-area: main;
+    background-color: #ffff64;
+  }
+
+  & > footer {
+    grid-area: foot;
+    background-color: #8cffa0;
+  }
+}
+
+/// // .g6_container>.g6.g6_${cell $}*60
+.g6_container {
+  gap: 1rem;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-flow: dense;
+
+  & .g6 {
+    padding: 0.6rem;
+    background-color: rgba(148, 255, 98, 0.685);
+
+    &:nth-child(6n) {
+      background: rgba(122, 91, 235, 0.637);
+      grid-column: span 6;
+    }
+
+    &:nth-child(8n) {
+      background: rgba(255, 99, 71, 0.74);
+      grid-column: span 2;
+    }
+
+    &:nth-child(9n) {
+      background: rgba(64, 224, 208, 0.685);
+      grid-row: span 2;
+    }
+
+    &:nth-child(9n) {
+      grid-row: span 2;
+    }
+  }
+
+  display: grid;
+  margin: 1rem;
+}
+
+/// // .g7.container>.i.i_${cell $}*35
+.g7 {
+  &.container {
+    grid-template-columns: repeat(4, 1fr);
+    // align-items: center; // Y axis
+    // justify-items: end; // X axis
+    place-items: center end; // Sort-hand
+
+    & .i {
+      background-color: rgb(55, 194, 236);
+      border: 2px solid blue;
+    }
+  }
+}
+
+//// // .g8.container>.i.i_${cell $}*13
+.g8 {
+  &.container {
+    border: 10px solid pink;
+    grid-template-columns: repeat(4, 7rem);
+
+    justify-content: space-evenly; // -- Xaxis
+    align-content: space-around; // || Yaxis
+
+    & .i {
+      background-color: rgb(55, 194, 236);
+    }
+  }
+}

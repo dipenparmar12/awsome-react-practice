@@ -8,13 +8,15 @@ import './icons/search.css'
 
 const Animations = () => {
   return (
-    <div className='container morpichh center'>
-      {/* <div className='heart'/> */}
-      {/* <div className='download' /> */}
-      {/* <div className='clock' /> */}
-      {/* <div className='wifi' /> */}
-			<div className="search" />
-    </div>
+      <>
+        <div className='container morpichh center'>
+          {/* <div className='heart'/> */}
+          {/* <div className='download' /> */}
+          {/* <div className='clock' /> */}
+          {/* <div className='wifi' /> */}
+          <div className="search"/>
+        </div>
+      </>
   )
 }
 

@@ -1,14 +1,18 @@
 {
   "name": "hands-on-css",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
-  "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "web-vitals": "^1.1.0"
-  },
+  "resources": [
+    "git@github.com:wesbos/css-grid.git",
+    "git@github.com:wesbos/What-The-Flexbox.git",
+    "https://github.com/phuoc-ng/csslayout",
+    "git@github.com:embermap/emberconf2020-tailwind-css-best-practices.git, https://www.youtube.com/watch?v=eTdYzNMPn1o",
+    ""
+  ],
   "scripts": {
+    "c_start": "craco start",
+    "c_build": "craco build",
+    "c_test": "craco test",
     "dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -17,6 +21,21 @@
     "src:css_grid": "git clone --depth=1 git@github.com:wesbos/css-grid.git",
     "src:css_flexbox": "git clone --depth=1 git@github.com:wesbos/What-The-Flexbox.git",
     "src:css_layouts": "git clone --depth=1 https://github.com/phuoc-ng/csslayout"
+  },
+  "dependencies": {
+    "@craco/craco": "^6.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.2",
+    "web-vitals": "^1.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9",
+    "cross-env": "^7.0.3",
+    "node-sass": "^5.0.0",
+    "postcss": "^7",
+    "serve": "^11.3.2"
   },
   "eslintConfig": {
     "extends": [
@@ -35,8 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "serve": "^11.3.2"
   }
 }

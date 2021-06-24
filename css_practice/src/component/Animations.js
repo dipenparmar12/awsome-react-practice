@@ -8,17 +8,19 @@ import './animations/pulse.css'
 
 const Animations = () => {
   return (
-      <div className="container morpichh center">
+      <div>
+        <div className="container morpichh center">
 
-        <div className="spinner"/>
+          <div className="spinner"/>
 
-        <Chase/>
+          <Chase/>
 
-        <div className='pulse'/>
+          <div className='pulse'/>
 
-        <div className="rotating_box"/>
+          <div className="rotating_box"/>
 
-        <Bounce/>
+          <Bounce/>
+        </div>
       </div>
   )
 }

@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 65.62%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(235, 235, 235);
+}
+
+.inlineCard{
+  display: flex;
+  justify-content: center
+}
+
+
+.light {
+  background-color: rgba(247, 247, 247, 0.918) !important;
+  color: #000;
+}
+
+.dark {
+  background-color: rgba(37, 37, 37, 0.918) !important;
+  color: #fff;
+}
+
+
+.card7 {
+  width: 320px;
+  height: 480px;
+  padding: 40px;
+  padding-top: 60px;
+  margin: 40px;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  box-shadow: 50px 27px 41px -1px #c7c7c7;
+  // box-shadow: 62px 53px 131px -24px #c7c7c7;
+  // box-shadow: 62px 53px 48px 25px #c7c7c7;
+
+  &__heading {
+    font-size: 25px;
+    margin-bottom: 70%;
+    text-transform: capitalize;
+
+    span {
+      color: rgb(151, 151, 151);
+      font-weight: 300;
+      text-transform: lowercase;
+
+      &::before {
+        content: "|";
+      }
+    }
+  }
+
+  &__sub_heading {
+    color: inherit;
+    font-size: 20px;
+    margin-bottom: 30px;
+
+    &::after {
+      content: " ";
+      display: block;
+      border-bottom: 4px solid black;
+      width: 30px;
+      height: 29px;
+    }
+  }
+
+  &__content {
+    color: rgb(117, 117, 117);
+  }
+}
