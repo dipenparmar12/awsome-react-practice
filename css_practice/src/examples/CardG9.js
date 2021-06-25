@@ -1,15 +1,12 @@
 import React from 'react'
+{
+  // /* .g9.container>(.card>.content>div>img.img[src="$"]+div.left>.title{Card Title$}+.autor_name{Autor name}+.desc{lorem})*3 */
+}
 
 export const Card = () => {
-  {
-    // /* .g9.container>(.card>.content>div>img.img[src="$"]+div.left>.title{Card Title$}+.autor_name{Autor name}+.desc{lorem})*3 */
-  }
   return (
     <div className='g9 container'>
-      {','
-        .repeat(23)
-        .split('')
-        .map((_, i) => {
+      {[...new Array(23)].map((_, i) => {
           return (
             <>
               <div className='card'>
@@ -30,6 +27,7 @@ export const Card = () => {
     </div>
   )
 }
+/*
 
 // .cards {
 //   display: grid;
@@ -55,7 +53,7 @@ export const Card = () => {
 //////////////////////// my ugly implimentation
 
 {
-  /*
+  /!*
 	 <div className='card'>
 			<div className='content'>
 				<div>
@@ -71,7 +69,7 @@ export const Card = () => {
 				</div>
 			</div>
 		</div> 
-  */
+  *!/
 }
 
 // //// // .g9.container>.i.i_${cell $}*10
@@ -118,3 +116,4 @@ export const Card = () => {
 //     }
 //   }
 // }
+*/
