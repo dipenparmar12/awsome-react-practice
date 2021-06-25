@@ -11,16 +11,25 @@ import Layouts from './component/Layouts'
 import Tailwind from './example_tailwind/Tailwind'
 import Grid1 from './practice/jonas/Grid1'
 
+import './App.css'
+import {renderSwitch} from './utils/renderSwitch';
+
 export const appRoutes = {
   test: {
     name: 'Test',
     path: `/test`,
-    component: (props) => <h1 {...props}> Test route </h1>,
+    component: (props) => <h1 > Test route [Home page] </h1>,
   },
   Icons: {
     name: 'Icons',
     path: `/Icons`,
     component: (props) => <Icons {...props}/>,
+    routes: [
+      {
+        name: 'Icons',
+        path: `/Icons`,
+        component: (props) => <Icons {...props}/>,}
+    ]
   },
   Animations: {
     name: 'Animations',
@@ -54,11 +63,9 @@ function App() {
   return (
       <BrowserRouter>
         <nav>
-          {Object.values(appRoutes).map((route) => <Link to={route.path}> {route.name}</Link>)}
+          {Object.values(appRoutes).map((route,i) => <Link key={'Link' + i} to={route.path}> {route.name}</Link>)}
         </nav>
-        <Switch>
-          {Object.values(appRoutes).map((route) => <Route exact path={route.path} render={route.component}/>)}
-        </Switch>
+        {renderSwitch(appRoutes)}
       </BrowserRouter>
   )
 }
