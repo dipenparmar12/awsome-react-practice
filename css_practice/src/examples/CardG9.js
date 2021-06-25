@@ -1,9 +1,10 @@
 import React from 'react'
+import './card.scss'
 {
   // /* .g9.container>(.card>.content>div>img.img[src="$"]+div.left>.title{Card Title$}+.autor_name{Autor name}+.desc{lorem})*3 */
 }
 
-export const Card = () => {
+export const CardG9 = () => {
   return (
     <div className='g9 container'>
       {[...new Array(23)].map((_, i) => {

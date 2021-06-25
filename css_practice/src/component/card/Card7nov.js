@@ -1,5 +1,6 @@
 import './_card7nov.scss'
 import Tabs from '../../reactive/tab/Tabs';
+import {CardG9} from '../../examples/CardG9';
 
 export default function Card() {
   return (
@@ -18,6 +19,11 @@ export default function Card() {
             </div>
           </div>
         </section>
+
+        <section data-tabName={'CardG9'}>
+          <CardG9/>
+        </section>
+
       </Tabs>
   )
 }

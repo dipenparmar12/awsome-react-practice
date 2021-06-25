@@ -11,12 +11,14 @@ import Tailwind from './example_tailwind/Tailwind'
 import './App.css'
 import {renderSwitch} from './utils/renderSwitch';
 import Card from './component/card/Card7nov';
+import Test1 from './component/test/Test1';
 
 export const appRoutes = {
   test: {
     name: 'Test',
     path: `/test`,
-    component: (props) => <h1> Test route [Home page] </h1>,
+    // component: (props) => <h1> Test route [Home page] </h1>,
+    component: (props) => <Test1/>,
   },
   Icons: {
     name: 'Icons',
@@ -58,6 +60,8 @@ function App() {
           {Object.values(appRoutes).map((route, i) =>
               <Link key={'Link' + i} to={route.path}> {route.name}</Link>
           )}
+          <br/>
+          <br/>
         </nav>
         {renderSwitch(appRoutes)}
       </BrowserRouter>
