@@ -202,45 +202,6 @@ const Grids = () => {
                 </div>
               </div>
             </div>
-
-          </Tabs.Tab>
-
-          <Tabs.Tab tabName={'Grid 10'}>
-            <div className="g9 container">
-              <div className="card">
-                <div className="content">
-                  <div><img className="img" src={`https://source.unsplash.com/random/200x200?sig=2`}/>
-                    <div className="left">
-                      <div className="title">Card Title1</div>
-                      <div className="autor_name">Autor name</div>
-                      <div className="desc">lorem</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="content">
-                  <div><img className="img" src={`https://source.unsplash.com/random/200x200?sig=3`}/>
-                    <div className="left">
-                      <div className="title">Card Title2</div>
-                      <div className="autor_name">Autor name</div>
-                      <div className="desc">lorem</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="content">
-                  <div><img className="img" src={`https://source.unsplash.com/random/200x200?sig=4`}/>
-                    <div className="left">
-                      <div className="title">Card Title3</div>
-                      <div className="autor_name">Autor name</div>
-                      <div className="desc">lorem</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </Tabs.Tab>
 
           <Tabs.Tab tabName={'asdf'}>
