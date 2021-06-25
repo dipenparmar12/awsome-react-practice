@@ -18,7 +18,7 @@
 
   border-radius: 50%;
   background-color: red;
-  background-color: rgba(100, 0, 0, 0.3);
+  /*background-color: rgba(100, 0, 0, 0.3);*/
 }
 
 .heart:after {

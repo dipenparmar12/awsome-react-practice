@@ -1,35 +1,27 @@
 import React from 'react'
 import {
-  BrowserRouter,
-  Switch,
-  Route, Link,
+  BrowserRouter, Link,
 } from 'react-router-dom'
 import Animations from './component/Animations'
 import Icons from './component/Icons'
 import Grids from './component/Grids'
 import Layouts from './component/Layouts'
 import Tailwind from './example_tailwind/Tailwind'
-import Grid1 from './practice/jonas/Grid1'
 
 import './App.css'
 import {renderSwitch} from './utils/renderSwitch';
+import Card from './component/card/Card7nov';
 
 export const appRoutes = {
   test: {
     name: 'Test',
     path: `/test`,
-    component: (props) => <h1 > Test route [Home page] </h1>,
+    component: (props) => <h1> Test route [Home page] </h1>,
   },
   Icons: {
     name: 'Icons',
     path: `/Icons`,
     component: (props) => <Icons {...props}/>,
-    routes: [
-      {
-        name: 'Icons',
-        path: `/Icons`,
-        component: (props) => <Icons {...props}/>,}
-    ]
   },
   Animations: {
     name: 'Animations',
@@ -41,10 +33,10 @@ export const appRoutes = {
     path: `/Grids`,
     component: (props) => <Grids {...props}/>,
   },
-  Grid1: {
-    name: 'Grid1',
-    path: `/Grid1`,
-    component: (props) => <Grid1 {...props}/>,
+  Cards: {
+    name: 'Cards',
+    path: `/Cards`,
+    component: (props) => <Card {...props}/>,
   },
   Layouts: {
     name: 'Layouts',
@@ -63,7 +55,9 @@ function App() {
   return (
       <BrowserRouter>
         <nav>
-          {Object.values(appRoutes).map((route,i) => <Link key={'Link' + i} to={route.path}> {route.name}</Link>)}
+          {Object.values(appRoutes).map((route, i) =>
+              <Link key={'Link' + i} to={route.path}> {route.name}</Link>
+          )}
         </nav>
         {renderSwitch(appRoutes)}
       </BrowserRouter>

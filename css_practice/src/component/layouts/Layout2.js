@@ -23,10 +23,7 @@ const Layout2 = () => {
             </div>
           </div>
           <div className='gallery'>
-            {','
-                .repeat(7)
-                .split(',')
-                .map((_, i) => (
+            {[...new Array(7)].map((_, i) => (
                     <figure key={i}>
                       <img
                           src={`https://source.unsplash.com/random/200x200?sig=${i}`}

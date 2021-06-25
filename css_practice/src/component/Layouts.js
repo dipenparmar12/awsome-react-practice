@@ -7,11 +7,11 @@ const Layouts = () => {
   return (
       <>
         <Tabs>
-          <Tabs.Tab tabName={'Layout1'}>
+          <Tabs.Tab tabName={'Layout 1'}>
             <Layout1/>
           </Tabs.Tab>
 
-          <Tabs.Tab tabName={'Layout2'}>
+          <Tabs.Tab tabName={'Layout 2'}>
             <Layout2/>
           </Tabs.Tab>
         </Tabs>

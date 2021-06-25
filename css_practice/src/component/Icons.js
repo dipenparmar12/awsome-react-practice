@@ -5,6 +5,7 @@ import './icons/download.css'
 import './icons/clock.css'
 import './icons/wifi.css'
 import './icons/search.css'
+import Tabs from '../reactive/tab/Tabs';
 
 const Icons = (props) => {
 
@@ -14,12 +15,24 @@ const Icons = (props) => {
 
   return (
       <>
-        <div className='container morpichh center'>
-          {/*<div className='heart'/>*/}
-          {/* <div className='download' /> */}
-          {/* <div className='clock' /> */}
-          {/* <div className='wifi' /> */}
-          {/*<div className="search"/>*/}
+        <div className='tabContainer morpichh center '>
+          <Tabs active={'name'}>
+            <div data-tabName={'download'}>
+              <div className='download'/>
+            </div>
+            <div data-tabName={'clock'}>
+              <div className='clock'/>
+            </div>
+            <div data-tabName={'wifi'}>
+              <div className='wifi'/>
+            </div>
+            <div data-tabName={'search'}>
+              <div className="search"/>
+            </div>
+            <div data-tabName={'heart'}>
+              <div className='heart'/>
+            </div>
+          </Tabs>
         </div>
       </>
   )

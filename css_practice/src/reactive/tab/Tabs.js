@@ -4,7 +4,7 @@
 import React, {useState} from 'react'
 import './Tabs.scss'
 
-export default function Tabs({children, active = null}) {
+export default function Tabs({children, active = 0}) {
   const [activeTab, setActiveTab] = useState(active);
 
   const changeTab = (tab) => {
@@ -17,10 +17,10 @@ export default function Tabs({children, active = null}) {
   return (
       <>
         <TabButtons activeTab={activeTab} tabList={tabList} changeTab={changeTab}/>
-        {/*{React.Children.map(children, child => {*/}
-        {children.map(child => {
-          tabList.push(child.props.tabName)
-          if (child.props?.tabName === activeTab) {
+        {React.Children.map(children, (child, i) => {
+          const tabName = child.props?.tabName || child.props['data-tabName'] || 'tab-' + i;
+          tabList.push(tabName)
+          if (tabName === activeTab) {
             content = child?.props?.children
           }
         })}
