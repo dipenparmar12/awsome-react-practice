@@ -2,10 +2,16 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { all, takeLatest } from 'redux-saga/effects'
+
+// If any of these functions are dispatched, invoke the appropriate saga
+function* rootSaga() {
+  yield all([
+    // takeLatest(login.type, loginUser),
+  ])
+}
 
 const rootReducer = {}
-const rootSaga = {}
-
 const sagaMiddleware = createSagaMiddleware()
 
 const store = configureStore({
@@ -16,6 +22,6 @@ const store = configureStore({
 
 sagaMiddleware.run(rootSaga)
 
-export default function ReduxSagaProvider({ children }) {
+export function ReduxSagaProvider({ children }) {
   return <Provider store={store}>{children}</Provider>
 }

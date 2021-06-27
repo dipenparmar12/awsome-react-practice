@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "googleapis": "^78.0.0",
+    "jsonwebtoken": "^8.5.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -22,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "websocket": "nodemon ./chat_server/index.js",
+    "server:auth": "nodemon ./auth_server/server.js",
+    "server:websocket": "nodemon ./chat_server/index.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,7 +50,6 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {},
   "resolutions": {
     "styled-components": "^5"
   }

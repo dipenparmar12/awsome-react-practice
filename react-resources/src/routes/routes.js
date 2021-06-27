@@ -4,12 +4,19 @@ import ReduxSaga from '../concepts/ReduxSaga'
 import WebSocket from '../concepts/WebSocket'
 import HashRouteExample from '../Route/HashRouteExample'
 import RouteExample from '../Route/RouteExample'
+import GoogleLogin from '../concepts/google-login/GoogleLogin'
 
 const routes = {
   root: {
     name: 'Home',
     path: '/home',
     render: (props) => <p> React Home </p>,
+  },
+
+  reduxSagaStore: {
+    name: 'GoogleLogin',
+    path: '/SagaStore',
+    render: (props) => <GoogleLogin {...props} />,
   },
 
   redux: {

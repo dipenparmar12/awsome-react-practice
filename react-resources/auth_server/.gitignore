@@ -22,8 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-### our project
-.idea
-.vscode
-.eslintcache
-react-resources/.env
+/.idea
+
+/_src

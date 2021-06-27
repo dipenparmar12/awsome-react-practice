@@ -13,7 +13,7 @@ import routes from './routes'
 //
 
 const SwitchApp = () => {
-  const appRoutes = React.useMemo(() => ({ ...routes }), []) // ...otherRoutes
+  const appRoutes = React.useMemo(() => routes, []) // ...otherRoutes
   React.useEffect(() => {
     ReactDOM.render(
       Object.values(appRoutes).map((route) => {
@@ -47,7 +47,7 @@ export default SwitchApp
 
 const createMenuItem = (path, title) => {
   return (
-    <React.Fragment key={Math.random()}>
+    <React.Fragment key={path}>
       <li style={{ display: 'inline' }}>
         <a href={'#' + path} style={{ marginLeft: '10px' }}>
           {title}
