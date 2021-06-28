@@ -58,7 +58,8 @@ const authSlice = createSlice({
   },
 })
 export const { loading, loginSuccess, loginError, logoutSuccess } = authSlice.actions
-export const googleLoginSuccess = createAction('auth/google/success')
+export const googleLoginSuccess = createAction('auth/google/login')
+export const googleLogoutSuccess = createAction('auth/google/loout')
 
 const rootReducer = combineReducers({
   authState: authSlice.reducer,
@@ -82,9 +83,23 @@ function* googleLogin({ payload }) {
   }
 }
 
+function* googleLogout({ payload }) {
+  const logout = () => axios.get(`${API}/logout`)
+  try {
+    yield put(loading())
+    const { data = null } = yield call(logout, payload)
+    console.log('GoogleLogin.js::[61] googleLogout', data)
+    yield localStorage.removeItem('token')
+    yield put(logoutSuccess())
+  } catch (err) {
+    console.log('GoogleLogin.js::[50] err', err)
+  }
+}
+
 // If any of these functions are dispatched, invoke the appropriate saga
 function* rootSaga() {
   yield all([takeLatest(googleLoginSuccess.type, googleLogin)])
+  yield all([takeLatest(googleLogoutSuccess.type, googleLogout)])
 }
 
 const sagaMiddleware = createSagaMiddleware()

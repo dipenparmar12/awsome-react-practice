@@ -1,22 +1,13 @@
 import React from 'react'
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
-import { useDispatch, useSelector } from 'react-redux'
-import { googleLoginSuccess } from './GoogleLogin'
+import { connect, useDispatch} from 'react-redux'
+import { googleLoginSuccess, googleLogoutSuccess } from './GoogleLogin'
 
-export default function GoogleLoginForm() {
-  const isAuthenticated = useSelector((state) => state.authState.isAuthenticated)
+
+function GoogleLoginForm({ isAuthenticated }) {
   const dispatch = useDispatch()
 
-  // React.useEffect(() => {
-  //   const firstLogin = localStorage.getItem('firstLogin')
-  //   if (firstLogin) {
-  //     const getToken = async () => {
-  //       const res = await axios.post('/user/refresh_token', null)
-  //       dispatch({ type: 'GET_TOKEN', payload: res.data.access_token })
-  //     }
-  //     getToken()
-  //   }
-  // }, [auth.isLogged, dispatch])
+  React.useEffect(() => {}, [])
 
   const onSuccess = async (response) => {
     console.log('GoogleLoginForm.js::[7]onSuccess')
@@ -32,8 +23,10 @@ export default function GoogleLoginForm() {
   const onFailure = (response) => {
     console.log('GoogleLoginForm.js::[7]onFailure', response)
   }
+  
   const logout = (response) => {
-    console.log('GoogleLoginForm.js::[12] logout', response)
+    dispatch(googleLogoutSuccess())
+    window.location = '/'
   }
 
   return (
@@ -43,6 +36,9 @@ export default function GoogleLoginForm() {
           clientId='302076842696-gc8qb3a4f36aq6kg1g44172qu44k3ubs.apps.googleusercontent.com'
           buttonText='Logout'
           onLogoutSuccess={logout}
+          onFailure={(res)   =>   {
+            console.log(res)
+          }}
         />
       ) : (
         <GoogleLogin
@@ -51,8 +47,17 @@ export default function GoogleLoginForm() {
           onFailure={onFailure}
           cookiePolicy={'single_host_origin'}
           buttonText='Login with Google'
+          isSignedIn={true}
         />
       )}
     </div>
   )
 }
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.authState.isAuthenticated,
+})
+
+const mapDispatchToProps = (dispatch) => ({})
+
+export default connect(mapStateToProps, mapDispatchToProps)(GoogleLoginForm)

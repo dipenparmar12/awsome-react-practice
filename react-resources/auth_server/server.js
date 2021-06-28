@@ -143,6 +143,16 @@ app.get('/user', authMiddleware, async (req, res) => {
   })
 })
 
+
+app.get('/logout', authMiddleware, async (req, res) => {
+  try {
+    res.clearCookie('refreshtoken')
+    return res.json({ msg: 'Logged out.' })
+  } catch (err) {
+    return res.status(500).json({ msg: err.message })
+  }
+})
+
 app.delete('/user', async (req, res) => {
   const { email } = req.body
   const user = await UserModel.findOne({ email })
