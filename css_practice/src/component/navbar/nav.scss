@@ -25,7 +25,8 @@
   max-width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-end;
+  // justify-content: flex-end;
+  justify-content: center;
 }
 
 ul.navbar-nav {
@@ -40,6 +41,8 @@ ul.navbar-nav {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
 }
 
 .icon-button {
@@ -66,4 +69,40 @@ ul.navbar-nav {
 
 .icon-button:hover {
   filter: brightness(1.3);
+}
+
+/* 
+========================================================
+  Dropdown
+======================================================== 
+*/
+.dropdown {
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-45%);
+
+  background-color: var(--nav-bg);
+  border: 1rem;
+  border-radius: var(--nav-border-radius);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--nav-border-radius);
+  transition: background var(--nav-speed);
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: #525357;
+  }
+}
+
+
+.icon-right {
+  margin-left: auto;
 }

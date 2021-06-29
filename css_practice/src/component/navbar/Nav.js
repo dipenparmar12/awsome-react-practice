@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './nav.scss'
@@ -16,6 +17,10 @@ export default function Nav() {
       <NavItem icon={<PlusIcon />} />
       <NavItem icon={<BellIcon />} />
       <NavItem icon={<MassengerIcon />} />
+
+      <NavItem icon={<CaretIcon />}>
+        <DropDownMenu>hello</DropDownMenu>
+      </NavItem>
     </Navbar>
   )
 }
@@ -26,10 +31,35 @@ const Navbar = ({ children }) => (
   </nav>
 )
 
-const NavItem = ({ icon }) => (
-  <li className='nav-item'>
-    <a href='#' className='icon-button'>
-      {icon}
-    </a>
-  </li>
-)
+const NavItem = ({ icon, children }) => {
+  const [open, setOpen] = React.useState(false)
+  return (
+    <li className='nav-item'>
+      <a href='#' className='icon-button' onClick={() => setOpen(!open)}>
+        {icon}
+      </a>
+      {open ? children : <div></div>}
+    </li>
+  )
+}
+
+const DropDownMenu = ({ icon, children }) => {
+  const DropDownItem = (props) => {
+    return (
+      <a href='#' className='menu-item'>
+        <span className='icon-button'>{props.leftIcon}</span>
+        {props.children}
+        <span className='icon-right'>{props.rightIcon}</span>
+      </a>
+    )
+  }
+
+  return (
+    <div className='dropdown'>
+      <DropDownItem> My Profile </DropDownItem>
+      <DropDownItem leftIcon={<CogIcon />} rightIcon={<ChevronIcon />}>
+        Settings
+      </DropDownItem>
+    </div>
+  )
+}
