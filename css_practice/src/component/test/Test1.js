@@ -4,7 +4,10 @@ import Tabs from '../../reactive/tab/Tabs';
 const Test1 = () => {
   return (
     <>
-      <Tabs active={'Test 1'}>
+      <Tabs active={'tab-0'}>
+        <div>
+
+        </div>
         <div data-tabName={'Test 1'}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <header>

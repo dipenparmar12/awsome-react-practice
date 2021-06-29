@@ -20,10 +20,12 @@
     "eject": "react-scripts eject",
     "src:css_grid": "git clone --depth=1 git@github.com:wesbos/css-grid.git",
     "src:css_flexbox": "git clone --depth=1 git@github.com:wesbos/What-The-Flexbox.git",
-    "src:css_layouts": "git clone --depth=1 https://github.com/phuoc-ng/csslayout"
+    "src:css_layouts": "git clone --depth=1 https://github.com/phuoc-ng/csslayout",
+    "src:css_dropdown": "git clone --depth=1 git@github.com:fireship-io/229-multi-level-dropdown.git "
   },
   "dependencies": {
     "@craco/craco": "^6.1.1",
+    "@svgr/webpack": "^5.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
