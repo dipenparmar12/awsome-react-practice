@@ -13,6 +13,7 @@ import {renderSwitch} from './utils/renderSwitch';
 import Card from './component/card/Card7nov';
 import Test1 from './component/test/Test1';
 import Nav from './component/navbar/Nav'
+import NavOriExample from './component/navbar/App'
 
 export const appRoutes = {
   test: {
@@ -50,6 +51,7 @@ export const appRoutes = {
     name: 'Nav',
     path: `/Nav`,
     component: (props) => <Nav {...props} />,
+    // component: (props) => <NavOriExample {...props} />,
   },
   Tailwind: {
     name: 'Tailwind',

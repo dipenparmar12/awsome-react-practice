@@ -85,8 +85,11 @@ ul.navbar-nav {
   background-color: var(--nav-bg);
   border: 1rem;
   border-radius: var(--nav-border-radius);
-  padding: 1rem;
+  padding: 13px;
   overflow: hidden;
+
+  
+  transition: height var(--nav-speed) ease;
 }
 
 .menu-item {
@@ -95,14 +98,81 @@ ul.navbar-nav {
   align-items: center;
   border-radius: var(--nav-border-radius);
   transition: background var(--nav-speed);
-  padding: 0.5rem;
+  padding: 0.7rem;
 
   &:hover {
     background-color: #525357;
   }
+
+  & .icon-button {
+    margin-right: 0.7rem;
+  }
+
+  & .icon-right {
+    margin-left: auto;
+  }
 }
 
-
-.icon-right {
-  margin-left: auto;
+a.menu-item {
+  color: white;
 }
+
+/* 
+========================================================
+  Animation
+  CSSTransition classes 
+======================================================== 
+*/
+
+.menu {
+  width: 100%;
+}
+
+.menu-primary {
+  &-enter,
+  &-exit {
+    position: absolute;
+    transform: translateX(-110%);
+
+    &-active {
+      transform: translateX(0%);
+      transition: all var(--nav-speed) ease;
+    }
+  }
+
+  &-exit-active {
+    transform: translateX(-110%);
+  }
+}
+
+// .menu-primary-enter {
+//   position: absolute;
+//   transform: translateX(-110%);
+// }
+// .menu-primary-enter-active {
+//   transform: translateX(0%);
+//   transition: all var(--speed) ease;
+// }
+// .menu-primary-exit {
+//   position: absolute;
+// }
+// .menu-primary-exit-active {
+//   transform: translateX(-110%);
+//   transition: all var(--speed) ease;
+// }
+
+
+// .menu-secondary-enter {
+//   transform: translateX(110%);
+// }
+// .menu-secondary-enter-active {
+//   transform: translateX(0%);
+//   transition: all var(--speed) ease;
+// }
+// .menu-secondary-exit {
+
+// }
+// .menu-secondary-exit-active {
+//   transform: translateX(110%);
+//   transition: all var(--speed) ease;
+// }

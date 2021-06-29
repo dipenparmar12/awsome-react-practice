@@ -30,14 +30,14 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
+    "react-transition-group": "^4.4.2",
     "web-vitals": "^1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^9",
     "cross-env": "^7.0.3",
     "node-sass": "^5.0.0",
-    "postcss": "^7",
-    "serve": "^11.3.2"
+    "postcss": "^7"
   },
   "eslintConfig": {
     "extends": [
