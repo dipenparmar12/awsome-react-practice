@@ -6,14 +6,15 @@ import Animations from './component/Animations'
 import Icons from './component/Icons'
 import Grids from './component/Grids'
 import Layouts from './component/Layouts'
-import Tailwind from './example_tailwind/Tailwind'
+// import Tailwind from './example_tailwind/Tailwind'
 
 import './App.css'
 import {renderSwitch} from './utils/renderSwitch';
 import Card from './component/card/Card7nov';
 import Test1 from './component/test/Test1';
 import Nav from './component/navbar/Nav'
-import NavOriExample from './component/navbar/App'
+// import NavOriExample from './component/navbar/App'
+import CheckboxSelect from './reactive/checkbox-select/CheckboxSelect'
 
 export const appRoutes = {
   test: {
@@ -53,26 +54,27 @@ export const appRoutes = {
     component: (props) => <Nav {...props} />,
     // component: (props) => <NavOriExample {...props} />,
   },
-  Tailwind: {
-    name: 'Tailwind',
-    path: `/Tailwind`,
-    component: (props) => <Tailwind {...props} />,
+  CheckboxSelect: {
+    name: 'CheckboxSelect',
+    path: `/CheckboxSelect`,
+    component: (props) => <CheckboxSelect {...props} />,
   },
 }
 
 
 function App() {
   return (
-      <BrowserRouter>
-        <nav>
-          {Object.values(appRoutes).map((route, i) =>
-              <Link key={'Link' + i} to={route.path}> {route.name}</Link>
-          )}
-          <br/>
-          <br/>
-        </nav>
-        {renderSwitch(appRoutes)}
-      </BrowserRouter>
+    <BrowserRouter>
+      <nav style={{  marginBottom:  '10px'  }}>
+        {Object.values(appRoutes).map((route, i) => (
+          <Link key={'Link' + i} to={route.path}>
+            {route.name}
+          </Link>
+        ))}
+        <br />
+      </nav>
+      {renderSwitch(appRoutes)}
+    </BrowserRouter>
   )
 }
 
