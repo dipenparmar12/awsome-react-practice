@@ -43,13 +43,6 @@ const socketEvents = {
   MSG_SEND: 'event://MSG_SEND',
 }
 
-app.get('/chat/events', (req, res, next) => {
-  res.json({
-    msg: 'socketEvents',
-    socketEvents,
-  })
-})
-
 const testRoomId = '8f077fc4-1926-267e-599a-384791278bea'
 
 let rooms = {
@@ -60,10 +53,48 @@ let rooms = {
 }
 
 let chatLogs = {
-  [testRoomId]: {
-    dipen: '[testRoom] hello world.... dipen',
-    unknown: '[testRoom] hello world....unknown',
-  },
+  [testRoomId]: [
+    {
+      username: 'dipen',
+      date: new Date(),
+      message: '[testRoom] hello world.... dipen',
+    },
+    {
+      username: 'unknown',
+      date: new Date(),
+      message: '[testRoom] hello world.... unknown',
+    },
+    {
+      username: 'dipen',
+      date: new Date(),
+      message: '[testRoom] hello world.... dipen',
+    },
+    {
+      username: 'unknown',
+      date: new Date(),
+      message: '[testRoom] hello world.... unknown',
+    },
+    {
+      username: 'unknown',
+      date: new Date(),
+      message: '[testRoom] hello world.... unknown',
+    },
+    {
+      username: 'dipen',
+      date: new Date(),
+      message: '[testRoom] hello world.... dipen',
+    },
+    {
+      username: 'dipen',
+      date: new Date(),
+      message: '[testRoom] hello world.... dipen',
+    },
+    {
+      username: 'unknown',
+      date: new Date(),
+      message: '[testRoom] hello world.... unknown',
+    },
+  ],
 }
 
 app.post('/chat/room', (req, res, next) => {
@@ -81,14 +112,17 @@ app.post('/chat/room', (req, res, next) => {
 })
 
 app.get('/chat/room/:roomId', (req, res, next) => {
+  const username = req.query.username
   const roomId = req.params.roomId
+
+  console.log('chatServer.js::[118] roomId', roomId, username)
   res.json({
     chats: chatLogs[roomId],
     roomId,
+    username,
     ...rooms[roomId],
   })
 })
-
 
 /* 
 ========================================================
@@ -96,3 +130,7 @@ app.get('/chat/room/:roomId', (req, res, next) => {
 ======================================================== 
 */
 server.listen(port, () => console.log(`listening on *:${port}`))
+
+
+// Test
+// console.log('chatServer.js::req[query,param,body]', req.query, req.params, req.body)

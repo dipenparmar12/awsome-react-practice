@@ -10,7 +10,7 @@ const initialState = {
   room: {},
   roomId: null,
   username: null,
-  chats: [],
+  chats: [], // [ { user, date, msg }, ]
   socketEvnets: {},
 }
 
@@ -26,8 +26,8 @@ export const chatSlice = createSlice({
       state.username = payload?.username
     },
     roomJoinSuccess: (state, { payload }) => {
-      console.log('ChatSlice.js::[22] payload', payload)
       state.roomId = payload?.roomId
+      state.username = payload?.username
       state.chats = payload?.chats
     },
     roomExitSuccess: (state, { payload }) => {

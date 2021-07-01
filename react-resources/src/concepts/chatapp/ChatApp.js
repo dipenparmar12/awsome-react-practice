@@ -38,7 +38,7 @@ function CreateRoom() {
   const createRoom = () => {
     dispatch(
       roomCreateReq({
-        roomName: roomNameRef.current?.value,
+        roomName: usernameRef.current?.value,
         username: usernameRef.current?.value,
       })
     )
@@ -48,6 +48,7 @@ function CreateRoom() {
     roomIdRef.current?.value &&
       dispatch(
         roomJoinReq({
+          username: usernameRef.current?.value,
           roomId: roomIdRef.current?.value,
         })
       )
@@ -59,8 +60,15 @@ function CreateRoom() {
       <div>
         <Input
           type='text'
+          ref={usernameRef}
+          defaultValue='dipen'
+          placeholder='your name'
+        />
+        <Input
+          type='text'
           ref={roomIdRef}
           defaultValue='8f077fc4-1926-267e-599a-384791278bea'
+          placeholder='room id'
         />
         <Button onClick={joinRoom}>Join room</Button>
       </div>
@@ -70,9 +78,18 @@ function CreateRoom() {
 
       <h4>Create rooom name</h4>
       <div>
-        {' '}
-        <Input type='text' ref={usernameRef} defaultValue='dipen' />
-        <Input type='text' ref={roomNameRef} defaultValue='testRoom' />
+        <Input
+          type='text'
+          ref={usernameRef}
+          defaultValue='dipen'
+          placeholder='your name'
+        />
+        <Input
+          type='text'
+          ref={roomNameRef}
+          defaultValue='testRoom'
+          placeholder='room name'
+        />
         <Button onClick={createRoom}>Create room</Button>
       </div>
     </>
@@ -80,34 +97,34 @@ function CreateRoom() {
 }
 
 function ChatRoom() {
-  const chat = useSelector((state) => state.chat)
+  const chatState = useSelector((state) => state.chat)
   const chats = useSelector((state) => state.chat.chats)
   const dispatch = useDispatch()
   const ws = useWebSocket()
 
+  // React.useEffect(() => {
+  //   console.log('ChatApp.js::[88]', chats)
+  // }, [])
+
   return (
     <>
       <h3>
-        {chat?.username}
+        {chatState?.username}
 
         <ChatRoomStyled>
           <div className='history'>
-            {/* {chats.map((c, i) => (
-              <div key={i}>
-                <i>{c.username}:</i> {c.message}
-              </div>
-            ))} */}
-
-            {[...Array(30)].map((el, i) => {
-              return (
+            {chats.length &&
+              chats.map((chat, i) => (
                 <div
-                  key={i + Math.random()}
-                  className={Math.random() > 0.2 ? '' : 'my_msg'}
+                  key={i}
+                  className={chat.username === chatState.username ? 'me' : ''}
                 >
-                  <i>Hitesh: </i> hello wherew
+                  {chat.username !== chatState.username && (
+                    <i>{chat.username}:</i>
+                  )}
+                  {chat.message}
                 </div>
-              )
-            })}
+              ))}
           </div>
           <div className='control'>
             <input type='text' />
@@ -115,7 +132,6 @@ function ChatRoom() {
           </div>
         </ChatRoomStyled>
 
-        <br />
         <Button onClick={() => dispatch(rootExitReq())} bg='#f2f2f2'>
           Exit room
         </Button>
@@ -169,7 +185,8 @@ const ChatRoomStyled = styled.div`
     font-weight: normal;
     overflow-y: scroll;
     font-size: 17px;
-    .my_msg {
+
+    .me {
       text-align: right;
     }
   }

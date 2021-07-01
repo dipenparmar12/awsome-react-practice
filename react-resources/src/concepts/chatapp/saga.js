@@ -29,11 +29,11 @@ function* roomCreateSaga({ payload, type }) {
 }
 
 function* roomJoinSaga({ payload, type }) {
-  const roomApi = (id) => axios.get(`${API}/chat/room/${id}`)
   try {
-    // const {roomName, username} = payload
-    const { data: resData = null } = yield call(roomApi, payload?.roomId)
-    // console.log('saga.js::[34] resData', resData)
+    const roomApi = ({ roomId, username }) =>
+      axios.get(`${API}/chat/room/${roomId}?username=${username}`)
+
+    const { data: resData = null } = yield call(roomApi, payload)
     yield put(roomJoinSuccess({ ...resData }))
   } catch (err) {
     console.log('saga.js::[10] err', err)
