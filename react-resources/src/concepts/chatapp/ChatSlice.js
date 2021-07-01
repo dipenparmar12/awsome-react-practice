@@ -38,7 +38,6 @@ export const chatSlice = createSlice({
 
     updateChatLog: (state, { payload }) => {
       state.chats.push(payload)
-      console.log('ChatSlice.js::[40] payload', payload)
     },
     // methodName: (state, { payload }) => {},
   },

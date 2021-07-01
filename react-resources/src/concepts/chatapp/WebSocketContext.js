@@ -1,3 +1,4 @@
+import React from 'react'
 import { createContext, useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import socketIOClient from 'socket.io-client'
@@ -21,10 +22,16 @@ export default function WpContextProvider({ children }) {
     socket = socketIOClient(WS_BASE)
     // socket = io.connect(WS_BASE)
     socket.on(socketEvents.MSG_GET, (msg) => {
-      console.log('WebSocketContext.js::[15] msg', msg)
+      console.log('WebSocketContext.js::[15] MSG_GET', msg)
     })
     // TODO:::dispatch
   }
+
+  // React.useEffect(() => {
+  //   socket.on(socketEvents.MSG_GET, (payload) => {
+  //     console.log('WebSocketContext.js::[31] MSG_GET', payload)
+  //   })
+  // }, [])
 
   const sendMessage = (message) => {
     const payload = {

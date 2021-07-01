@@ -108,7 +108,6 @@ app.get('/chat/room/:roomId', (req, res, next) => {
   const username = req.query.username
   const roomId = req.params.roomId
 
-  console.log('chatServer.js::[118] roomId', roomId, username)
   res.json({
     chats: chatLogs[roomId],
     roomId,
