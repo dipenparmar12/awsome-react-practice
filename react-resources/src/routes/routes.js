@@ -1,10 +1,12 @@
-import ChatApp from '../concepts/ChatApp'
+// import ChatApp from '../concepts/ChatApp'
 import ReactReduxApp from '../concepts/ReactReduxApp'
 import ReduxSaga from '../concepts/ReduxSaga'
 import WebSocket from '../concepts/WebSocket'
-import HashRouteExample from '../Route/HashRouteExample'
+// import HashRouteExample from '../Route/HashRouteExample'
 import RouteExample from '../Route/RouteExample'
 import GoogleLogin from '../concepts/google-login/GoogleLogin'
+import CollapseExample from '../concepts/collapsed/CollapseExample'
+import ChatApp from '../concepts/chatapp/ChatApp'
 
 const routes = {
   root: {
@@ -37,10 +39,16 @@ const routes = {
     render: (props) => <RouteExample {...props} />,
   },
 
-  hasRoute: {
-    name: 'Hash Routes',
-    path: '/app/hash-route',
-    render: (props) => <HashRouteExample {...props} />,
+  // hasRoute: {
+  //   name: 'Hash Routes',
+  //   path: '/app/hash-route',
+  //   render: (props) => <HashRouteExample {...props} />,
+  // },
+
+  chatApp: {
+    name: 'Chat App',
+    path: '/chat',
+    render: (props) => <ChatApp {...props} />,
   },
 
   webSocket: {
@@ -49,10 +57,10 @@ const routes = {
     render: (props) => <WebSocket {...props} />,
   },
 
-  chatApp: {
-    name: 'Chat App',
-    path: '/chat',
-    render: (props) => <ChatApp {...props} />,
+  tesCollapsedt: {
+    name: 'Collapsed',
+    path: '/Collapsed',
+    render: (props) => <CollapseExample />,
   },
 
   test: {
