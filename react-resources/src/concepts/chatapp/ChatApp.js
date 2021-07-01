@@ -45,6 +45,7 @@ function CreateRoom() {
   }
 
   const joinRoom = () => {
+    console.log('ChatApp.js::[48] ', usernameRef.current?.value)
     roomIdRef.current?.value &&
       dispatch(
         roomJoinReq({
@@ -61,12 +62,14 @@ function CreateRoom() {
         <Input
           type='text'
           ref={usernameRef}
+          onChange={(e) => (usernameRef.current.value = e.target.value)}
           defaultValue='dipen'
           placeholder='your name'
         />
         <Input
           type='text'
           ref={roomIdRef}
+          onChange={(e) => (roomIdRef.current.value = e.target.value)}
           defaultValue='8f077fc4-1926-267e-599a-384791278bea'
           placeholder='room id'
         />
@@ -81,12 +84,14 @@ function CreateRoom() {
         <Input
           type='text'
           ref={usernameRef}
+          onChange={(e) => (usernameRef.current.value = e.target.value)}
           defaultValue='dipen'
           placeholder='your name'
         />
         <Input
           type='text'
           ref={roomNameRef}
+          onChange={(e) => (roomNameRef.current.value = e.target.value)}
           defaultValue='testRoom'
           placeholder='room name'
         />
