@@ -31,7 +31,7 @@ function* roomJoinSaga({ payload, type }) {
   try {
     // const {roomName, username} = payload
     const { data: resData = null } = yield call(roomApi, payload?.roomId)
-    console.log('saga.js::[34] resData', resData)
+    // console.log('saga.js::[34] resData', resData)
     yield put(roomJoinSuccess({ ...resData }))
   } catch (err) {
     console.log('saga.js::[10] err', err)

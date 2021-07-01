@@ -11,8 +11,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({})
 
 function ChatApp({ chat }) {
-  
   const ws = useWebSocket()
+  console.log('ChatApp.js::[16] ws', ws)
 
   return (
     <Center>
@@ -69,7 +69,7 @@ function CreateRoom() {
       <div>
         {' '}
         <Input type='text' ref={usernameRef} defaultValue='dipen' />
-        <Input type='text' ref={roomNameRef} defaultValue='room1' />
+        <Input type='text' ref={roomNameRef} defaultValue='testRoom' />
         <Button onClick={createRoom}>Create room</Button>
       </div>
     </>
@@ -78,6 +78,7 @@ function CreateRoom() {
 
 function ChatRoom() {
   const chat = useSelector((state) => state.chat)
+  const chats = useSelector((state) => state.chat.chats)
   const dispatch = useDispatch()
 
   return (

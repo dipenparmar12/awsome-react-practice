@@ -29,9 +29,6 @@ io.on('connection', (socket) => {
   })
 })
 
-/// start server
-server.listen(port, () => console.log(`listening on *:${port}`))
-
 /* 
 ========================================================
   Chats
@@ -40,15 +37,34 @@ server.listen(port, () => console.log(`listening on *:${port}`))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json()) // To parse the incoming requests with JSON payloads
 
+// Just for Better
+const socketEvents = {
+  MSG_GET: 'event://MSG_GET',
+  MSG_SEND: 'event://MSG_SEND',
+}
+
+app.get('/chat/events', (req, res, next) => {
+  res.json({
+    msg: 'socketEvents',
+    socketEvents,
+  })
+})
+
+const testRoomId = '8f077fc4-1926-267e-599a-384791278bea'
 
 let rooms = {
-  '8f077fc4-1926-267e-599a-384791278bea': {
-    id: '8f077fc4-1926-267e-599a-384791278bea',
-    name: 'room1',
+  [testRoomId]: {
+    id: testRoomId,
+    name: 'testRoom',
   },
 }
 
-let chatLogs = {}
+let chatLogs = {
+  [testRoomId]: {
+    dipen: '[testRoom] hello world.... dipen',
+    unknown: '[testRoom] hello world....unknown',
+  },
+}
 
 app.post('/chat/room', (req, res, next) => {
   const { roomName, username } = req.body
@@ -67,15 +83,16 @@ app.post('/chat/room', (req, res, next) => {
 app.get('/chat/room/:roomId', (req, res, next) => {
   const roomId = req.params.roomId
   res.json({
-    join: 'susccess',
+    chats: chatLogs[roomId],
     roomId,
     ...rooms[roomId],
-    chats: chatLogs[roomId],
   })
 })
 
-// app.delete('/chat/room', (req, res, next) => {
-//   res.json({
-//     msg: 'succes room exit',
-//   })
-// })
+
+/* 
+========================================================
+  Server start
+======================================================== 
+*/
+server.listen(port, () => console.log(`listening on *:${port}`))
