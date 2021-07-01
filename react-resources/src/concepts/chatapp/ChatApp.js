@@ -3,6 +3,7 @@ import { connect, useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Spacer } from '../../styled-components/index'
 import { roomCreateReq, roomJoinReq, rootExitReq } from './ChatSlice'
+import { useWebSocket } from './WebSocketContext'
 
 const mapStateToProps = (state) => ({
   chat: state.chat,
@@ -10,9 +11,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({})
 
 function ChatApp({ chat }) {
-  // React.useEffect(() => {
-  //   console.log('ChatApp.js::[13]', chat)
-  // })
+  
+  const ws = useWebSocket()
 
   return (
     <Center>

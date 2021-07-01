@@ -67,14 +67,15 @@ app.post('/chat/room', (req, res, next) => {
 app.get('/chat/room/:roomId', (req, res, next) => {
   const roomId = req.params.roomId
   res.json({
-    roomId,
-    chat: rooms[roomId],
     join: 'susccess',
+    roomId,
+    ...rooms[roomId],
+    chats: chatLogs[roomId],
   })
 })
 
-app.delete('/chat/room', (req, res, next) => {
-  res.json({
-    msg: 'succes room exit',
-  })
-})
+// app.delete('/chat/room', (req, res, next) => {
+//   res.json({
+//     msg: 'succes room exit',
+//   })
+// })

@@ -6,8 +6,7 @@ import WebSocket from '../concepts/WebSocket'
 import RouteExample from '../Route/RouteExample'
 import GoogleLogin from '../concepts/google-login/GoogleLogin'
 import CollapseExample from '../concepts/collapsed/CollapseExample'
-import ChatApp from '../concepts/chatapp/ChatApp'
-import ChatReduxStore from '../concepts/chatapp/saga'
+import ChatApp from '../concepts/chatapp'
 
 const routes = {
   root: {
@@ -49,11 +48,7 @@ const routes = {
   chatApp: {
     name: 'Chat App',
     path: '/chat',
-    render: (props) => (
-      <ChatReduxStore>
-        <ChatApp {...props} />
-      </ChatReduxStore>
-    ),
+    render: (props) => <ChatApp {...props} />,
   },
 
   webSocket: {
