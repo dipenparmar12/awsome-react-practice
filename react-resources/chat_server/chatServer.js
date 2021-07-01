@@ -41,8 +41,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 
+let rooms = {
+  '8f077fc4-1926-267e-599a-384791278bea': {
+    id: '8f077fc4-1926-267e-599a-384791278bea',
+    name: 'room1',
+  },
+}
 
-let rooms = {}
 let chatLogs = {}
 
 app.post('/chat/room', (req, res, next) => {
@@ -51,12 +56,20 @@ app.post('/chat/room', (req, res, next) => {
     name: roomName,
     id: _uuid(),
   }
-
   rooms[room.id] = room
-
+  console.log('chatServer.js::[57] rooms', rooms)
   res.json({
     room,
     username,
+  })
+})
+
+app.get('/chat/room/:roomId', (req, res, next) => {
+  const roomId = req.params.roomId
+  res.json({
+    roomId,
+    chat: rooms[roomId],
+    join: 'susccess',
   })
 })
 

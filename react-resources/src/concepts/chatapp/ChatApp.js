@@ -2,7 +2,7 @@ import React from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Spacer } from '../../styled-components/index'
-import { roomJoinReq, rootExitReq } from './ChatSlice'
+import { roomCreateReq, roomJoinReq, rootExitReq } from './ChatSlice'
 
 const mapStateToProps = (state) => ({
   chat: state.chat,
@@ -13,11 +13,12 @@ function ChatApp({ chat }) {
   // React.useEffect(() => {
   //   console.log('ChatApp.js::[13]', chat)
   // })
-  
+
   return (
     <Center>
       <Spacer top={'30px'} />
-      {chat?.username ? <ChatRoom /> : <CreateRoom />}
+      {chat?.roomId ? <ChatRoom /> : <CreateRoom />}
+
       <br />
     </Center>
   )
@@ -28,30 +29,55 @@ export default connect(mapStateToProps, mapDispatchToProps)(ChatApp)
 function CreateRoom() {
   const roomNameRef = React.useRef('')
   const usernameRef = React.useRef('')
+  const roomIdRef = React.useRef('')
   const dispatch = useDispatch()
-  
-  const enterRoom = (e) => {
+
+  const createRoom = () => {
     dispatch(
-      roomJoinReq({
+      roomCreateReq({
         roomName: roomNameRef.current?.value,
         username: usernameRef.current?.value,
       })
     )
   }
 
+  const joinRoom = () => {
+    roomIdRef.current?.value &&
+      dispatch(
+        roomJoinReq({
+          roomId: roomIdRef.current?.value,
+        })
+      )
+  }
+
   return (
     <>
-      <h4>Enter rooom name</h4>
-      <Input type='text' ref={usernameRef} defaultValue='dipen' />
-      <Input type='text' ref={roomNameRef} defaultValue='room1' />
-      <Button onClick={enterRoom}>Join room</Button>
-      {/*  */}
+      <h4>Join rooom</h4>
+      <div>
+        <Input
+          type='text'
+          ref={roomIdRef}
+          defaultValue='8f077fc4-1926-267e-599a-384791278bea'
+        />
+        <Button onClick={joinRoom}>Join room</Button>
+      </div>
+
+      <br />
+      <br />
+
+      <h4>Create rooom name</h4>
+      <div>
+        {' '}
+        <Input type='text' ref={usernameRef} defaultValue='dipen' />
+        <Input type='text' ref={roomNameRef} defaultValue='room1' />
+        <Button onClick={createRoom}>Create room</Button>
+      </div>
     </>
   )
 }
 
 function ChatRoom() {
-  const chat = useSelector(state => state.chat)
+  const chat = useSelector((state) => state.chat)
   const dispatch = useDispatch()
 
   return (
@@ -60,13 +86,13 @@ function ChatRoom() {
         {chat?.username}
 
         <br />
-        <Button onClick={() => dispatch(rootExitReq())}>Exit room</Button>
+        <Button onClick={() => dispatch(rootExitReq())} bg='#f2f2f2'>
+          Exit room
+        </Button>
       </h3>
     </>
   )
 }
-
-
 
 /* 
 ========================================================
@@ -88,8 +114,12 @@ const Input = styled.input`
 `
 
 const Button = styled.button`
-  padding: 7px 30px;
+  background-color: ${({ bg = 'initial' }) => bg};
+  padding: 10px 35px;
   margin-top: 10px;
-  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
 `
