@@ -1,5 +1,4 @@
 import { createContext, useContext } from 'react'
-import { io } from 'socket.io-client'
 import socketIOClient from 'socket.io-client'
 import { WS_BASE } from './config'
 
@@ -14,14 +13,14 @@ export const WpContext = createContext(null)
 export default function WpContextProvider({ children }) {
   let socket
 
-  // if (!socket) {
-  //   socket = socketIOClient(WS_BASE)
-  //   // socket = io.connect(WS_BASE)
-  //   socket.on(socketEvents.MSG_GET, (msg) => {
-  //     console.log('WebSocketContext.js::[15] msg', msg)
-  //   })
-  //   // TODO:::dispatch
-  // }
+  if (!socket) {
+    socket = socketIOClient(WS_BASE)
+    // socket = io.connect(WS_BASE)
+    socket.on(socketEvents.MSG_GET, (msg) => {
+      console.log('WebSocketContext.js::[15] msg', msg)
+    })
+    // TODO:::dispatch
+  }
 
   const sendMessage = (roodId, msg) => {
     // const payload = {
