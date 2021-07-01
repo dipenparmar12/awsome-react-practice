@@ -11,12 +11,16 @@ const initialState = {
   roomId: null,
   username: null,
   chats: [],
+  socketEvnets: {},
 }
 
 export const chatSlice = createSlice({
   name: 'chat',
   initialState,
   reducers: {
+    getSocketEventsSuccess: (state, { payload }) => {
+      state.socketEvnets = payload
+    },
     roomCreateSuccess: (state, { payload }) => {
       state.room = payload?.roomName
       state.username = payload?.username
@@ -35,8 +39,13 @@ export const chatSlice = createSlice({
   },
 })
 
-export const { roomCreateSuccess, roomJoinSuccess, roomExitSuccess } =
-  chatSlice.actions
+export const {
+  roomCreateSuccess,
+  roomJoinSuccess,
+  roomExitSuccess,
+  getSocketEventsSuccess,
+} = chatSlice.actions
+export const getSocketEventsReq = createAction('chat/getEventsReq')
 export const roomCreateReq = createAction('chat/room/creqteReq')
 export const roomJoinReq = createAction('chat/room/joinReq')
 export const rootExitReq = createAction('chat/room/exitReq')

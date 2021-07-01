@@ -3,11 +3,11 @@ import { io } from 'socket.io-client'
 import socketIOClient from 'socket.io-client'
 import { WS_BASE } from './config'
 
+// TODO:::MUST be same server side
 const socketEvents = {
   MSG_GET: 'event://MSG_GET',
   MSG_SEND: 'event://MSG_SEND',
 }
-
 
 export const WpContext = createContext(null)
 

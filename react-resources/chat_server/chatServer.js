@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json()) // To parse the incoming requests with JSON payloads
 
-// Just for Better
+// TODO:::MUST be same Client side
 const socketEvents = {
   MSG_GET: 'event://MSG_GET',
   MSG_SEND: 'event://MSG_SEND',
