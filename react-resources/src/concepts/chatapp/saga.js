@@ -11,8 +11,8 @@ import {
   rootReducer,
   roomJoinReq,
   roomJoinSuccess,
-  getSocketEventsReq,
-  getSocketEventsSuccess,
+  // getSocketEventsReq,
+  // getSocketEventsSuccess,
 } from './ChatSlice'
 
 const API = 'http://localhost:4001'
@@ -48,18 +48,18 @@ function* roomExitSaga({ payload, type }) {
   }
 }
 
-function* getSocketEventsSaga() {
-  try {
-    const roomApi = () => axios.get(`${API}/chat/events`)
-    const { data: resData = {} } = yield call(roomApi)
-    yield put(getSocketEventsSuccess({ ...resData.socketEvents }))
-  } catch (err) {
-    console.log('saga.js::[10] err', err)
-  }
-}
+// function* getSocketEventsSaga() {
+//   try {
+//     const roomApi = () => axios.get(`${API}/chat/events`)
+//     const { data: resData = {} } = yield call(roomApi)
+//     yield put(getSocketEventsSuccess({ ...resData.socketEvents }))
+//   } catch (err) {
+//     console.log('saga.js::[10] err', err)
+//   }
+// }
 
 function* rootSaga() {
-  yield all([takeLatest(getSocketEventsReq.type, getSocketEventsSaga)])
+  // yield all([takeLatest(getSocketEventsReq.type, getSocketEventsSaga)])
   yield all([takeLatest(roomCreateReq.type, roomCreateSaga)])
   yield all([takeLatest(roomJoinReq.type, roomJoinSaga)])
   yield all([takeLatest(rootExitReq.type, roomExitSaga)])

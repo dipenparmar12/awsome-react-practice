@@ -14,22 +14,22 @@ export const WpContext = createContext(null)
 export default function WpContextProvider({ children }) {
   let socket
 
-  if (!socket) {
-    socket = socketIOClient(WS_BASE)
-    // socket = io.connect(WS_BASE)
-    socket.on(socketEvents.MSG_GET, (msg) => {
-      console.log('WebSocketContext.js::[15] msg', msg)
-    })
-    // TODO:::dispatch
-  }
+  // if (!socket) {
+  //   socket = socketIOClient(WS_BASE)
+  //   // socket = io.connect(WS_BASE)
+  //   socket.on(socketEvents.MSG_GET, (msg) => {
+  //     console.log('WebSocketContext.js::[15] msg', msg)
+  //   })
+  //   // TODO:::dispatch
+  // }
 
   const sendMessage = (roodId, msg) => {
-    const payload = {
-      roodId,
-      data: msg,
-    }
-    socket.emit(socketEvents.MSG_SEND, JSON.stringify(payload))
-    // TODO:::dispatch
+    // const payload = {
+    //   roodId,
+    //   data: msg,
+    // }
+    // socket.emit(socketEvents.MSG_SEND, JSON.stringify(payload))
+    // // TODO:::dispatch
   }
 
   return (

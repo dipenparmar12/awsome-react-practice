@@ -2,12 +2,7 @@ import React from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Spacer } from '../../styled-components/index'
-import {
-  getSocketEventsReq,
-  roomCreateReq,
-  roomJoinReq,
-  rootExitReq,
-} from './ChatSlice'
+import { roomCreateReq, roomJoinReq, rootExitReq } from './ChatSlice'
 import { useWebSocket } from './WebSocketContext'
 
 const mapStateToProps = (state) => ({
@@ -16,14 +11,11 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({})
 
 function ChatApp({ chat }) {
-  const dispatch = useDispatch()
-
-  React.useEffect(() => {
-    console.log('ChatApp.js::[22]')
-    dispatch(getSocketEventsReq())
-  }, [dispatch])
-
-  const ws = useWebSocket()
+  // const dispatch = useDispatch()
+  // React.useEffect(() => {
+  //   console.log('ChatApp.js::[22]')
+  //   dispatch(getSocketEventsReq())
+  // }, [dispatch])
 
   return (
     <Center>
@@ -91,11 +83,37 @@ function ChatRoom() {
   const chat = useSelector((state) => state.chat)
   const chats = useSelector((state) => state.chat.chats)
   const dispatch = useDispatch()
+  const ws = useWebSocket()
 
   return (
     <>
       <h3>
         {chat?.username}
+
+        <ChatRoomStyled>
+          <div className='history'>
+            {/* {chats.map((c, i) => (
+              <div key={i}>
+                <i>{c.username}:</i> {c.message}
+              </div>
+            ))} */}
+
+            {[...Array(30)].map((el, i) => {
+              return (
+                <div
+                  key={i + Math.random()}
+                  className={Math.random() > 0.2 ? '' : 'my_msg'}
+                >
+                  <i>Hitesh: </i> hello wherew
+                </div>
+              )
+            })}
+          </div>
+          <div className='control'>
+            <input type='text' />
+            <button onClick={ws.sendMessage}>Send</button>
+          </div>
+        </ChatRoomStyled>
 
         <br />
         <Button onClick={() => dispatch(rootExitReq())} bg='#f2f2f2'>
@@ -134,4 +152,49 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   font-size: 20px;
+`
+
+const ChatRoomStyled = styled.div`
+  background-color: lightblue;
+  min-width: 600px;
+  width: auto;
+  display: flex;
+  flex-flow: column;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .history {
+    padding: 16px 20px;
+    height: 250px;
+    font-weight: normal;
+    overflow-y: scroll;
+    font-size: 17px;
+    .my_msg {
+      text-align: right;
+    }
+  }
+
+  .control {
+    display: flex;
+
+    input {
+      flex: 1;
+      padding: 5px 10px;
+      font-size: 20px;
+      border-radius: 5px 0 0 10px;
+
+      &:focus {
+      }
+    }
+
+    button {
+      padding: 10px 30px;
+      border-radius: 5px;
+      border: none;
+
+      &:active {
+        background-color: lightgray;
+      }
+    }
+  }
 `
