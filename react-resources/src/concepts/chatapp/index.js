@@ -15,6 +15,15 @@ export default function ChatApplication(props) {
 
 /* 
 ========================================================
+  :::TODO:::
+  - Inifinate Scolling chat upscrolling 
+  - 
+======================================================== 
+*/
+
+
+/* 
+========================================================
   Src: https://www.pluralsight.com/guides/using-web-sockets-in-your-reactredux-app
   Github: https://github.com/ManZzup/plguides/tree/master/11-using-websockets-in-your-react-redux-app
 ======================================================== 
