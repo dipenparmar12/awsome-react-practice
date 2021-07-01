@@ -1,34 +1,68 @@
 import React from 'react'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Spacer } from '../../styled-components/index'
-import ReduxStoreSagaProvider from './saga'
+import { joinRoomReq } from './ChatSlice'
 
-export default function ChatApp() {
+const mapStateToProps = (state) => ({
+  chat: state.chat,
+})
+const mapDispatchToProps = (dispatch) => ({})
+
+function ChatApp({ chat }) {
+  // React.useEffect(() => {
+  //   console.log('ChatApp.js::[13]', chat)
+  // })
+  
+  return (
+    <Center>
+      <Spacer top={'30px'} />
+      {chat?.username ? <ChatRoom /> : <CreateRoom />}
+      <br />
+    </Center>
+  )
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatApp)
+
+function CreateRoom() {
   const roomNameRef = React.useRef('')
   const usernameRef = React.useRef('')
-
+  const dispatch = useDispatch()
+  
   const enterRoom = (e) => {
-    console.log('ChatApp.js::[8] roomNameRef', roomNameRef.current?.value)
-    console.log('ChatApp.js::[8] usernameRef', usernameRef.current?.value)
+    dispatch(
+      joinRoomReq({
+        roomName: roomNameRef.current?.value,
+        username: usernameRef.current?.value,
+      })
+    )
   }
 
   return (
-    <ReduxStoreSagaProvider>
-      <Center>
-        <Spacer top={'30px'} />
-        <h4>Enter rooom name</h4>
-        <Input type='text' ref={usernameRef} defaultValue='dipen' />
-        <Input type='text' ref={roomNameRef} defaultValue='room1' />
-        <Button onClick={enterRoom}>Join room</Button>
-
-        <br />
-        <br />
-
-        {/*  */}
-      </Center>
-    </ReduxStoreSagaProvider>
+    <>
+      <h4>Enter rooom name</h4>
+      <Input type='text' ref={usernameRef} defaultValue='dipen' />
+      <Input type='text' ref={roomNameRef} defaultValue='room1' />
+      <Button onClick={enterRoom}>Join room</Button>
+      {/*  */}
+    </>
   )
 }
+
+function ChatRoom() {
+  const chat = useSelector(state => state.chat)
+  return (
+    <>
+      <h3>
+        {chat?.username}
+        {/* {room.name} ({room.id}) */}
+      </h3>
+    </>
+  )
+}
+
+
 
 /* 
 ========================================================

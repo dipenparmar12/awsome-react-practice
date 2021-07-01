@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "server:auth": "nodemon ./auth_server/server.js",
-    "server:websocket": "nodemon ./chat_server/index.js",
+    "server:websocket": "nodemon ./chat_server/chatServer.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

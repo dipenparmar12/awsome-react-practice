@@ -19,13 +19,14 @@ const uuid = () => {
   )
 }
 
-export default uuid
+// export default uuid
+module.exports = uuid
 
-export const genId = (len = 8) => {
-  let id = ''
-  do {
-    id += Math.random().toString(36).substr(2)
-  } while (id.length < len)
-  return id.substr(0, len)
-}
-// import { genId } from "utils/uuid";
+// export const genId = (len = 8) => {
+//   let id = ''
+//   do {
+//     id += Math.random().toString(36).substr(2)
+//   } while (id.length < len)
+//   return id.substr(0, len)
+// }
+// // import { genId } from "utils/uuid";

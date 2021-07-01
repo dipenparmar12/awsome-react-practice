@@ -2,6 +2,7 @@ const express = require('express')
 const http = require('http')
 const socketIo = require('socket.io')
 const cors = require('cors')
+const _uuid = require('./uuid')
 
 // app setup
 const port = process.env.PORT || 4001
@@ -39,10 +40,22 @@ server.listen(port, () => console.log(`listening on *:${port}`))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json()) // To parse the incoming requests with JSON payloads
 
+
+
+let rooms = {}
+let chatLogs = {}
+
 app.post('/chat/room', (req, res, next) => {
   const { roomName, username } = req.body
+  const room = {
+    name: roomName,
+    id: _uuid(),
+  }
+
+  rooms[room.id] = room
+
   res.json({
-    roomName,
+    room,
     username,
   })
 })

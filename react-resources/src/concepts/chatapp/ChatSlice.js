@@ -4,18 +4,26 @@
 
 */
 
-import { combineReducers, createSlice } from '@reduxjs/toolkit'
+import { combineReducers, createAction, createSlice } from '@reduxjs/toolkit'
 
-const chatSlice = createSlice({
-  name: 'room',
+export const chatSlice = createSlice({
+  name: 'chat',
   initialState: {
-    room: null,
-    user: null,
+    room: {},
+    roomId: null,
+    username: null,
   },
   reducers: {
-    methodName: (state, { payload }) => {},
+    joinRoom: (state, { payload }) => {
+      state.room = payload?.roomName
+      state.username = payload?.username
+    },
+    // methodName: (state, { payload }) => {},
   },
 })
+
+export const { joinRoom } = chatSlice.actions
+export const joinRoomReq = createAction('chat/room/Req')
 
 export const rootReducer = combineReducers({
   chat: chatSlice.reducer,
