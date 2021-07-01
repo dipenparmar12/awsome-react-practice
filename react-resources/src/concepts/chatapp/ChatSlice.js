@@ -35,6 +35,11 @@ export const chatSlice = createSlice({
       state.room = null
       state.username = null
     },
+
+    updateChatLog: (state, { payload }) => {
+      state.chats.push(payload)
+      console.log('ChatSlice.js::[40] payload', payload)
+    },
     // methodName: (state, { payload }) => {},
   },
 })
@@ -44,6 +49,7 @@ export const {
   roomJoinSuccess,
   roomExitSuccess,
   getSocketEventsSuccess,
+  updateChatLog,
 } = chatSlice.actions
 // export const getSocketEventsReq = createAction('chat/getEventsReq')
 export const roomCreateReq = createAction('chat/room/creqteReq')

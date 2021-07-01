@@ -12,33 +12,20 @@ const server = http.createServer(app)
 // Cors
 app.use(cors())
 
-// routes
+// Root route
 app.get('/', (req, res) => {
   res.send({ response: 'Socket.Io  local-server' }).status(200)
 })
 
-// Web socket
-const io = socketIo(server, { cors: { origin: '*' } })
-
-io.on('connection', (socket) => {
-  socket.emit('TEST_INIT', ' Welcome User, From websocket server' + new Date())
-
-  // disconnect
-  socket.on('disconnect', () => {
-    console.log('Client disconnected:', new Date())
-  })
-})
-
 /* 
 ========================================================
-  Chats
+  Socket IO WebSocket
 ======================================================== 
 */
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 // TODO:::MUST be same Client side
 const socketEvents = {
+  userJoined: 'event://user_joined',
   MSG_GET: 'event://MSG_GET',
   MSG_SEND: 'event://MSG_SEND',
 }
@@ -65,37 +52,43 @@ let chatLogs = {
       message: '[testRoom] hello world.... unknown',
     },
     {
-      username: 'dipen',
-      date: new Date(),
-      message: '[testRoom] hello world.... dipen',
-    },
-    {
-      username: 'unknown',
-      date: new Date(),
-      message: '[testRoom] hello world.... unknown',
-    },
-    {
-      username: 'unknown',
-      date: new Date(),
-      message: '[testRoom] hello world.... unknown',
-    },
-    {
-      username: 'dipen',
-      date: new Date(),
-      message: '[testRoom] hello world.... dipen',
-    },
-    {
-      username: 'dipen',
-      date: new Date(),
-      message: '[testRoom] hello world.... dipen',
-    },
-    {
       username: 'unknown',
       date: new Date(),
       message: '[testRoom] hello world.... unknown',
     },
   ],
 }
+
+const io = socketIo(server, { cors: { origin: '*' } })
+
+io.on('connection', (socket) => {
+  socket.emit('TEST_INIT', ' Welcome User, From websocket server' + new Date())
+
+  // disconnect
+  socket.on('disconnect', () => {
+    console.log('Client disconnected:', new Date())
+  })
+
+  socket.on(socketEvents.MSG_SEND, (data) => {
+    data = JSON.parse(data || {})
+    data.date = new Date()
+    chatLogs[data.roomId].push(data)
+    // console.log('chatServer.js::[76] chatLogs', chatLogs)
+  })
+
+  socket.on(socketEvents.MSG_GET, (data) => {
+    console.log('chatServer.js::[43] MSG_GET', data)
+  })
+
+})
+
+/* 
+========================================================
+  Server routes chat
+======================================================== 
+*/
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 app.post('/chat/room', (req, res, next) => {
   const { roomName, username } = req.body

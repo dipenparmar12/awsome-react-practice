@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Spacer } from '../../styled-components/index'
@@ -45,7 +45,6 @@ function CreateRoom() {
   }
 
   const joinRoom = () => {
-    console.log('ChatApp.js::[48] ', usernameRef.current?.value)
     roomIdRef.current?.value &&
       dispatch(
         roomJoinReq({
@@ -102,6 +101,7 @@ function CreateRoom() {
 }
 
 function ChatRoom() {
+  const massageRef = useRef('')
   const chatState = useSelector((state) => state.chat)
   const chats = useSelector((state) => state.chat.chats)
   const dispatch = useDispatch()
@@ -110,6 +110,11 @@ function ChatRoom() {
   // React.useEffect(() => {
   //   console.log('ChatApp.js::[88]', chats)
   // }, [])
+
+  const msgSend = () => {
+    ws.sendMessage(massageRef.current.value)
+    massageRef.current.value = null
+  }
 
   return (
     <>
@@ -121,7 +126,7 @@ function ChatRoom() {
             {chats.length &&
               chats.map((chat, i) => (
                 <div
-                  key={i}
+                  key={i + Math.random()}
                   className={chat.username === chatState.username ? 'me' : ''}
                 >
                   {chat.username !== chatState.username && (
@@ -132,8 +137,13 @@ function ChatRoom() {
               ))}
           </div>
           <div className='control'>
-            <input type='text' />
-            <button onClick={ws.sendMessage}>Send</button>
+            <input
+              type='text'
+              ref={massageRef}
+              onChange={(e) => (massageRef.current.value = e.target.value)}
+              onKeyPress={(e) => (e.key === 'Enter') && msgSend()}
+            />
+            <button onClick={msgSend}>Send</button>
           </div>
         </ChatRoomStyled>
 
@@ -186,7 +196,7 @@ const ChatRoomStyled = styled.div`
 
   .history {
     padding: 16px 20px;
-    height: 250px;
+    height: 170px;
     font-weight: normal;
     overflow-y: scroll;
     font-size: 17px;
