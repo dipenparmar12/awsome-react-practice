@@ -14,16 +14,21 @@ export const chatSlice = createSlice({
     username: null,
   },
   reducers: {
-    joinRoom: (state, { payload }) => {
+    roomJoinSuccess: (state, { payload }) => {
       state.room = payload?.roomName
       state.username = payload?.username
+    },
+    roomExitSuccess: (state, { payload }) => {
+      state.room = null
+      state.username = null
     },
     // methodName: (state, { payload }) => {},
   },
 })
 
-export const { joinRoom } = chatSlice.actions
-export const joinRoomReq = createAction('chat/room/Req')
+export const { roomJoinSuccess, roomExitSuccess } = chatSlice.actions
+export const roomJoinReq = createAction('chat/room/joinReq')
+export const rootExitReq = createAction('chat/room/exitReq')
 
 export const rootReducer = combineReducers({
   chat: chatSlice.reducer,

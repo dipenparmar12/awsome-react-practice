@@ -2,7 +2,7 @@ import React from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Spacer } from '../../styled-components/index'
-import { joinRoomReq } from './ChatSlice'
+import { roomJoinReq, rootExitReq } from './ChatSlice'
 
 const mapStateToProps = (state) => ({
   chat: state.chat,
@@ -32,7 +32,7 @@ function CreateRoom() {
   
   const enterRoom = (e) => {
     dispatch(
-      joinRoomReq({
+      roomJoinReq({
         roomName: roomNameRef.current?.value,
         username: usernameRef.current?.value,
       })
@@ -52,11 +52,15 @@ function CreateRoom() {
 
 function ChatRoom() {
   const chat = useSelector(state => state.chat)
+  const dispatch = useDispatch()
+
   return (
     <>
       <h3>
         {chat?.username}
-        {/* {room.name} ({room.id}) */}
+
+        <br />
+        <Button onClick={() => dispatch(rootExitReq())}>Exit room</Button>
       </h3>
     </>
   )

@@ -59,3 +59,9 @@ app.post('/chat/room', (req, res, next) => {
     username,
   })
 })
+
+app.delete('/chat/room', (req, res, next) => {
+  res.json({
+    msg: 'succes room exit',
+  })
+})
