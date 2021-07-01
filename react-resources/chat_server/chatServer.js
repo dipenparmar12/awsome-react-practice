@@ -1,11 +1,15 @@
 const express = require('express')
 const http = require('http')
 const socketIo = require('socket.io')
+const cors = require('cors')
 
 // app setup
 const port = process.env.PORT || 4001
 const app = express()
 const server = http.createServer(app)
+
+// Cors
+app.use(cors())
 
 // routes
 app.get('/', (req, res) => {
@@ -26,3 +30,19 @@ io.on('connection', (socket) => {
 
 /// start server
 server.listen(port, () => console.log(`listening on *:${port}`))
+
+/* 
+========================================================
+  Chats
+======================================================== 
+*/
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json()) // To parse the incoming requests with JSON payloads
+
+app.post('/chat/room', (req, res, next) => {
+  const { roomName, username } = req.body
+  res.json({
+    roomName,
+    username,
+  })
+})
