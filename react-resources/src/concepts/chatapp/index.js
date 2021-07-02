@@ -26,5 +26,7 @@ export default function ChatApplication(props) {
 ========================================================
   Src: https://www.pluralsight.com/guides/using-web-sockets-in-your-reactredux-app
   Github: https://github.com/ManZzup/plguides/tree/master/11-using-websockets-in-your-react-redux-app
+  
+  https://github1s.com/ManZzup/plguides/blob/master/11-using-websockets-in-your-react-redux-app/chat-server/server.js
 ======================================================== 
 */

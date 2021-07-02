@@ -7,6 +7,8 @@ import { WS_BASE } from './config'
 
 // TODO:::MUST be same server side
 const socketEvents = {
+  userJoined: 'event://user_joined',
+  userLeft: 'event://user_left',
   MSG_GET: 'event://MSG_GET',
   MSG_SEND: 'event://MSG_SEND',
 }
@@ -21,17 +23,17 @@ export default function WpContextProvider({ children }) {
   if (!socket) {
     socket = socketIOClient(WS_BASE)
     // socket = io.connect(WS_BASE)
+  }
+
+  React.useEffect(() => {
     socket.on(socketEvents.MSG_GET, (msg) => {
       console.log('WebSocketContext.js::[15] MSG_GET', msg)
     })
-    // TODO:::dispatch
-  }
 
-  // React.useEffect(() => {
-  //   socket.on(socketEvents.MSG_GET, (payload) => {
-  //     console.log('WebSocketContext.js::[31] MSG_GET', payload)
-  //   })
-  // }, [])
+    return ()   =>   {
+      socket.disconnect()
+    }
+  }, [socket])
 
   const sendMessage = (message) => {
     const payload = {
@@ -39,7 +41,7 @@ export default function WpContextProvider({ children }) {
       username: chatState.username,
       roomId: chatState.roomId,
     }
-    console.log('WebSocketContext.js::[33] sendMessage', payload)
+    // console.log('WebSocketContext.js::[33] sendMessage', payload)
     socket.emit(socketEvents.MSG_SEND, JSON.stringify(payload || {}))
     // TODO:::dispatch
     dispatch(updateChatLog(payload))

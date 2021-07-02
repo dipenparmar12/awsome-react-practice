@@ -3,6 +3,7 @@ const http = require('http')
 const socketIo = require('socket.io')
 const cors = require('cors')
 const _uuid = require('./uuid')
+const { Socket } = require('dgram')
 
 // app setup
 const port = process.env.PORT || 4001
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 // TODO:::MUST be same Client side
 const socketEvents = {
   userJoined: 'event://user_joined',
+  userLeft: 'event://user_left',
   MSG_GET: 'event://MSG_GET',
   MSG_SEND: 'event://MSG_SEND',
 }
@@ -46,40 +48,30 @@ let chatLogs = {
       date: new Date(),
       message: '[testRoom] hello world.... dipen',
     },
-    {
-      username: 'unknown',
-      date: new Date(),
-      message: '[testRoom] hello world.... unknown',
-    },
-    {
-      username: 'unknown',
-      date: new Date(),
-      message: '[testRoom] hello world.... unknown',
-    },
   ],
 }
 
 const io = socketIo(server, { cors: { origin: '*' } })
 
-io.on('connection', (socket) => {
+
+io.on('connection', (socket, data) => {
   socket.emit('TEST_INIT', ' Welcome User, From websocket server' + new Date())
 
   // disconnect
-  socket.on('disconnect', () => {
+  socket.on('disconnect', (data) => {
+    socket.broadcast.emit(socketEvents.userLeft, data)
     console.log('Client disconnected:', new Date())
   })
 
   socket.on(socketEvents.MSG_SEND, (data) => {
+    console.log('chatServer.js::[73] _io', data)
     data = JSON.parse(data || {})
     data.date = new Date()
     chatLogs[data.roomId].push(data)
+
+    socket.broadcast.emit(socketEvents.MSG_GET, data)
     // console.log('chatServer.js::[76] chatLogs', chatLogs)
   })
-
-  socket.on(socketEvents.MSG_GET, (data) => {
-    console.log('chatServer.js::[43] MSG_GET', data)
-  })
-
 })
 
 /* 
@@ -122,7 +114,6 @@ app.get('/chat/room/:roomId', (req, res, next) => {
 ======================================================== 
 */
 server.listen(port, () => console.log(`listening on *:${port}`))
-
 
 // Test
 // console.log('chatServer.js::req[query,param,body]', req.query, req.params, req.body)

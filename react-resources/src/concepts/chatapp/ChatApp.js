@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { connect, useDispatch, useSelector } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import { Spacer } from '../../styled-components/index'
 import { roomCreateReq, roomJoinReq, rootExitReq } from './ChatSlice'
@@ -34,11 +35,18 @@ function CreateRoom() {
   const usernameRef = React.useRef('')
   const roomIdRef = React.useRef('')
   const dispatch = useDispatch()
+  const location = useLocation()
+  const queryRef = React.useRef(new URLSearchParams(location.search))
+
+  React.useEffect(() => {
+    queryRef.current = new URLSearchParams(location.search)
+    usernameRef.current.value = queryRef.current.get('username')
+  }, [location])
 
   const createRoom = () => {
     dispatch(
       roomCreateReq({
-        roomName: usernameRef.current?.value,
+        roomName: roomNameRef.current?.value,
         username: usernameRef.current?.value,
       })
     )
@@ -62,7 +70,7 @@ function CreateRoom() {
           type='text'
           ref={usernameRef}
           onChange={(e) => (usernameRef.current.value = e.target.value)}
-          defaultValue='dipen'
+          defaultValue={'dipen'}
           placeholder='your name'
         />
         <Input
@@ -80,13 +88,13 @@ function CreateRoom() {
 
       <h4>Create rooom name</h4>
       <div>
-        <Input
+        {/* <Input
           type='text'
           ref={usernameRef}
           onChange={(e) => (usernameRef.current.value = e.target.value)}
-          defaultValue='dipen'
+          defaultValue={'dipen'}
           placeholder='your name'
-        />
+        /> */}
         <Input
           type='text'
           ref={roomNameRef}
@@ -141,7 +149,7 @@ function ChatRoom() {
               type='text'
               ref={massageRef}
               onChange={(e) => (massageRef.current.value = e.target.value)}
-              onKeyPress={(e) => (e.key === 'Enter') && msgSend()}
+              onKeyPress={(e) => e.key === 'Enter' && msgSend()}
             />
             <button onClick={msgSend}>Send</button>
           </div>
