@@ -30,10 +30,12 @@ export default function WpContextProvider({ children }) {
       console.log('WebSocketContext.js::[15] MSG_GET', msg)
     })
 
-    return ()   =>   {
+    socket.emit('create', chatState.roomId)
+
+    return () => {
       socket.disconnect()
     }
-  }, [socket])
+  }, [chatState.roomId, socket])
 
   const sendMessage = (message) => {
     const payload = {

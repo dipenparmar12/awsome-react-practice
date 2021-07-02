@@ -54,23 +54,32 @@ let chatLogs = {
 const io = socketIo(server, { cors: { origin: '*' } })
 
 
-io.on('connection', (socket, data) => {
-  socket.emit('TEST_INIT', ' Welcome User, From websocket server' + new Date())
+// io.on('connection', (socket, data) => {
+//   socket.emit('TEST_INIT', ' Welcome User, From websocket server' + new Date())
 
-  // disconnect
-  socket.on('disconnect', (data) => {
-    socket.broadcast.emit(socketEvents.userLeft, data)
-    console.log('Client disconnected:', new Date())
-  })
+//   socket.on(socketEvents.MSG_SEND, (data) => {
+//     console.log('chatServer.js::[73] _io', data)
+//     data = JSON.parse(data || {})
+//     data.date = new Date()
+//     chatLogs[data.roomId].push(data)
 
-  socket.on(socketEvents.MSG_SEND, (data) => {
-    console.log('chatServer.js::[73] _io', data)
-    data = JSON.parse(data || {})
-    data.date = new Date()
-    chatLogs[data.roomId].push(data)
+//     socket.broadcast.emit(socketEvents.MSG_GET, data)
+//     // console.log('chatServer.js::[76] chatLogs', chatLogs)
+//   })
 
-    socket.broadcast.emit(socketEvents.MSG_GET, data)
-    // console.log('chatServer.js::[76] chatLogs', chatLogs)
+//   // disconnect
+//   socket.on('disconnect', (data) => {
+//     console.log('Client disconnected:', new Date())
+//   })
+// })
+
+io.sockets.on('connection', function (socket) {
+  socket.on('create', function (room) {
+    // console.log('chatServer.js::[84] room', room)
+    socket.join(room)
+    socket.on(socketEvents.MSG_SEND, function (msg) {
+      socket.broadcast.to(room).emit(socketEvents.MSG_GET, msg)
+    })
   })
 })
 

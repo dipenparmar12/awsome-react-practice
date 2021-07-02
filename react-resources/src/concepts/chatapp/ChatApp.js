@@ -109,7 +109,7 @@ function CreateRoom() {
 }
 
 function ChatRoom() {
-  const massageRef = useRef('')
+  const massageRef = useRef()
   const chatState = useSelector((state) => state.chat)
   const chats = useSelector((state) => state.chat.chats)
   const dispatch = useDispatch()
@@ -150,6 +150,7 @@ function ChatRoom() {
               ref={massageRef}
               onChange={(e) => (massageRef.current.value = e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && msgSend()}
+              defaultValue={new Date()}
             />
             <button onClick={msgSend}>Send</button>
           </div>
@@ -195,7 +196,7 @@ const Button = styled.button`
 
 const ChatRoomStyled = styled.div`
   background-color: lightblue;
-  min-width: 600px;
+  /* min-width: 600px; */
   width: auto;
   display: flex;
   flex-flow: column;
