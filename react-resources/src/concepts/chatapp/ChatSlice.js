@@ -10,7 +10,7 @@ const initialState = {
   room: {},
   roomId: null,
   username: null,
-  chats: [], // [ { user, date, msg }, ]
+  chats: [], // [ { username, date, msg }, ]
   socketEvnets: {},
 }
 
@@ -35,9 +35,16 @@ export const chatSlice = createSlice({
       state.room = null
       state.username = null
     },
-
     updateChatLog: (state, { payload }) => {
       state.chats.push(payload)
+    },
+    chatLogReceivedSuccess: (state, { payload }) => {
+      const { message, username, date  = null } = payload
+      state.chats.push({
+        message,
+        username,
+        date,
+      })
     },
     // methodName: (state, { payload }) => {},
   },
@@ -49,11 +56,13 @@ export const {
   roomExitSuccess,
   getSocketEventsSuccess,
   updateChatLog,
+  chatLogReceivedSuccess,
 } = chatSlice.actions
 // export const getSocketEventsReq = createAction('chat/getEventsReq')
 export const roomCreateReq = createAction('chat/room/creqteReq')
 export const roomJoinReq = createAction('chat/room/joinReq')
 export const rootExitReq = createAction('chat/room/exitReq')
+export const chatLogReceived = createAction('chat/chatLogReceived')
 
 export const rootReducer = combineReducers({
   chat: chatSlice.reducer,

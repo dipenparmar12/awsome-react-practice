@@ -11,6 +11,8 @@ import {
   rootReducer,
   roomJoinReq,
   roomJoinSuccess,
+  chatLogReceived,
+  chatLogReceivedSuccess,
   // getSocketEventsReq,
   // getSocketEventsSuccess,
 } from './ChatSlice'
@@ -36,7 +38,7 @@ function* roomJoinSaga({ payload, type }) {
     const { data: resData = null } = yield call(roomApi, payload)
     yield put(roomJoinSuccess({ ...resData }))
   } catch (err) {
-    console.log('saga.js::[10] err', err)
+    console.log('saga.js::[10] ERROR roomJoinSaga', err)
   }
 }
 
@@ -44,25 +46,25 @@ function* roomExitSaga({ payload, type }) {
   try {
     yield put(roomExitSuccess())
   } catch (err) {
-    console.log('saga.js::[10] err', err)
+    console.log('saga.js::[10] ERROR roomExitSaga', err)
   }
 }
 
-// function* getSocketEventsSaga() {
-//   try {
-//     const roomApi = () => axios.get(`${API}/chat/events`)
-//     const { data: resData = {} } = yield call(roomApi)
-//     yield put(getSocketEventsSuccess({ ...resData.socketEvents }))
-//   } catch (err) {
-//     console.log('saga.js::[10] err', err)
-//   }
-// }
+function* chatLogReceivedSaga({ payload }) {
+  try {
+    // payload = { message, username, roomId }
+    yield put(chatLogReceivedSuccess(payload))
+  } catch (err) {
+    console.log('saga.js::[10] ERROR chatLogReceivedSaga', err)
+  }
+}
 
 function* rootSaga() {
   // yield all([takeLatest(getSocketEventsReq.type, getSocketEventsSaga)])
   yield all([takeLatest(roomCreateReq.type, roomCreateSaga)])
   yield all([takeLatest(roomJoinReq.type, roomJoinSaga)])
   yield all([takeLatest(rootExitReq.type, roomExitSaga)])
+  yield all([takeLatest(chatLogReceived.type, chatLogReceivedSaga)])
 }
 
 const sagaMiddleware = createSagaMiddleware()
@@ -78,3 +80,13 @@ sagaMiddleware.run(rootSaga)
 export default function ChatReduxStore({ children }) {
   return <Provider store={store}>{children}</Provider>
 }
+
+// function* getSocketEventsSaga() {
+//   try {
+//     const roomApi = () => axios.get(`${API}/chat/events`)
+//     const { data: resData = {} } = yield call(roomApi)
+//     yield put(getSocketEventsSuccess({ ...resData.socketEvents }))
+//   } catch (err) {
+//     console.log('saga.js::[10] err', err)
+//   }
+// }

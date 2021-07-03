@@ -2,7 +2,7 @@ import React from 'react'
 import { createContext, useContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import socketIOClient from 'socket.io-client'
-import { updateChatLog } from './ChatSlice'
+import { chatLogReceived, updateChatLog } from './ChatSlice'
 import { WS_BASE } from './config'
 
 // TODO:::MUST be same server side
@@ -26,8 +26,9 @@ export default function WpContextProvider({ children }) {
   }
 
   React.useEffect(() => {
-    socket.on(socketEvents.MSG_GET, (msg) => {
-      console.log('WebSocketContext.js::[15] MSG_GET', msg)
+    socket.on(socketEvents.MSG_GET, (msgPayload) => {
+      // console.log('WebSocketContext.js::[15] MSG_GET', msgPayload)
+      dispatch(chatLogReceived(JSON.parse(msgPayload)))
     })
 
     socket.emit('create', chatState.roomId)
@@ -35,7 +36,7 @@ export default function WpContextProvider({ children }) {
     return () => {
       socket.disconnect()
     }
-  }, [chatState.roomId, socket])
+  }, [chatState.roomId, dispatch, socket])
 
   const sendMessage = (message) => {
     const payload = {

@@ -110,19 +110,40 @@ function CreateRoom() {
 
 function ChatRoom() {
   const massageRef = useRef()
+  const historyRef = useRef()
   const chatState = useSelector((state) => state.chat)
   const chats = useSelector((state) => state.chat.chats)
   const dispatch = useDispatch()
   const ws = useWebSocket()
 
-  // React.useEffect(() => {
-  //   console.log('ChatApp.js::[88]', chats)
-  // }, [])
+  function scrollToBottom() {
+    const scrollHeight = historyRef.current.scrollHeight
+    const height = historyRef.current.clientHeight
+    const maxScrollTop = scrollHeight - height
+    historyRef.current.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0
+  }
+
+  React.useEffect(() => {
+    scrollToBottom()
+  })
 
   const msgSend = () => {
     ws.sendMessage(massageRef.current.value)
     massageRef.current.value = null
   }
+
+
+  const MessageRender =
+    chats.length &&
+    chats.map((chat, i) => (
+      <div
+        key={i + Math.random()}
+        className={chat.username === chatState.username ? 'me' : ''}
+      >
+        {chat.username !== chatState.username && <i>{chat.username}:</i>}
+        {chat.message}
+      </div>
+    ))
 
   return (
     <>
@@ -130,19 +151,8 @@ function ChatRoom() {
         {chatState?.username}
 
         <ChatRoomStyled>
-          <div className='history'>
-            {chats.length &&
-              chats.map((chat, i) => (
-                <div
-                  key={i + Math.random()}
-                  className={chat.username === chatState.username ? 'me' : ''}
-                >
-                  {chat.username !== chatState.username && (
-                    <i>{chat.username}:</i>
-                  )}
-                  {chat.message}
-                </div>
-              ))}
+          <div className='history' ref={historyRef}>
+            {MessageRender}
           </div>
           <div className='control'>
             <input

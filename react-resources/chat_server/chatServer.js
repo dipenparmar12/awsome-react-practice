@@ -3,7 +3,6 @@ const http = require('http')
 const socketIo = require('socket.io')
 const cors = require('cors')
 const _uuid = require('./uuid')
-const { Socket } = require('dgram')
 
 // app setup
 const port = process.env.PORT || 4001
@@ -77,8 +76,8 @@ io.sockets.on('connection', function (socket) {
   socket.on('create', function (room) {
     // console.log('chatServer.js::[84] room', room)
     socket.join(room)
-    socket.on(socketEvents.MSG_SEND, function (msg) {
-      socket.broadcast.to(room).emit(socketEvents.MSG_GET, msg)
+    socket.on(socketEvents.MSG_SEND, function (msgPayload) {
+      socket.broadcast.to(room).emit(socketEvents.MSG_GET, msgPayload)
     })
   })
 })
