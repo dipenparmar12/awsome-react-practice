@@ -15,6 +15,7 @@ specifiers:
   prop-types: ^15.7.2
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-google-charts: ^3.0.15
   react-google-login: ^5.2.2
   react-redux: ^7.2.3
   react-router-dom: ^5.2.0
@@ -38,6 +39,7 @@ dependencies:
   prop-types: 15.7.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-google-charts: 3.0.15_9bdd65c2b60ce8638444b80b396a481b
   react-google-login: 5.2.2_react-dom@17.0.2+react@17.0.2
   react-redux: 7.2.4_react-dom@17.0.2+react@17.0.2
   react-router-dom: 5.2.0_react@17.0.2
@@ -9945,6 +9947,19 @@ packages:
     resolution: {integrity: sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==}
     dev: false
 
+  /react-google-charts/3.0.15_9bdd65c2b60ce8638444b80b396a481b:
+    resolution: {integrity: sha512-78s5xOQOJvL+jIewrWQZEHtlVk+5Yh4zZy+ODA1on1o1FaRjKWXxoo4n4JQl1XuqkF/A9NWque3KqM6pMggjzQ==}
+    peerDependencies:
+      prop-types: '>=15'
+      react: '>=16.3.0'
+      react-dom: '>=16.3.0'
+    dependencies:
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-load-script: 0.0.6_prop-types@15.7.2+react@17.0.2
+    dev: false
+
   /react-google-login/5.2.2_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-JUngfvaSMcOuV0lFff7+SzJ2qviuNMQdqlsDJkUM145xkGPVIfqWXq9Ui+2Dr6jdJWH5KYdynz9+4CzKjI5u6g==}
     peerDependencies:
@@ -9963,6 +9978,17 @@ packages:
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+    dev: false
+
+  /react-load-script/0.0.6_prop-types@15.7.2+react@17.0.2:
+    resolution: {integrity: sha512-aRGxDGP9VoLxcsaYvKWIW+LRrMOzz2eEcubTS4NvQPPugjk2VvMhow0wWTkSl7RxookomD1MwcP4l5UStg5ShQ==}
+    deprecated: abandoned and unmaintained
+    peerDependencies:
+      prop-types: '>=15'
+      react: '>=0.14.9'
+    dependencies:
+      prop-types: 15.7.2
+      react: 17.0.2
     dev: false
 
   /react-redux/7.2.4_react-dom@17.0.2+react@17.0.2:

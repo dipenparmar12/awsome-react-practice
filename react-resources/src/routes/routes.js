@@ -7,6 +7,7 @@ import RouteExample from '../Route/RouteExample'
 import GoogleLogin from '../concepts/google-login/GoogleLogin'
 import CollapseExample from '../concepts/collapsed/CollapseExample'
 import ChatApp from '../concepts/chatapp'
+import GoogleCharts from '../concepts/google_charts/GoogleCharts';
 
 const routes = {
   root: {
@@ -67,6 +68,12 @@ const routes = {
     name: 'testing',
     path: '/test/:component?',
     render: (props) => <p> Testing </p>,
+  },
+
+  google_chart: {
+    name: 'google_chart',
+    path: '/google_chart',
+    render: (props) => <GoogleCharts {...props}/>,
   },
 }
 
