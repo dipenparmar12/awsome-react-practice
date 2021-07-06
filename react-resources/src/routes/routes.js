@@ -8,6 +8,7 @@ import GoogleLogin from '../concepts/google-login/GoogleLogin'
 import CollapseExample from '../concepts/collapsed/CollapseExample'
 import ChatApp from '../concepts/chatapp'
 import GoogleCharts from '../concepts/google_charts/GoogleCharts';
+import CssModal from '../css_examples/css_popup/CssModal';
 
 const routes = {
   root: {
@@ -15,6 +16,12 @@ const routes = {
     path: '/home',
     render: (props) => <p> React Home </p>,
   },
+
+  // hasRoute: {
+  //   name: 'Hash Routes',
+  //   path: '/app/hash-route',
+  //   render: (props) => <HashRouteExample {...props} />,
+  // },
 
   reduxSagaStore: {
     name: 'GoogleLogin',
@@ -39,12 +46,6 @@ const routes = {
     path: '/app/routes',
     render: (props) => <RouteExample {...props} />,
   },
-
-  // hasRoute: {
-  //   name: 'Hash Routes',
-  //   path: '/app/hash-route',
-  //   render: (props) => <HashRouteExample {...props} />,
-  // },
 
   chatApp: {
     name: 'Chat App',
@@ -74,6 +75,12 @@ const routes = {
     name: 'google_chart',
     path: '/google_chart',
     render: (props) => <GoogleCharts {...props}/>,
+  },
+
+  CssPop: {
+    name: 'css_popup',
+    path: '/css_popup',
+    render: (props) => <CssModal {...props}/>,
   },
 }
 

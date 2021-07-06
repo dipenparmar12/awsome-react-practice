@@ -5,6 +5,8 @@ export const Center = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  //margin-top: ${({ mtop = 'initial' }) => mtop};
+  //padding-top: ${({ ptop = 'initial' }) => ptop};
 `
 
 export const Input = styled.input`
