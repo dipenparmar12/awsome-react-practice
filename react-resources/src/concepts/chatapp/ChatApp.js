@@ -1,12 +1,12 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {Spacer} from '../../styled-components/index'
-import {CreateRoom} from './CreateRoom';
-import {ChatRoom} from './ChatRoom';
-import {Center} from './styles';
+import { connect } from 'react-redux'
+import { Spacer } from '../../styled-components/index'
+import { CreateRoom } from './CreateRoom'
+import { ChatRoom } from './ChatRoom'
+import { Center } from './styles'
 
 const mapStateToProps = (state) => ({
-  chat: state.chat,
+  chat: state.chat
 })
 const mapDispatchToProps = (dispatch) => ({})
 

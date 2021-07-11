@@ -37,13 +37,12 @@
   }
 }
 
-
 a {
   text-decoration: none;
   color: gray;
-  transition: .1s ease-in;
+  transition: 0.1s ease-in;
 }
 a:active,
-a:hover{
+a:hover {
   color: black;
 }

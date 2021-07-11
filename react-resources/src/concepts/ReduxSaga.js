@@ -13,14 +13,14 @@ const addTodo = (title) => ({
   type: ADD_TODO,
   todoItem: {
     _id: Math.random(),
-    title,
-  },
+    title
+  }
 })
 
 const loadTodoListDipatcher = () => ({ type: LOAD_TODO_LIST })
 
 const initialState = {
-  todoList: [{ _id: 1, title: 'One Todo' }],
+  todoList: [{ _id: 1, title: 'One Todo' }]
 }
 
 const todoReducer = (state = initialState, action) => {
@@ -29,12 +29,12 @@ const todoReducer = (state = initialState, action) => {
     case RENDER_TODO_LIST:
       return {
         ...state,
-        todoList: action.todoList,
+        todoList: action.todoList
       }
     case ADD_TODO:
       return {
         ...state,
-        todoList: [...state?.todoList, action?.todoItem],
+        todoList: [...state?.todoList, action?.todoItem]
       }
     default:
       return state
@@ -68,7 +68,10 @@ sagaMiddleware.run(rootSaga)
 
 const ReduxSaga = (props) => {
   React.useEffect(() => {
-    console.log('ReduxSaga.js::[ReduxSaga] ', store.dispatch(loadTodoListDipatcher()))
+    console.log(
+      'ReduxSaga.js::[ReduxSaga] ',
+      store.dispatch(loadTodoListDipatcher())
+    )
   }, [])
 
   return (
@@ -93,7 +96,7 @@ const AddTodoForm = (props) => {
 
   return (
     <>
-      <input type='text' value={todo} onChange={(e) => setTodo(e.target.value)} />
+      <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
       <button onClick={() => dispatch(addTodo(todo)) && setTodo('')}>Add</button>
     </>
   )
@@ -101,7 +104,7 @@ const AddTodoForm = (props) => {
 const AddTodoFormConnected = connect()(AddTodoForm)
 
 const mapStateToProps = (state) => ({
-  todoList: state.todoList,
+  todoList: state.todoList
 })
 
 const TodoList = ({ todoList }) => {

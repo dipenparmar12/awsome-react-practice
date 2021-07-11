@@ -7,14 +7,14 @@ import RouteExample from '../Route/RouteExample'
 import GoogleLogin from '../concepts/google-login/GoogleLogin'
 import CollapseExample from '../concepts/collapsed/CollapseExample'
 import ChatApp from '../concepts/chatapp'
-import GoogleCharts from '../concepts/google_charts/GoogleCharts';
-import CssModal from '../css_examples/css_popup/CssModal';
+import GoogleCharts from '../concepts/google_charts/GoogleCharts'
+import CssModal from '../css_examples/css_popup/CssModal'
 
 const routes = {
   root: {
     name: 'Home',
     path: '/home',
-    render: (props) => <p> React Home </p>,
+    render: (props) => <p> React Home </p>
   },
 
   // hasRoute: {
@@ -26,62 +26,62 @@ const routes = {
   reduxSagaStore: {
     name: 'GoogleLogin',
     path: '/SagaStore',
-    render: (props) => <GoogleLogin {...props} />,
+    render: (props) => <GoogleLogin {...props} />
   },
 
   redux: {
     name: 'react-redux',
     path: '/redux',
-    render: (props) => <ReactReduxApp {...props} />,
+    render: (props) => <ReactReduxApp {...props} />
   },
 
   reduxSaga: {
     name: 'reduxSaga',
     path: '/redux/saga',
-    render: (props) => <ReduxSaga {...props} />,
+    render: (props) => <ReduxSaga {...props} />
   },
 
   routeExample: {
     name: 'Route example',
     path: '/app/routes',
-    render: (props) => <RouteExample {...props} />,
+    render: (props) => <RouteExample {...props} />
   },
 
   chatApp: {
     name: 'Chat App',
     path: '/chat',
-    render: (props) => <ChatApp {...props} />,
+    render: (props) => <ChatApp {...props} />
   },
 
   webSocket: {
     name: 'Web-Socket',
     path: '/webSocket',
-    render: (props) => <WebSocket {...props} />,
+    render: (props) => <WebSocket {...props} />
   },
 
   tesCollapsedt: {
     name: 'Collapsed',
     path: '/Collapsed',
-    render: (props) => <CollapseExample />,
+    render: (props) => <CollapseExample />
   },
 
   test: {
     name: 'testing',
     path: '/test/:component?',
-    render: (props) => <p> Testing </p>,
+    render: (props) => <p> Testing </p>
   },
 
   google_chart: {
     name: 'google_chart',
     path: '/google_chart',
-    render: (props) => <GoogleCharts {...props}/>,
+    render: (props) => <GoogleCharts {...props} />
   },
 
   CssPop: {
     name: 'css_popup',
     path: '/css_popup',
-    render: (props) => <CssModal {...props}/>,
-  },
+    render: (props) => <CssModal {...props} />
+  }
 }
 
 export default routes

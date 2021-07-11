@@ -10,7 +10,7 @@ const socketEvents = {
   userJoined: 'event://user_joined',
   userLeft: 'event://user_left',
   MSG_GET: 'event://MSG_GET',
-  MSG_SEND: 'event://MSG_SEND',
+  MSG_SEND: 'event://MSG_SEND'
 }
 
 export const WpContext = createContext(null)
@@ -42,7 +42,7 @@ export default function WpContextProvider({ children }) {
     const payload = {
       message,
       username: chatState.username,
-      roomId: chatState.roomId,
+      roomId: chatState.roomId
     }
     // console.log('WebSocketContext.js::[33] sendMessage', payload)
     socket.emit(socketEvents.MSG_SEND, JSON.stringify(payload || {}))

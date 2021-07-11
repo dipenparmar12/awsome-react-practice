@@ -8,17 +8,18 @@ const addTodo = (title) => ({
   type: ADD_TODO,
   todoItem: {
     _id: Math.random(),
-    title,
-  },
+    title
+  }
 })
 
 const initialState = {
-  todoList: [{_id:1,title:"One Todo"}],
+  todoList: [{ _id: 1, title: 'One Todo' }]
 }
 
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
+      // eslint-disable-next-line no-case-declarations
       let newTodoList = { todoList: [...state?.todoList, action?.todoItem] }
       console.log('ReduxSaga.js::[23] newTodoList', newTodoList)
       return newTodoList
@@ -52,7 +53,7 @@ const AddTodoForm = (props) => {
 
   return (
     <>
-      <input type='text' value={todo} onChange={(e) => setTodo(e.target.value)} />
+      <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
       <button onClick={() => dispatch(addTodo(todo)) && setTodo('')}>Add</button>
     </>
   )
@@ -60,7 +61,7 @@ const AddTodoForm = (props) => {
 const AddTodoFormConnected = connect()(AddTodoForm)
 
 const mapStateToProps = (state) => ({
-  todoList: state.todoList,
+  todoList: state.todoList
 })
 
 const TodoList = ({ todoList }) => {

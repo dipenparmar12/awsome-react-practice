@@ -12,7 +12,7 @@ import {
   roomJoinReq,
   roomJoinSuccess,
   chatLogReceived,
-  chatLogReceivedSuccess,
+  chatLogReceivedSuccess
   // getSocketEventsReq,
   // getSocketEventsSuccess,
 } from './ChatSlice'
@@ -72,7 +72,8 @@ const sagaMiddleware = createSagaMiddleware()
 const store = configureStore({
   reducer: rootReducer,
   middleware: [sagaMiddleware, ...getDefaultMiddleware({ thunk: false })],
-  devTools: process.env.NODE_ENV !== 'production',
+
+  devTools: process.env.NODE_ENV !== 'production'
 })
 
 sagaMiddleware.run(rootSaga)

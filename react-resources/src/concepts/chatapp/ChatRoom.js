@@ -1,8 +1,8 @@
-import React, {useRef} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {useWebSocket} from './WebSocketContext';
-import {rootExitReq} from './ChatSlice';
-import {Button, ChatRoomStyled} from './styles';
+import React, { useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useWebSocket } from './WebSocketContext'
+import { rootExitReq } from './ChatSlice'
+import { Button, ChatRoomStyled } from './styles'
 
 export function ChatRoom() {
   const massageRef = useRef()
@@ -28,45 +28,43 @@ export function ChatRoom() {
     massageRef.current.value = null
   }
 
-
   const MessageRender =
-      chats.length &&
-      chats.map((chat, i) => (
-          <div
-              key={i + Math.random()}
-              className={chat.username === chatState.username ? 'me' : ''}
-          >
-            {chat.username !== chatState.username && <i>{chat.username}:</i>}
-            {chat.message}
-          </div>
-      ))
+    chats.length &&
+    chats.map((chat, i) => (
+      <div
+        key={i + Math.random()}
+        className={chat.username === chatState.username ? 'me' : ''}
+      >
+        {chat.username !== chatState.username && <i>{chat.username}:</i>}
+        {chat.message}
+      </div>
+    ))
 
   return (
-      <>
-        <h3>
-          {chatState?.username}
+    <>
+      <h3>
+        {chatState?.username}
 
-          <ChatRoomStyled>
-            <div className='history' ref={historyRef}>
-              {MessageRender}
-            </div>
-            <div className='control'>
-              <input
-                  type='text'
-                  ref={massageRef}
-                  onChange={(e) => (massageRef.current.value = e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && msgSend()}
-                  defaultValue={new Date()}
-              />
-              <button onClick={msgSend}>Send</button>
-            </div>
-          </ChatRoomStyled>
+        <ChatRoomStyled>
+          <div className="history" ref={historyRef}>
+            {MessageRender}
+          </div>
+          <div className="control">
+            <input
+              type="text"
+              ref={massageRef}
+              onChange={(e) => (massageRef.current.value = e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && msgSend()}
+              defaultValue={new Date()}
+            />
+            <button onClick={msgSend}>Send</button>
+          </div>
+        </ChatRoomStyled>
 
-          <Button onClick={() => dispatch(rootExitReq())} bg='#f2f2f2'>
-            Exit room
-          </Button>
-        </h3>
-      </>
+        <Button onClick={() => dispatch(rootExitReq())} bg="#f2f2f2">
+          Exit room
+        </Button>
+      </h3>
+    </>
   )
 }
-

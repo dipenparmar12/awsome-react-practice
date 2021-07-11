@@ -2,7 +2,12 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import axios from 'axios'
 import createSagaMiddleware from 'redux-saga'
-import { createSlice, configureStore, getDefaultMiddleware, createAction } from '@reduxjs/toolkit'
+import {
+  createSlice,
+  configureStore,
+  getDefaultMiddleware,
+  createAction
+} from '@reduxjs/toolkit'
 import { all, call, put, takeLatest } from 'redux-saga/effects'
 import { combineReducers } from 'redux'
 import GoogleLoginForm from './GoogleLoginForm'
@@ -30,7 +35,7 @@ const authSlice = createSlice({
     currentUser: {},
     isAuthenticated: false,
     error: '',
-    loading: true,
+    loading: true
   },
   reducers: {
     loading: (state) => {
@@ -54,15 +59,15 @@ const authSlice = createSlice({
       state.currentUser = {}
       state.error = ''
       state.loading = false
-    },
-  },
+    }
+  }
 })
 export const { loading, loginSuccess, loginError, logoutSuccess } = authSlice.actions
 export const googleLoginSuccess = createAction('auth/google/login')
 export const googleLogoutSuccess = createAction('auth/google/loout')
 
 const rootReducer = combineReducers({
-  authState: authSlice.reducer,
+  authState: authSlice.reducer
 })
 
 function* googleLogin({ payload }) {
@@ -77,7 +82,6 @@ function* googleLogin({ payload }) {
     yield localStorage.setItem('token', data?.token)
     const { user } = data
     yield put(loginSuccess({ ...user }))
-
   } catch (err) {
     console.log('GoogleLogin.js::[50] err', err)
   }
@@ -107,7 +111,7 @@ const sagaMiddleware = createSagaMiddleware()
 const store = configureStore({
   reducer: rootReducer,
   middleware: [sagaMiddleware, ...getDefaultMiddleware({ thunk: false })],
-  devTools: process.env.NODE_ENV !== 'production',
+  devTools: process.env.NODE_ENV !== 'production'
 })
 
 sagaMiddleware.run(rootSaga)
@@ -117,7 +121,6 @@ export function ReduxStoreSagaProvider({ children }) {
 }
 
 export default function GoogleLogin() {
-
   return (
     <ReduxStoreSagaProvider>
       <GoogleLoginForm />

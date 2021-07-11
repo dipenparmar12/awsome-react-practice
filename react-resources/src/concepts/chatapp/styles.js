@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Center = styled.div`
   display: flex;
@@ -6,7 +6,7 @@ export const Center = styled.div`
   flex-direction: column;
   justify-content: center;
   //margin-top: ${({ mtop = 'initial' }) => mtop};
-  //padding-top: ${({ ptop = 'initial' }) => ptop};
+  padding-top: ${({ ptop = 'initial' }) => ptop};
 `
 
 export const Input = styled.input`

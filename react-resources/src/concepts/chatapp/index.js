@@ -21,7 +21,6 @@ export default function ChatApplication(props) {
 ======================================================== 
 */
 
-
 /* 
 ========================================================
   Src: https://www.pluralsight.com/guides/using-web-sockets-in-your-reactredux-app
