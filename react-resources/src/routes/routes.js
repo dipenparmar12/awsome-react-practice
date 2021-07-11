@@ -9,6 +9,7 @@ import CollapseExample from '../concepts/collapsed/CollapseExample'
 import ChatApp from '../concepts/chatapp'
 import GoogleCharts from '../concepts/google_charts/GoogleCharts'
 import CssModal from '../css_examples/css_popup/CssModal'
+import FileExplorer from '../concepts/file_explorer/FileExplorer'
 
 const routes = {
   root: {
@@ -81,6 +82,12 @@ const routes = {
     name: 'css_popup',
     path: '/css_popup',
     render: (props) => <CssModal {...props} />
+  },
+
+  fileExplorer: {
+    name: 'explorer',
+    path: '/explorer',
+    render: (props) => <FileExplorer {...props} />
   }
 }
 
