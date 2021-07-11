@@ -40,6 +40,20 @@ const Li = ({ children }) => {
 
 const FileExplorer = () => {
   // const [active, setActive] = React.useState('')
+  const dirs = [
+    {
+      name: 'A'
+    },
+    {
+      name: 'B',
+      children: [{ name: 'B-1' }, { name: 'B-2', children: [{ name: 'BB-1' }] }]
+    },
+    {
+      name: 'C',
+      children: [{ name: 'C-1' }]
+    }
+  ]
+
   return (
     <Center ptop={'30px'}>
       <div className="folder-tree-wrapper">
@@ -80,5 +94,32 @@ export default FileExplorer
 /* ------------------------------------
   src
   https://github.com/shunjizhan/react-folder-tree
+ ------------------------------------ */
 
+/* ------------------------------------
+  function loop(nodes) {
+    let dir = []
+    Object.values(nodes).forEach((node, i) => {
+      dir.push({
+        li: <Li> {node.name}</Li>
+      })
+      if (node.children) {
+        dir[i].children = <ul> {node.children}</ul>
+        loop(node.children)
+      }
+    })
+    return dir
+  }
+
+  let dir = loop(dirs)
+  const mapRecursive = (children, callback) =>
+    children.map((child) =>
+      child.children
+        ? [callback(child), mapRecursive(child.children, callback)]
+        : callback(child)
+    )
+
+  const listRender = mapRecursive(dirs, (e) => {
+    return <li key={Math.random()}> {e.name}</li>
+  })
  ------------------------------------ */
