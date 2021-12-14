@@ -2,15 +2,20 @@ import React from 'react'
 
 export default function ExamplesTemp() {
   return (
-    <div className='flex flex-col space-y-4'>
+    <div className="flex flex-col space-y-4">
       {/* Buttons  */}
-      <div className='space-x-2 '>
-        <button className='btn btn-primary'>Button Default</button>
+      <div className="space-x-2 ">
+        <button className="btn btn-primary">Button Default</button>
       </div>
 
       {/* Button disable */}
-      <div className='space-x-2 '>
-        <button className='btn disabled'> Default disable</button>
+      <div className="space-x-2 ">
+        <button className="btn disabled"> Default disable</button>
+      </div>
+
+      {/* Button disable */}
+      <div className="space-x-2 ">
+        <button className="link"> Button Link </button>
       </div>
 
       {/* <div className='space-x-2 '>
@@ -37,11 +42,11 @@ export default function ExamplesTemp() {
       </div> */}
 
       {/* Button ETC */}
-      <div className='space-x-2 '></div>
+      <div className="space-x-2 " />
 
       {/* Button Test */}
       <div>
-        <button className='btn_test '>btn_test</button>
+        <button className="btn_test ">btn_test</button>
       </div>
     </div>
   )

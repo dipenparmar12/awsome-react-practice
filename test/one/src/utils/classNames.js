@@ -1,7 +1,3 @@
-export default function cn(...args) {
-  return flatten(args).join(' ')
-}
-
 /**
  *
  * @param {*} arr
@@ -9,11 +5,16 @@ export default function cn(...args) {
  * @example arrayFlatten([1, [2, [3, [4, 5]]]], 6, 7, 8, 9), // [1, 2, 3, 4, 5, 6, 7, 8, 9]
  */
 function flatten(arr, ...args) {
+  // eslint-disable-next-line no-param-reassign
   Array.isArray(arr) || (arr = [arr])
   return [...arr, ...args].reduce(
     (acc, val) => acc.concat(Array.isArray(val) ? flatten(val) : val),
-    []
+    [],
   )
+}
+
+export default function cn(...args) {
+  return flatten(args).join(' ')
 }
 
 // console.log(
