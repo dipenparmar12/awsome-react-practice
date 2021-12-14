@@ -6,7 +6,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
  * @src: https://medium.com/free-code-camp/how-to-detect-an-outside-click-with-react-and-hooks-25dbaa30abcd
  * @returns
  */
-export default function useOutsideClicked() {
+const useOutsideClicked = (element) => {
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef(null)
 
@@ -20,24 +20,23 @@ export default function useOutsideClicked() {
   )
 
   const handleOutsideClicked = (event) => {
+    if (!isVisible) return null
     if (ref.current && !ref.current.contains(event.target)) {
       setIsVisible(false)
     }
+    return null
   }
 
   useEffect(() => {
-    document.addEventListener('click', handleOutsideClicked)
+    document.addEventListener('click', handleOutsideClicked, !isVisible)
+    document.addEventListener('keydown', hideOnEsc, !isVisible)
     return () => {
-      document.removeEventListener('click', handleOutsideClicked)
+      document.removeEventListener('click', handleOutsideClicked, !isVisible)
+      document.removeEventListener('keydown', hideOnEsc, !isVisible)
     }
-  }, [handleOutsideClicked])
-
-  useEffect(() => {
-    document.addEventListener('keydown', hideOnEsc)
-    return () => {
-      document.removeEventListener('keydown', hideOnEsc)
-    }
-  }, [hideOnEsc])
+  }, [handleOutsideClicked, hideOnEsc])
 
   return { ref, isVisible, setIsVisible }
 }
+
+export default useOutsideClicked
