@@ -6,6 +6,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "format": "prettier --config ./prettier.config.js --write ./src/**/*.{js,jsx} && eslint --fix ./src/**/*.{js,jsx}",
+    "lint": "eslint \"./**/*.{js,jsx}\"",
+    "lint:fix": "eslint \"./**/*.{js,jsx}\" --fix",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -21,7 +24,14 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.4.4",
+    "prettier": "^2.5.1",
     "tailwindcss": "^3.0.1"
   },
   "eslintConfig": {

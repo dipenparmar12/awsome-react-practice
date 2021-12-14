@@ -1,8 +1,7 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
-import { routes } from '../App'
+import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import useLocalStorageState from '../hooks/useLocalStorageState'
+import { routes } from '../App'
 
 /**
  *
@@ -22,26 +21,35 @@ export const authService = {
   },
 }
 
-let AuthContext = React.createContext(null)
+const AuthContext = React.createContext(null)
 export default function AuthProvider({ children }) {
   const [user, setUser] = useLocalStorageState('auth', null)
+  const navigate = useNavigate()
 
-  let signIn = (newUser, callback) => {
+  const signIn = (newUser, callback) => {
     return authService.signIn(() => {
       setUser(newUser)
       callback()
     })
   }
 
-  let signOut = (callback) => {
+  const signOut = (callback) => {
     return authService.signOut(() => {
       setUser(null)
       callback()
     })
   }
 
-  let value = { user, signIn, signOut }
+  const signOutRedirect = (newUser, callback) => {
+    return authService.signIn(() => {
+      setUser(newUser)
+      navigate(routes.login.path)
+    })
+  }
 
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
+  const value = { user, signIn, signOut, signOutRedirect }
+  // const value = React.memo(() => ({ user, signIn, signOut })) // Not working
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
@@ -49,9 +57,9 @@ export function useAuth() {
   return React.useContext(AuthContext)
 }
 
-export function RequireAuth({ children }) {
-  let auth = React.useContext(AuthContext)
-  let location = useLocation()
+export const RequireAuth = function ({ children }) {
+  const auth = React.useContext(AuthContext)
+  const location = useLocation()
   // React.useEffect(() => {
   //   console.log('AuthContext.js::[55]', auth.user)
   // }, [auth.user])
