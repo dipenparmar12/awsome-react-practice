@@ -1,10 +1,15 @@
 import React from 'react'
 
 const getLocalValue = (key, initState) => {
-  const localValue = JSON.parse(localStorage.getItem(key) || null) || null
-  if (localValue) return localValue
-  if (initState instanceof Function) return initState()
-  return initState
+  try {
+    const localValue = JSON.parse(localStorage.getItem(key) || null) || null
+    if (localValue) return localValue
+    if (initState instanceof Function) return initState()
+    return initState
+  } catch (error) {
+    console.log('useLocalStorageState.js::[10] error', error)
+    return null
+  }
 }
 
 const useLocalStorageState = (key, initState = null) => {

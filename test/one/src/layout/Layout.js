@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import LogoIMG from '../assets/img/logo.png'
 import Svg from '../lib/Svg/Svg'
@@ -56,7 +57,10 @@ const Layout = function ({ content, children }) {
       <div className="h-[calc(100vh_-_3.5rem)] relative flex ">
         {/* sidebar */}
         <nav
-          className={cn(['sidebar_nav', !isVisible && '-translate-x-full'])}
+          className={cn([
+            'z-20 text-gray-700 absolute inset-y-0 left-0 w-64 px-2 space-y-2 transition duration-200 ease-in-out transform shadow-md py-7 md:relative md:translate-x-0 bg-white dark:bg-slate-900',
+            !isVisible && '-translate-x-full',
+          ])}
           ref={ref}
         >
           <NavLinkItem route={routes?.projects} />

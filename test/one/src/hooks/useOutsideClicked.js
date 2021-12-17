@@ -6,7 +6,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
  * @src: https://medium.com/free-code-camp/how-to-detect-an-outside-click-with-react-and-hooks-25dbaa30abcd
  * @returns
  */
-const useOutsideClicked = (element) => {
+const useOutsideClicked = (isHideOnEsc = true) => {
   const [isVisible, setIsVisible] = useState(false)
   const ref = useRef(null)
 
@@ -29,10 +29,11 @@ const useOutsideClicked = (element) => {
 
   useEffect(() => {
     document.addEventListener('click', handleOutsideClicked, !isVisible)
-    document.addEventListener('keydown', hideOnEsc, !isVisible)
+    isHideOnEsc && document.addEventListener('keydown', hideOnEsc, !isVisible)
     return () => {
       document.removeEventListener('click', handleOutsideClicked, !isVisible)
-      document.removeEventListener('keydown', hideOnEsc, !isVisible)
+      isHideOnEsc &&
+        document.removeEventListener('keydown', hideOnEsc, !isVisible)
     }
   }, [handleOutsideClicked, hideOnEsc])
 
@@ -40,3 +41,13 @@ const useOutsideClicked = (element) => {
 }
 
 export default useOutsideClicked
+
+/*
+  const { ref, isVisible, setIsVisible } = useOutsideClicked()
+  <button
+    onClick={(e) => setIsVisible(!isVisible)}
+    ref={ref}
+  >
+    Show Modal
+  </button>
+ */

@@ -7,23 +7,9 @@ import LoginPage from './pages/LoginPage'
 import ExamplesTemp from './temp/ExamplesTemp'
 import NotFound from './pages/NotFound'
 import PrivateTemp from './temp/PrivateTemp'
+import Env from './utils/environment'
 
-export const routesPublic = {
-  login: {
-    label: 'Login',
-    path: '/' || '/login',
-    element: <LoginPage />,
-    public: true,
-  },
-}
-
-export const routesPrivate = {
-  home: {
-    label: 'Home',
-    path: '/',
-    element: <div className="text-2xl"> Home </div>,
-    icon: <Svg.Plus />,
-  },
+const testRoutes = {
   projects: {
     label: 'Projects',
     path: '/Projects',
@@ -94,6 +80,25 @@ export const routesPrivate = {
   },
 }
 
+export const routesPublic = {
+  login: {
+    label: 'Login',
+    path: '/login',
+    element: <LoginPage />,
+    public: true,
+  },
+}
+
+export const routesPrivate = {
+  home: {
+    label: 'Home',
+    path: '/',
+    element: <div className="text-2xl"> Home </div>,
+    icon: <Svg.Plus />,
+  },
+  ...(Env.IsDev ? testRoutes : {}),
+}
+
 export const routes = { ...routesPrivate, ...routesPublic }
 export const routesPrivateArr = Object.entries(routesPrivate)
 export const routesPublicArr = Object.entries(routesPublic)
@@ -103,25 +108,24 @@ const App = function () {
 
   return (
     <>
-      {auth?.user && (
-        <Routes>
-          {routesPrivateArr?.map(([k, route]) => (
-            <Route
-              // {...route}
-              key={route.label + k}
-              path={route.path}
-              element={
-                <RequireAuth>
-                  <Layout>
-                    <span className="hidden text-test"> I am </span>
-                    {route.element}
-                  </Layout>
-                </RequireAuth>
-              }
-            />
-          ))}
-        </Routes>
-      )}
+      <Routes>
+        {routesPrivateArr?.map(([k, route]) => (
+          <Route
+            // {...route}
+            key={route.label + k}
+            path={route.path}
+            exact
+            element={
+              <RequireAuth>
+                <Layout>
+                  <span className="hidden text-test"> I am </span>
+                  {route.element}
+                </Layout>
+              </RequireAuth>
+            }
+          />
+        ))}
+      </Routes>
 
       <Routes>
         {routesPublicArr?.map(([k, route]) => (
