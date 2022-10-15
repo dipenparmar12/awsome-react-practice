@@ -1,9 +1,11 @@
+import PopupBox from './components/PopupBox';
+
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <PopupBox/>
+    </>
   );
 }
 
