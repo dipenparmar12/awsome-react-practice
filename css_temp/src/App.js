@@ -1,12 +1,11 @@
-import PopupBox from './components/PopupBox';
-
+import WindowsCagePopOver from './components/WindowsCagePopOver'
 
 function App() {
   return (
     <>
-      <PopupBox/>
+      <WindowsCagePopOver />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

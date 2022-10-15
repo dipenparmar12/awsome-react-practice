@@ -84,6 +84,7 @@ module.exports = {
     'prefer-template': 'warn',
     'object-shorthand': 'warn',
     'no-shadow': 'warn',
+    'prefer-const': 'warn',
     indent: [
       'warn',
       2,
