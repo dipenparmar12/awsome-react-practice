@@ -10,17 +10,17 @@ html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
-  @include respond(tab-land) {
+  @include responsive(lg) {
     // width < 1200?
     font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
   }
 
-  @include respond(tab-port) {
+  @include responsive(md) {
     // width < 900?
     font-size: 50%; //1 rem = 8px, 8/16 = 50%
   }
 
-  @include respond(big-desktop) {
+  @include responsive(lg) {
     font-size: 75%; //1rem = 12, 12/16
   }
 }
@@ -30,8 +30,22 @@ body {
   line-height: 1.5;
   font-size: 16px;
   font-family: 'Lato', sans-serif;
+  color: var(--color_gray_5);
 
-  @include respond(tab-port) {
+  @include responsive(md) {
     padding: 0;
   }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.hr {
+  border: 1px solid var(--color_gray_3);
 }

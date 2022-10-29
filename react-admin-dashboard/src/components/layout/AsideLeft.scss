@@ -1,0 +1,49 @@
+.sidebar {
+  & .head {
+    display: grid;
+    grid-template-columns: 55px 2fr;
+    padding-top: 1rem;
+
+    margin-bottom: 8rem;
+
+    &__content {
+      padding-left: 10px;
+    }
+
+    &__content h3 {
+      padding-top: 3px;
+      font-weight: 800;
+    }
+
+    &__content p {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  & .nav_links {
+    &__item {
+      color: var(--color_gray_4);
+      font-weight: 600;
+
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 4rem auto;
+
+      &.active {
+        color: var(--color_black);
+      }
+    }
+
+    &__icon {
+      font-size: 30px;
+    }
+  }
+
+  & hr {
+    border-top: 0.5px solid var(--color_gray_5);
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

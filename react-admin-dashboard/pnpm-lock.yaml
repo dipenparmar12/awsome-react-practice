@@ -6,6 +6,7 @@ specifiers:
   '@testing-library/user-event': ^13.5.0
   autoprefixer: ^10.4.0
   bootstrap: 5.2.2
+  classnames: ^2.3.2
   eslint: ^8.26.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-prettier: ^8.5.0
@@ -16,6 +17,7 @@ specifiers:
   prettier: ^2.7.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-icons: ^4.6.0
   react-scripts: 5.0.0-next.58
   sass: ^1.55.0
   web-vitals: ^2.1.2
@@ -25,8 +27,10 @@ dependencies:
   '@testing-library/react': 12.1.5_sfoxds7t5ydpegc3knd667wn6m
   '@testing-library/user-event': 13.5.0
   bootstrap: 5.2.2
+  classnames: 2.3.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-icons: 4.6.0_react@17.0.2
   react-scripts: 5.0.0-next.58_react@17.0.2+sass@1.55.0
   sass: 1.55.0
   web-vitals: 2.1.4
@@ -3491,6 +3495,10 @@ packages:
 
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
+    dev: false
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
     dev: false
 
   /clean-css/5.3.1:
@@ -8094,6 +8102,14 @@ packages:
 
   /react-error-overlay/7.0.0-next.65:
     resolution: {integrity: sha512-tOAxyTOaOrwon2GMS6cTfFdTHBIifyf7i/SphLxHZtWVhD/dk+pfEp/ACaQe3J1lO7qEv/ei2np3XxRezyedrg==}
+    dev: false
+
+  /react-icons/4.6.0_react@17.0.2:
+    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 17.0.2
     dev: false
 
   /react-is/16.13.1:
