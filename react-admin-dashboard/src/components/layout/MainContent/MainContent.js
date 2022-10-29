@@ -1,7 +1,7 @@
 import React from 'react'
 
-import './MainContent/mainContent.scss'
-import UsersList from './MainContent/UsersList'
+import UsersList from './UsersList'
+import './mainContent.scss'
 
 export default function MainContent() {
   return (

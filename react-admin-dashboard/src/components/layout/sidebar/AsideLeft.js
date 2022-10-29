@@ -120,7 +120,7 @@ export default function AsideLeft() {
 
       <div className="sidebar_footer">
         <span className="">
-          <Icons.Plus />
+          <Icons.PlusOutline />
         </span>
         <span className=""> Invite new member </span>
       </div>

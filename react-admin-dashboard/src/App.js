@@ -1,5 +1,5 @@
 import AsideRight from 'components/layout/AsideRight'
-import MainContent from 'components/layout/MainContent'
+import MainContent from 'components/layout/MainContent/MainContent'
 import AsideLeft from 'components/layout/sidebar/AsideLeft'
 
 import './styles/main.scss'

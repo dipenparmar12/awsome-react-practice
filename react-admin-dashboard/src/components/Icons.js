@@ -5,7 +5,7 @@ import {
   BsBookmarkDash,
   BsBookmarkCheck,
 } from 'react-icons/bs'
-import { HiOutlinePlusCircle } from 'react-icons/hi'
+import { HiOutlinePlusCircle, HiOutlinePlus } from 'react-icons/hi'
 import { CiCirclePlus, CiBookmarkMinus } from 'react-icons/ci'
 import { AiOutlineClockCircle, AiOutlinePlus } from 'react-icons/ai'
 import { BiMessageSquareCheck } from 'react-icons/bi'
@@ -30,7 +30,8 @@ const Icons = {
   Clock: AiOutlineClockCircle,
   Check: BiMessageSquareCheck,
   Bookmark: CiBookmarkMinus,
-  Plus: ({ ...rest }) => IconHOC({ Icon: AiOutlinePlus, ...rest }),
+  PlusOutline: ({ ...rest }) => IconHOC({ Icon: AiOutlinePlus, ...rest }),
+  Plus: ({ ...rest }) => IconHOC({ Icon: HiOutlinePlus, ...rest }),
 }
 
 export default Icons
