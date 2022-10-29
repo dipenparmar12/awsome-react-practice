@@ -5,7 +5,7 @@ specifiers:
   '@testing-library/react': ^12.1.2
   '@testing-library/user-event': ^13.5.0
   autoprefixer: ^10.4.0
-  bootstrap: v5.2.2
+  bootstrap: 5.2.2
   eslint: ^8.26.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-prettier: ^8.5.0

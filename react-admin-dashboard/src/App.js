@@ -1,7 +1,11 @@
-import './styles/main.scss'
+import BtTable from './components/example/BtTable'
 
 function App() {
-  return <>Test </>
+  return (
+    <>
+      <BtTable />
+    </>
+  )
 }
 
 export default App
