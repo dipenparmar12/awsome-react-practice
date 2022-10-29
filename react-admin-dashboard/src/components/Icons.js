@@ -26,7 +26,7 @@ const Icons = {
   Calendar: TbCalendarStats,
   Settings: RiSettingsLine,
   CaretRight: BsCaretRightFill,
-  OutlinePlusCircle: CiCirclePlus,
+  OutlinePlusCircle: ({ ...rest }) => IconHOC({ Icon: CiCirclePlus, ...rest }),
   Clock: AiOutlineClockCircle,
   Check: BiMessageSquareCheck,
   Bookmark: CiBookmarkMinus,

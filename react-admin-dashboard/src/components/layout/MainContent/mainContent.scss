@@ -1,0 +1,13 @@
+.avatar_list {
+  display: flex;
+  overflow: auto;
+  .avatar {
+    &__img {
+      width: 100px;
+    }
+    &__name {
+    }
+    &__icon {
+    }
+  }
+}
