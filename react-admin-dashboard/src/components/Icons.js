@@ -1,5 +1,14 @@
 import { TbCalendarStats, TbSmartHome } from 'react-icons/tb'
 import { RiSettingsLine } from 'react-icons/ri'
+import {
+  BsCaretRightFill,
+  BsBookmarkDash,
+  BsBookmarkCheck,
+} from 'react-icons/bs'
+import { HiOutlinePlusCircle } from 'react-icons/hi'
+import { CiCirclePlus, CiBookmarkMinus } from 'react-icons/ci'
+import { AiOutlineClockCircle } from 'react-icons/ai'
+import { BiMessageSquareCheck } from 'react-icons/bi'
 
 /**
  * Icons for the application
@@ -13,6 +22,12 @@ const Icons = {
   Home: TbSmartHome,
   Calendar: TbCalendarStats,
   Settings: RiSettingsLine,
+  CaretRight: BsCaretRightFill,
+
+  OutlinePlusCircle: CiCirclePlus,
+  Clock: AiOutlineClockCircle,
+  Check: BiMessageSquareCheck,
+  Bookmark: CiBookmarkMinus,
 }
 
 export default Icons
