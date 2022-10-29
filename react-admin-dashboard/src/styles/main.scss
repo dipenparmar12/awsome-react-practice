@@ -1,14 +1,30 @@
-:root {
-  --color_white: #fff;
-  --color_1: #fafafa;
-  --color_11: ##f2e8ff;
-  --color_3: #4f46bb;
-  --color_33: #52459f;
-  --color_333: #4d4a80;
-  --color_4: #fdbc64;
-  --color_44: #ab6752;
-  --color_444: #fef3f1;
-  --color_5: #434343;
-  --color_6: #10243d;
-  --color_7: #84e9f5;
+@import './mixins';
+@import './colors';
+@import './base';
+
+.main_container {
+  background-color: var(--color_1);
+  display: grid;
+  grid-template-columns: 30rem auto 40rem;
+
+  & > aside,
+  main {
+    padding-top: 3rem;
+    padding-left: 2.7rem;
+  }
+
+  & .navigation {
+    min-height: 100vh;
+    background-color: var(--color_white);
+    border: 1px solid var(--color_11);
+  }
+
+  & main {
+  }
+
+  & .navigation_right {
+    min-height: 100vh;
+    background-color: var(--color_white);
+    border: 1px solid var(--color_11);
+  }
 }
