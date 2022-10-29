@@ -8,7 +8,7 @@
 
 html {
   // This defines what 1rem is
-  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
 
   @include responsive(lg) {
     // width < 1200?
@@ -48,4 +48,9 @@ ul {
 
 .hr {
   border: 1px solid var(--color_gray_3);
+}
+
+.app-icon {
+  display: flex;
+  align-items: center;
 }

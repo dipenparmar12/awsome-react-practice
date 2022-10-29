@@ -1,10 +1,12 @@
 .sidebar {
-  & .head {
-    display: grid;
-    grid-template-columns: 55px 2fr;
-    padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    margin-bottom: 8rem;
+  &_head {
+    display: grid;
+    grid-template-columns: 50px 2fr;
+    padding-top: 1rem;
 
     &__content {
       padding-left: 10px;
@@ -16,7 +18,7 @@
     }
 
     &__content p {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
     }
   }
@@ -30,16 +32,16 @@
       align-items: center;
       gap: 1.5rem;
 
-      margin: 3.5rem auto;
+      margin: 1.5rem auto;
     }
 
     &__icon {
-      font-size: 28px;
+      font-size: 21px;
     }
 
     &__notification {
-      font-size: 14px;
-      padding: 0.1rem 1.5rem;
+      font-size: 13px;
+      padding: 0rem 1.3rem;
       border: 1px solid var(--color_gray_4);
       color: var(--color_gray_4);
       border-radius: 2rem;
@@ -48,7 +50,7 @@
 
   & .group {
     &__heading {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       display: flex;
       justify-content: space-between;
     }
@@ -60,12 +62,25 @@
     }
 
     & .nav__item {
-      margin: 2rem auto;
+      margin: 1.5rem auto;
     }
+  }
+
+  &_footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    color: var(--color_black);
   }
 
   & .active {
     color: var(--color_black);
     font-weight: 600;
   }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
 }

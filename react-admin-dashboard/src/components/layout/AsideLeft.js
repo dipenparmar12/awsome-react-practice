@@ -8,112 +8,121 @@ import classNames from 'classnames'
 export default function AsideLeft() {
   return (
     <aside className="sidebar">
-      <div className="head">
-        <div className="head__img">
+      <div className="sidebar_head">
+        <div className="sidebar_head__img">
           <img src={Logo} alt="Logo" />
         </div>
 
-        <div className="head__content">
+        <div className="sidebar_head__content">
           <h3>Redwhale</h3>
           <p>Growth & Marketing</p>
         </div>
       </div>
 
-      <ul className="nav__links primary">
-        <li className="nav__item active">
-          <span className="nav__icon">
-            <Icons.Home />
-          </span>
-          <span className=""> Dashboard </span>
-        </li>
-        <li className="nav__item">
-          <span className="nav__icon">
-            <Icons.Calendar />
-          </span>
-          <span className=""> Activity </span>
-        </li>
-        <li className="nav__item">
-          <span className="nav__icon">
-            <Icons.Settings />
-          </span>
-          <span className=""> Settings </span>
-        </li>
-      </ul>
-
-      <div className="group">
-        <HorizontalLine />
-
-        <div className="group__heading active">
-          <div className="group__heading__title">
-            <span className="">Post's</span>
-            <Icons.CaretRight className="inline-block rotate-90" />
-          </div>
-
-          <Icons.OutlinePlusCircle
-            className=""
-            style={{ fontSize: '28px', color: '#a9a9a9' }}
-          />
-        </div>
-
-        <ul className="nav__links">
-          <li className="nav__item ">
+      <div>
+        <ul className="nav__links primary">
+          <li className="nav__item active">
             <span className="nav__icon">
-              <Icons.Check />
+              <Icons.Home />
             </span>
-            <span className=""> Published </span>
+            <span className=""> Dashboard </span>
           </li>
-          <li className="nav__item ">
+          <li className="nav__item">
             <span className="nav__icon">
-              <Icons.Clock />
+              <Icons.Calendar />
             </span>
-            <span className=""> Today Scheduled </span>
-            <span className="nav__notification"> +2 </span>
-          </li>{' '}
-          <li className="nav__item ">
+            <span className=""> Activity </span>
+          </li>
+          <li className="nav__item">
             <span className="nav__icon">
-              <Icons.Bookmark />
+              <Icons.Settings />
             </span>
-            <span className=""> Bookmarks </span>
+            <span className=""> Settings </span>
           </li>
         </ul>
+
+        <div className="group">
+          <HorizontalLine />
+
+          <div className="group__heading active">
+            <div className="group__heading__title">
+              <span className="">Post's</span>
+              <Icons.CaretRight className="inline-block rotate-90" />
+            </div>
+
+            <Icons.OutlinePlusCircle
+              className=""
+              style={{ fontSize: '28px', color: '#a9a9a9' }}
+            />
+          </div>
+
+          <ul className="nav__links">
+            <li className="nav__item ">
+              <span className="nav__icon">
+                <Icons.Check />
+              </span>
+              <span className=""> Published </span>
+            </li>
+            <li className="nav__item ">
+              <span className="nav__icon">
+                <Icons.Clock />
+              </span>
+              <span className=""> Today Scheduled </span>
+              <span className="nav__notification"> +2 </span>
+            </li>{' '}
+            <li className="nav__item ">
+              <span className="nav__icon">
+                <Icons.Bookmark />
+              </span>
+              <span className=""> Bookmarks </span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="group">
+          <HorizontalLine />
+
+          <div className="group__heading active">
+            <div className="group__heading__title">
+              <span className="">Favorite users</span>
+              <Icons.CaretRight className="inline-block " />
+            </div>
+
+            <Icons.OutlinePlusCircle
+              className=""
+              style={{ fontSize: '28px', color: '#a9a9a9' }}
+            />
+          </div>
+
+          <ul className="nav__links d-none">
+            <li className="nav__item ">
+              <span className="nav__icon">
+                <Icons.Check />
+              </span>
+              <span className=""> Published </span>
+            </li>
+            <li className="nav__item ">
+              <span className="nav__icon">
+                <Icons.Clock />
+              </span>
+              <span className=""> Today Scheduled </span>
+              <span className="nav__notification"> +2 </span>
+            </li>{' '}
+            <li className="nav__item ">
+              <span className="nav__icon">
+                <Icons.Bookmark />
+              </span>
+              <span className=""> Bookmarks </span>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div className="group">
-        <HorizontalLine />
-
-        <div className="group__heading active">
-          <div className="group__heading__title">
-            <span className="">Favorite users</span>
-            <Icons.CaretRight className="inline-block " />
-          </div>
-
-          <Icons.OutlinePlusCircle
-            className=""
-            style={{ fontSize: '28px', color: '#a9a9a9' }}
-          />
-        </div>
-
-        <ul className="nav__links d-none">
-          <li className="nav__item ">
-            <span className="nav__icon">
-              <Icons.Check />
-            </span>
-            <span className=""> Published </span>
-          </li>
-          <li className="nav__item ">
-            <span className="nav__icon">
-              <Icons.Clock />
-            </span>
-            <span className=""> Today Scheduled </span>
-            <span className="nav__notification"> +2 </span>
-          </li>{' '}
-          <li className="nav__item ">
-            <span className="nav__icon">
-              <Icons.Bookmark />
-            </span>
-            <span className=""> Bookmarks </span>
-          </li>
-        </ul>
+      <div className="sidebar_footer">
+        <span className="">
+          <Icons.Plus />
+        </span>
+        <span className=""> Invite new member </span>
       </div>
     </aside>
   )
