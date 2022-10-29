@@ -87,6 +87,7 @@ module.exports = {
     'react/no-unknown-property': 'off',
     'jsx-a11y/heading-has-content': 'off',
     'no-loop-func': 'off',
+    'import/no-unresolved': 'off',
     radix: 'off',
     indent: [
       'warn',
