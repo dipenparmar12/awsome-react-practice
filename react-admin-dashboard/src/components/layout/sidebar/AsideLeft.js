@@ -1,9 +1,9 @@
 import React from 'react'
-import './AsideLeft.scss'
-import Logo from '../../assets/logo.png'
-import Icons from '../Icons'
-import Hr from '../atoms/Hr'
 import classNames from 'classnames'
+import Logo from '../../../assets/logo.png'
+import Icons from '../../Icons'
+import Hr from '../../atoms/Hr'
+import './AsideLeft.scss'
 
 export default function AsideLeft() {
   return (

@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
-
-import AsideLeft from './components/layout/AsideLeft'
 import AsideRight from './components/layout/AsideRight'
 import MainContent from './components/layout/MainContent'
+import AsideLeft from './components/layout/sidebar/AsideLeft'
 import './styles/main.scss'
 
 function App() {
