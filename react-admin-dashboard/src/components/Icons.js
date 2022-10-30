@@ -1,9 +1,15 @@
 import { TbCalendarStats, TbSmartHome } from 'react-icons/tb'
-import { RiPauseMiniLine, RiSettingsLine } from 'react-icons/ri'
+import {
+  RiPauseMiniLine,
+  RiSettingsLine,
+  RiArrowUpDownLine,
+  RiUserAddLine,
+} from 'react-icons/ri'
 import {
   BsCaretRightFill,
   BsBookmarkDash,
   BsBookmarkCheck,
+  BsChatDots,
 } from 'react-icons/bs'
 import { HiOutlinePlusCircle, HiOutlinePlus } from 'react-icons/hi'
 import { CiCirclePlus, CiBookmarkMinus } from 'react-icons/ci'
@@ -14,6 +20,7 @@ import {
 } from 'react-icons/ai'
 import { BiMessageSquareCheck } from 'react-icons/bi'
 import { IoPause } from 'react-icons/io'
+import { FiHeart } from 'react-icons/fi'
 
 import classNames from 'classnames'
 
@@ -39,6 +46,11 @@ const Icons = {
   PlusOutline: ({ ...rest }) => IconHOC({ Icon: AiOutlinePlus, ...rest }),
   Plus: ({ ...rest }) => IconHOC({ Icon: HiOutlinePlus, ...rest }),
   Pause: ({ ...rest }) => IconHOC({ Icon: RiPauseMiniLine, ...rest }),
+  Heart: ({ ...rest }) => IconHOC({ Icon: FiHeart, ...rest }),
+  UserAddLine: ({ ...rest }) => IconHOC({ Icon: RiUserAddLine, ...rest }),
+  ChatDots: ({ ...rest }) => IconHOC({ Icon: BsChatDots, ...rest }),
+  ArrowUpDownLine: ({ ...rest }) =>
+    IconHOC({ Icon: RiArrowUpDownLine, ...rest }),
 }
 
 export default Icons
