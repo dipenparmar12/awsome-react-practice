@@ -11,7 +11,11 @@ import {
   BsBookmarkCheck,
   BsChatDots,
 } from 'react-icons/bs'
-import { HiOutlinePlusCircle, HiOutlinePlus } from 'react-icons/hi'
+import {
+  HiOutlinePlusCircle,
+  HiOutlinePlus,
+  HiOutlineBell,
+} from 'react-icons/hi'
 import { CiCirclePlus, CiBookmarkMinus } from 'react-icons/ci'
 import {
   AiFillPauseCircle,
@@ -49,6 +53,7 @@ const Icons = {
   Heart: ({ ...rest }) => IconHOC({ Icon: FiHeart, ...rest }),
   UserAddLine: ({ ...rest }) => IconHOC({ Icon: RiUserAddLine, ...rest }),
   ChatDots: ({ ...rest }) => IconHOC({ Icon: BsChatDots, ...rest }),
+  OutlineBell: ({ ...rest }) => IconHOC({ Icon: HiOutlineBell, ...rest }),
   ArrowUpDownLine: ({ ...rest }) =>
     IconHOC({ Icon: RiArrowUpDownLine, ...rest }),
 }

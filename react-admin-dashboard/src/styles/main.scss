@@ -9,7 +9,7 @@
 .main_container {
   background-color: var(--color_gray_1);
   display: grid;
-  grid-template-columns: 30rem auto 40rem;
+  grid-template-columns: 27rem auto 36rem;
 
   @include responsive(lg) {
     grid-template-columns: auto 27rem;
@@ -53,5 +53,6 @@
     padding-top: 3.1rem;
     padding-bottom: 2.7rem;
     padding-left: 3.5rem;
+    padding-right: 3rem;
   }
 }

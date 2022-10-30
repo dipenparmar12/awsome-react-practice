@@ -1,0 +1,32 @@
+.sidebar_right {
+}
+
+.aside__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    margin-bottom: 2px !important;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 1rem;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 18px;
+      width: 4rem;
+      height: 4rem;
+      border-radius: var(--border_radius_1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+      color: var(--color_block);
+      // background: rgba(0, 0, 0, 0.515);
+    }
+  }
+}
