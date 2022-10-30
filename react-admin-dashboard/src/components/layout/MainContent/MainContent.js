@@ -4,6 +4,7 @@ import Analytics from './Analytics'
 import AvatarList from './AvatarList'
 import './mainContent.scss'
 import PerformanceCards from './PerformanceCards'
+import Statics from './Statics'
 
 export default function MainContent() {
   return (
@@ -13,6 +14,8 @@ export default function MainContent() {
       <PerformanceCards />
 
       <Analytics />
+
+      <Statics />
     </main>
   )
 }

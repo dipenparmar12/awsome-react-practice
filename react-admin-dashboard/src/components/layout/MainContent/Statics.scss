@@ -1,0 +1,16 @@
+.statics_container {
+  margin-top: 5rem;
+}
+
+.statics_cards_container {
+  & .statics_card {
+    &__content {
+    }
+    &__heading {
+    }
+    &__sub_heading {
+    }
+    &__progress {
+    }
+  }
+}
