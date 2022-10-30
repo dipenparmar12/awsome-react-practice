@@ -25,12 +25,12 @@ export default function AsideRight() {
       </div>
 
       {/* AVATAR_PROFiLE */}
-      <div className="avatar">
-        <div className="avatar__img">
+      <div className="aside_avatar">
+        <div className="aside_avatar__img">
           <img src={AvatarImg} alt="" />
         </div>
-        <Heading3 className="avatar__name">AR Shakir</Heading3>
-        <p className="avatar__designation">UI/UX Designer @RedWale</p>
+        <Heading3 className="aside_avatar__name">AR Shakir</Heading3>
+        <p className="aside_avatar__designation">UI/UX Designer @RedWale</p>
       </div>
 
       {/* AVATAR_INFO */}
