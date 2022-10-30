@@ -38,6 +38,7 @@
 
   &__img {
     width: 7.5rem;
+    box-shadow: 0 5px 20px 1px hsla(13, 90%, 69%, 0.517);
   }
   &__name {
     margin-top: 2.5rem;
@@ -140,6 +141,10 @@
     width: 100%;
     margin: 0 !important;
     border: 1px solid white;
+
+    &:hover {
+      filter: brightness(85%);
+    }
 
     & img {
       width: 100%;
