@@ -14,7 +14,8 @@
   }
   //1200px // lg
   @media only screen and (max-width: 75em) {
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1rem;
   }
   //1800 // xl
   @media only screen and (min-width: 112.5em) {
