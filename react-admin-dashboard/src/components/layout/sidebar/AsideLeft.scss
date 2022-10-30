@@ -36,6 +36,14 @@
       gap: 1.5rem;
 
       margin: 3rem auto;
+
+      cursor: pointer;
+      transition: all 0.1s ease-in;
+
+      &:hover:not(.active) {
+        color: var(--color_gray_5);
+        transform: translateX(4px);
+      }
     }
 
     &__icon {
