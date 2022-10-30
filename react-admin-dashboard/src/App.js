@@ -1,4 +1,4 @@
-import AsideRight from 'components/layout/AsideRight'
+import AsideRight from 'components/layout/AsideRight/AsideRight'
 import MainContent from 'components/layout/MainContent/MainContent'
 import AsideLeft from 'components/layout/sidebar/AsideLeft'
 
