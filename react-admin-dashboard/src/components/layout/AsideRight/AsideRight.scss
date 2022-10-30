@@ -1,6 +1,3 @@
-.sidebar_right {
-}
-
 .aside__top {
   display: flex;
   justify-content: space-between;
@@ -28,5 +25,50 @@
       color: var(--color_block);
       // background: rgba(0, 0, 0, 0.515);
     }
+  }
+}
+
+.avatar {
+  margin-top: 5.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    width: 7.5rem;
+  }
+  &__name {
+    margin-top: 2.5rem;
+    margin-bottom: 0px !important;
+  }
+  &__designation {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+.statics {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+
+  text-align: center;
+
+  & > div {
+    flex: 1 1 100%;
+    // border: 1px solid rgba(0, 0, 0, 0.004);
+  }
+
+  &__value {
+    font-size: 15px;
+    margin-bottom: -1px !important;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 600;
   }
 }
