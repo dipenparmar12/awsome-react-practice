@@ -34,7 +34,7 @@ export default function AsideRight() {
       </div>
 
       {/* AVATAR_INFO */}
-      <div id="statics" className="statics">
+      <div className="statics">
         <div>
           <Heading3 className="statics__value">786k</Heading3>
           <p className="statics__title">Followers</p>
@@ -50,10 +50,10 @@ export default function AsideRight() {
       </div>
 
       {/* BUTTONS */}
-      {/* <div className="avatar__buttons">
-        <button>View Profile</button>
-        <button>Edit Profile</button>
-      </div> */}
+      <div className="profile_buttons">
+        <button className="btn btn_primary">View Profile</button>
+        <button className="btn btn_secondary">Edit Profile</button>
+      </div>
     </aside>
   )
 }
