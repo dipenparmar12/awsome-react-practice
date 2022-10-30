@@ -7,60 +7,7 @@
 @import './temp.scss';
 
 .main_container {
-  background-color: var(--color_gray_1);
-  display: grid;
-  grid-template-columns: 27rem auto 36rem;
-
-  @include responsive(lg) {
-    grid-template-columns: auto 27rem;
-  }
-
-  @include responsive(md) {
-    grid-template-columns: auto 22rem;
-  }
-
-  @include responsive(sm) {
-    grid-template-columns: 1fr;
-  }
-
   @include bbg;
-
-  & main {
-    padding-top: 3.1rem;
-    padding-bottom: 2.7rem;
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-  }
-
-  & .sidebar {
-    min-height: 100vh;
-    background-color: var(--color_white);
-    border: 1.5px solid var(--color_gray_2);
-    padding-top: 3.1rem;
-    padding-left: 3.5rem;
-    padding-right: 2.8rem;
-    padding-bottom: 2.7rem;
-
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: scroll;
-
-    @include responsive(lg) {
-      display: none;
-    }
-  }
-
-  & .sidebar_right {
-    min-height: 100vh;
-    background-color: var(--color_white);
-    border: 1px solid var(--color_gray_2);
-    padding-top: 3.1rem;
-    padding-bottom: 2.7rem;
-    padding-left: 3.5rem;
-    padding-right: 3rem;
-  }
 }
 
 /* 

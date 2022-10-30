@@ -10,6 +10,20 @@
     display: flex;
     gap: 3rem;
 
+    @media only screen and (max-width: 37.5em) {
+    } //600px
+
+    @media only screen and (max-width: 56.25em) {
+      gap: 2rem;
+    } //900px
+
+    @media only screen and (max-width: 75em) {
+      gap: 1.5rem;
+    } //1200px
+
+    @media only screen and (min-width: 112.5em) {
+    } //1800
+
     &__item {
       border-radius: 1rem;
       flex: 1 1 100%;

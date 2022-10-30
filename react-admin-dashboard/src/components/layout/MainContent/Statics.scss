@@ -6,6 +6,20 @@
   display: flex;
   gap: 4rem;
 
+  //600px // sm
+  @media only screen and (max-width: 37.5em) {
+  }
+  //900px // md
+  @media only screen and (max-width: 56.25em) {
+  }
+  //1200px // lg
+  @media only screen and (max-width: 75em) {
+    gap: 2rem;
+  }
+  //1800 // xl
+  @media only screen and (min-width: 112.5em) {
+  }
+
   & .statics_card.variant_blue {
     background-color: var(--color_blue_2);
     color: var(--color_white);

@@ -2,6 +2,7 @@ import AsideRight from 'components/layout/AsideRight/AsideRight'
 import MainContent from 'components/layout/MainContent/MainContent'
 import AsideLeft from 'components/layout/sidebar/AsideLeft'
 
+import './index.scss'
 import './styles/main.scss'
 
 function App() {
