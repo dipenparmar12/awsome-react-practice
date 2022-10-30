@@ -17,3 +17,6 @@
   - `Grid generator` 
     - https://angrytools.com/css-grid/ 
     - https://cssgrid-generator.netlify.app/
+  - `Pia-Chart` 
+    - https://codepen.io/jo-asakura/pen/NWWrWj?editors=1100
+    - https://www.youtube.com/watch?v=SKU2gExpkPI

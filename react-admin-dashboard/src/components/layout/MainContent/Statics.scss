@@ -3,21 +3,36 @@
 }
 
 .statics_cards_container {
+  display: flex;
+  gap: 4rem;
+
   & .statics_card {
+    flex: 1 1 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
 
-    padding: 2rem 3.5rem;
+    padding: 1.5rem 3.5rem;
     background-color: var(--color_white);
+    border-radius: var(--border_radius_1);
+    box-shadow: var(--box_shadow_1);
 
     &__content {
-      border: 1px solid rgba(0, 128, 0, 0.349);
+      border-right: 1px solid var(--color_gray_3);
+      width: 60%;
     }
 
     &__heading {
       margin-bottom: 0.6rem;
+      font-size: 15px;
     }
+
     &__progress {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      border: 1px solid #cdcbd0;
     }
   }
 }
