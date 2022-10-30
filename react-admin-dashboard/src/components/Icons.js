@@ -27,6 +27,7 @@ import {
 import { BiMessageSquareCheck } from 'react-icons/bi'
 import { IoPause } from 'react-icons/io'
 import { FiHeart } from 'react-icons/fi'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
 import classNames from 'classnames'
 
@@ -45,10 +46,10 @@ const Icons = {
   Calendar: TbCalendarStats,
   Settings: RiSettingsLine,
   CaretRight: BsCaretRightFill,
-  OutlinePlusCircle: ({ ...rest }) => IconHOC({ Icon: CiCirclePlus, ...rest }),
   Clock: AiOutlineClockCircle,
   Check: BiMessageSquareCheck,
   Bookmark: CiBookmarkMinus,
+  OutlinePlusCircle: ({ ...rest }) => IconHOC({ Icon: CiCirclePlus, ...rest }),
   PlusOutline: ({ ...rest }) => IconHOC({ Icon: AiOutlinePlus, ...rest }),
   Plus: ({ ...rest }) => IconHOC({ Icon: HiOutlinePlus, ...rest }),
   Pause: ({ ...rest }) => IconHOC({ Icon: RiPauseMiniLine, ...rest }),
@@ -58,8 +59,8 @@ const Icons = {
   OutlineBell: ({ ...rest }) => IconHOC({ Icon: HiOutlineBell, ...rest }),
   Video: ({ ...rest }) => IconHOC({ Icon: BsCameraVideo, ...rest }),
   Camera: ({ ...rest }) => IconHOC({ Icon: HiOutlineCamera, ...rest }),
-  ArrowUpDownLine: ({ ...rest }) =>
-    IconHOC({ Icon: RiArrowUpDownLine, ...rest }),
+  ArrowUpDown: ({ ...rest }) => IconHOC({ Icon: RiArrowUpDownLine, ...rest }),
+  HamburgerMenu: ({ ...rest }) => IconHOC({ Icon: GiHamburgerMenu, ...rest }),
 }
 
 export default Icons

@@ -45,7 +45,7 @@ export default function Analytics() {
             </li>
             <li className="event_dist__item">
               <div className="icon" style={{ '--bg_color': '#84e9f5' }}>
-                <Icons.ArrowUpDownLine className="" />
+                <Icons.ArrowUpDown className="" />
               </div>
               <div>Views </div>
             </li>
