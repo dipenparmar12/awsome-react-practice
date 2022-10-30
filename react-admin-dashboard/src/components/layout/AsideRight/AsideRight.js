@@ -56,7 +56,7 @@ export default function AsideRight() {
       </div>
 
       {/* UTILITY CARDS */}
-      <div className="utility_card">
+      <div className="utility_cards">
         <div className="card card_primary">
           <div className="card__icon">
             <Icons.Video />
@@ -71,6 +71,20 @@ export default function AsideRight() {
           <div className="card__title">Videos</div>
           <p className="card__sub_title">Click To Add Videos.</p>
         </div>
+      </div>
+
+      <div className="image_gallery">
+        {[...Array(6)].map((_, Idx) => {
+          return (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className="image_gallery__item" key={Idx}>
+              <img
+                src={`http://placeimg.com/90/90/people?${Math.random()}`}
+                alt=""
+              />
+            </div>
+          )
+        })}
       </div>
     </aside>
   )

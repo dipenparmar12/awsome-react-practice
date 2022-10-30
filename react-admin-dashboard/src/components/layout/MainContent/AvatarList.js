@@ -19,7 +19,8 @@ export default function AvatarList() {
   return (
     <div className="avatar_list">
       {Fake.arrRandom(8, 10).map((_, i) => {
-        return <Avatar name={i + 1} avatar={i} />
+        // eslint-disable-next-line react/no-array-index-key
+        return <Avatar name={i + 1} avatar={i} key={i} />
       })}
     </div>
   )

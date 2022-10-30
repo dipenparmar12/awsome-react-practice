@@ -10,12 +10,12 @@ import Heading4 from 'components/atoms/Heading4'
 export default function Analytics() {
   return (
     <div className="">
-      <div class="analytics_heading">
+      <div className="analytics_heading">
         <Heading3> Analytics </Heading3>
         <Heading3> Event Distribution </Heading3>
       </div>
 
-      <div class="analytics_content">
+      <div className="analytics_content">
         <div id="line_chart">
           <Heading4>Daily views</Heading4>
         </div>
