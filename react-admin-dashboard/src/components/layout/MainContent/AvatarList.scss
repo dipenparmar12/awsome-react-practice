@@ -1,16 +1,24 @@
 .avatar_container {
+  // // TODO:: OverFlow-x scroll
+
   // position: relative;
-  // width: 100%;
-  // overflow: hidden;
-  // white-space: nowrap;
-
-  // overflow-x: auto;
-  // display: flex;
-  // flex: 0 0 350px;
   // overflow-x: scroll;
-  // white-space: nowrap;
+  // width: 100%;
+  max-width: 800px;
 
-  // OverFlow-x scroll
+  //600px // sm
+  @media only screen and (max-width: 37.5em) {
+    max-width: calc(92vw - 3rem);
+  }
+  //900px // md
+  @media only screen and (max-width: 56.25em) {
+  }
+  //1200px // lg
+  @media only screen and (max-width: 75em) {
+  }
+  //1800 // xl
+  @media only screen and (min-width: 112.5em) {
+  }
 }
 
 .avatar_list {
@@ -19,7 +27,6 @@
   padding-top: 1rem;
 
   overflow-x: auto;
-  position: relative;
 
   & .avatar {
     display: flex;

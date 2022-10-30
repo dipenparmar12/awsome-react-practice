@@ -13,7 +13,7 @@ export default function Analytics() {
     <div className="">
       <div className="analytics_heading">
         <Heading3> Analytics </Heading3>
-        <Heading3> Event Distribution </Heading3>
+        <Heading3 className="sm-hidden"> Event Distribution </Heading3>
       </div>
 
       <div className="analytics_content">

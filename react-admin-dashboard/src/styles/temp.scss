@@ -8,9 +8,9 @@
   @include responsive(md) {
     background-color: #a7f3d0 !important;
   }
-  @include responsive(sm) {
-    background-color: #ecfccb !important;
-  }
+  // @include responsive(sm) {
+  //   background-color: #ecfccb !important;
+  // }
   //Use @include bbg
 }
 
