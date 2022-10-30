@@ -27,7 +27,11 @@ export default function Analytics() {
 
           <div id="event_dist__img">
             {/* TODO:: Content */}
-            <img src={CircleImg} alt="Circle" />
+            <img
+              src={CircleImg}
+              alt="Circle"
+              style={{ height: '140px', textAlign: 'center' }}
+            />
           </div>
 
           <h4 id="event_dist__sub_title"> Events DISTRIBUTION </h4>

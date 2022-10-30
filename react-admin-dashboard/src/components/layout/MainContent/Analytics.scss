@@ -53,7 +53,7 @@
     &__title {
       text-align: center;
       color: var(--color_blue_4);
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
     }
 
     &__sub_title {
@@ -75,7 +75,7 @@
       .event_dist__item {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        // justify-content: flex-start;
         gap: 0.4rem;
         margin-top: 1.2rem;
 
@@ -93,6 +93,11 @@
           font-size: 15px;
         }
       }
+    }
+
+    &__img {
+      display: flex;
+      justify-content: center;
     }
   }
 
