@@ -1,8 +1,9 @@
 import React from 'react'
 import Fake from 'utils/faker'
 import Icons from 'components/Icons'
+import './AvatarList.scss'
 
-function User({ name, avatar }) {
+function Avatar({ name, avatar }) {
   return (
     <div className="avatar">
       <div className="avatar__img">
@@ -14,11 +15,11 @@ function User({ name, avatar }) {
   )
 }
 
-export default function UsersList() {
+export default function AvatarList() {
   return (
     <div className="avatar_list">
       {Fake.arrRandom(8, 10).map((_, i) => {
-        return <User name={i + 1} avatar={i} />
+        return <Avatar name={i + 1} avatar={i} />
       })}
     </div>
   )

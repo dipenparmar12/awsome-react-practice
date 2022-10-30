@@ -1,0 +1,46 @@
+.performance {
+  // flex-direction: column;
+  // justify-content: space-between;
+
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
+
+  .cards {
+    width: 100%;
+    display: flex;
+    gap: 2.5rem;
+
+    &__item {
+      border-radius: 1rem;
+      flex: 1 1 100%;
+      padding: 1.1rem 2rem 1.6rem;
+      box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+      background-color: var(--color_blue_1);
+
+      // position: relative;
+      // overflow: hidden;
+    }
+
+    &__title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color_gray_4);
+      text-transform: uppercase;
+      padding-bottom: 4px;
+    }
+
+    &__value {
+      font-weight: 500;
+      color: var(--color_white);
+    }
+  }
+}
+
+// .test {
+//   position: absolute;
+//   right: 100%;
+//   top: 0;
+//   // transform: translateX(60%) translateY(-100%);
+//   rotate: 60deg;
+//   transform-origin: center;
+// }

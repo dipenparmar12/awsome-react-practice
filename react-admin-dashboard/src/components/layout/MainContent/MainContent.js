@@ -1,12 +1,18 @@
 import React from 'react'
+import Analytics from './Analytics'
 
-import UsersList from './UsersList'
+import AvatarList from './AvatarList'
 import './mainContent.scss'
+import PerformanceCards from './PerformanceCards'
 
 export default function MainContent() {
   return (
     <main>
-      <UsersList />
+      <AvatarList />
+
+      <PerformanceCards />
+
+      <Analytics />
     </main>
   )
 }
