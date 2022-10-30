@@ -4,21 +4,27 @@
 
 .statics_cards_container {
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
 
   //600px // sm
   @media only screen and (max-width: 37.5em) {
+    flex-direction: column !important;
+  }
+
+  //1200px // lg
+  @media only screen and (max-width: 75em) {
+    flex-direction: row;
+    gap: 2rem;
   }
   //900px // md
   @media only screen and (max-width: 56.25em) {
-  }
-  //1200px // lg
-  @media only screen and (max-width: 75em) {
-    flex-direction: column;
-    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
   }
   //1800 // xl
   @media only screen and (min-width: 112.5em) {
+    gap: 4rem;
   }
 
   & .statics_card.variant_blue {

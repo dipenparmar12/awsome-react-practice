@@ -27,6 +27,29 @@
     'card_medium card_medium card_1 card_2 event_dist event_dist'
     'card_medium card_medium card_1 card_2 event_dist event_dist';
 
+  //1200px // lg
+  @media only screen and (max-width: 75em) {
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'line_chart   line_chart  event_dist'
+      'line_chart   line_chart  event_dist'
+      'card_medium  card_medium   event_dist'
+      'card_medium  card_medium   event_dist'
+      'card_1       card_2      event_dist';
+  }
+
+  //900px // md
+  @media only screen and (max-width: 56.25em) {
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'line_chart line_chart'
+      'card_1 event_dist '
+      'card_2 event_dist '
+      'card_medium card_medium';
+  }
+
   //600px // sm
   @media only screen and (max-width: 37.5em) {
     gap: 1rem;
@@ -38,17 +61,6 @@
       'card_1 card_2'
       'card_medium card_medium';
   }
-
-  //600px // sm
-  // @media only screen and (max-width: 37.5em) {
-  //   grid-template-areas:
-  //     'line_chart line_chart'
-  //     'card_1 card_1'
-  //     'card_2 card_2'
-  //     'card_medium card_medium'
-  //     'event_dist event_dist';
-  // }
-
   & > div {
     border-radius: var(--border_radius_1);
     padding: 2rem 2rem 1.6rem;
@@ -218,40 +230,3 @@
   justify-content: center;
   align-items: center;
 }
-
-// .angry-grid {
-//   display: grid;
-
-//   grid-template-rows: 1fr 1fr 1fr 1fr;
-//   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-
-//   grid-template-areas:
-//     'line_chart line_chart line_chart line_chart event_dist event_dist'
-//     'line_chart line_chart line_chart line_chart event_dist event_dist'
-//     'card_medium card_medium card_1 card_2 event_dist event_dist'
-//     'card_medium card_medium card_1 card_2 event_dist event_dist';
-
-//   gap: 0px;
-//   height: 100%;
-// }
-
-// #item-0 {
-//   background-color: #b5fabe;
-//   grid-area: card_medium;
-// }
-// #item-1 {
-//   background-color: #b5abcb;
-//   grid-area: line_chart;
-// }
-// #item-2 {
-//   background-color: #bdbb6d;
-//   grid-area: event_dist;
-// }
-// #item-3 {
-//   background-color: #8be7d9;
-//   grid-area: card_1;
-// }
-// #item-4 {
-//   background-color: #598f77;
-//   grid-area: card_2;
-// }
