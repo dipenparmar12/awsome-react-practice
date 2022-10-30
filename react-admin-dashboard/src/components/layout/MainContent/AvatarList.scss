@@ -1,7 +1,25 @@
+.avatar_container {
+  // position: relative;
+  // width: 100%;
+  // overflow: hidden;
+  // white-space: nowrap;
+
+  // overflow-x: auto;
+  // display: flex;
+  // flex: 0 0 350px;
+  // overflow-x: scroll;
+  // white-space: nowrap;
+
+  // OverFlow-x scroll
+}
+
 .avatar_list {
   display: flex;
   gap: 1.2rem;
   padding-top: 1rem;
+
+  overflow-x: auto;
+  position: relative;
 
   & .avatar {
     display: flex;

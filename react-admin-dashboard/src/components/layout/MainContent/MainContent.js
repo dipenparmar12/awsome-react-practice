@@ -8,7 +8,7 @@ import Statics from './Statics'
 
 export default function MainContent() {
   return (
-    <main>
+    <main style={{ maxWidth: '100%' }}>
       <AvatarList />
 
       <PerformanceCards />

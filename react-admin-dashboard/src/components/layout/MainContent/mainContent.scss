@@ -48,29 +48,13 @@
     grid-template-columns: 1fr;
   }
 
-  //900px // md
-  @media only screen and (max-width: 56.25em) {
-    grid-template-columns: auto 22rem;
-
-    & .sidebar_right {
-      display: none;
-      min-height: 100vh;
-      background-color: var(--color_white);
-      border: 1px solid var(--color_gray_2);
-      padding-top: 3.1rem;
-      padding-bottom: 2.7rem;
-      padding-left: 3.5rem;
-      padding-right: 3rem;
-    }
-  }
-
   //1200px // lg
   @media only screen and (max-width: 75em) {
-    grid-template-columns: auto 27rem;
+    grid-template-columns: auto calc(30vw);
 
     & main {
       padding-left: 2rem;
-      padding-right: 2.5rem;
+      padding-right: 3rem;
     }
 
     & .sidebar_right {
@@ -81,5 +65,14 @@
 
   //1800 // xl
   @media only screen and (min-width: 112.5em) {
+  }
+
+  //900px // md
+  @media only screen and (max-width: 56.25em) {
+    grid-template-columns: 1fr;
+
+    & .sidebar_right {
+      display: none;
+    }
   }
 }
