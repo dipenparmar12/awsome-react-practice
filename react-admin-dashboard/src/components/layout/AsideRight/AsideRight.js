@@ -54,6 +54,24 @@ export default function AsideRight() {
         <button className="btn btn_primary">View Profile</button>
         <button className="btn btn_secondary">Edit Profile</button>
       </div>
+
+      {/* UTILITY CARDS */}
+      <div className="utility_card">
+        <div className="card card_primary">
+          <div className="card__icon">
+            <Icons.Video />
+          </div>
+          <div className="card__title">Videos</div>
+          <p className="card__sub_title">Click To Add Videos.</p>
+        </div>
+        <div className="card card_secondary">
+          <div className="card__icon">
+            <Icons.Camera />
+          </div>
+          <div className="card__title">Videos</div>
+          <p className="card__sub_title">Click To Add Videos.</p>
+        </div>
+      </div>
     </aside>
   )
 }

@@ -10,11 +10,13 @@ import {
   BsBookmarkDash,
   BsBookmarkCheck,
   BsChatDots,
+  BsCameraVideo,
 } from 'react-icons/bs'
 import {
   HiOutlinePlusCircle,
   HiOutlinePlus,
   HiOutlineBell,
+  HiOutlineCamera,
 } from 'react-icons/hi'
 import { CiCirclePlus, CiBookmarkMinus } from 'react-icons/ci'
 import {
@@ -54,6 +56,8 @@ const Icons = {
   UserAddLine: ({ ...rest }) => IconHOC({ Icon: RiUserAddLine, ...rest }),
   ChatDots: ({ ...rest }) => IconHOC({ Icon: BsChatDots, ...rest }),
   OutlineBell: ({ ...rest }) => IconHOC({ Icon: HiOutlineBell, ...rest }),
+  Video: ({ ...rest }) => IconHOC({ Icon: BsCameraVideo, ...rest }),
+  Camera: ({ ...rest }) => IconHOC({ Icon: HiOutlineCamera, ...rest }),
   ArrowUpDownLine: ({ ...rest }) =>
     IconHOC({ Icon: RiArrowUpDownLine, ...rest }),
 }

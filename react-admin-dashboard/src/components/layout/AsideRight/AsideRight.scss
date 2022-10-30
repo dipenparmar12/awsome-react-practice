@@ -75,8 +75,54 @@
 
 .profile_buttons {
   margin-top: 2rem;
-
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+}
+
+.utility_card {
+  margin-top: 3rem;
+
+  display: flex;
+  // align-items: flex-end;
+  // justify-content: flex-end;
+
+  gap: 2rem;
+
+  & .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: 16rem;
+    padding: 2rem 1.5rem;
+    border-radius: var(--border_radius_1);
+
+    &_primary {
+      background-color: var(--color_purple_1);
+      color: var(--color_blue_2);
+    }
+
+    &_secondary {
+      background-color: var(--color_orange_4);
+      color: var(--color_orange_3);
+    }
+
+    &__icon {
+      text-align: left;
+      font-size: 30px;
+      margin: 1.4rem auto;
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    &__sub_title {
+      font-size: 11px;
+      font-weight: 700;
+    }
+  }
 }
