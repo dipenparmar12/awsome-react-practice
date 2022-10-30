@@ -19,7 +19,7 @@
 //   }
 // }
 
-.analytics_container_1 {
+.analytics_heading {
   display: grid;
   grid-template-columns: 2fr 1fr;
 
@@ -90,41 +90,49 @@
         height: 6rem;
         // img {height: 100%;}
       }
-
-      & .icon_wrapper {
-        font-size: 1.8rem;
-        background-color: var(--color_blue_2);
-        color: var(--color_white);
-        border-radius: 100px;
-
-        width: 3rem;
-        height: 4rem;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        & svg {
-          transform: translateX(-1.5px);
-        }
-      }
     }
   }
 
-  #item-3 {
-    background-color: #a7dbc9;
+  #card_1 {
+    background-color: var(--color_white);
     grid-row-start: 3;
     grid-column-start: 3;
 
     grid-row-end: 5;
     grid-column-end: 4;
   }
-  #item-4 {
-    background-color: #8b986c;
+
+  #card_2 {
+    background-color: var(--color_white);
     grid-row-start: 3;
     grid-column-start: 4;
 
     grid-row-end: 5;
     grid-column-end: 5;
   }
+
+  .feature_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+  }
+}
+
+.icon_wrapper {
+  --bg_color: black;
+
+  font-size: 1.8rem;
+  background-color: var(--bg_color);
+  color: var(--color_white);
+  border-radius: 100px;
+
+  width: 3.3rem;
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

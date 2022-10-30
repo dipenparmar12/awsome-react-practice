@@ -8,7 +8,7 @@ import Icons from 'components/Icons'
 export default function Analytics() {
   return (
     <div className="">
-      <div class="analytics_container_1">
+      <div class="analytics_heading">
         <Heading3> Analytics </Heading3>
         <Heading3> Event Distribution </Heading3>
       </div>
@@ -25,8 +25,7 @@ export default function Analytics() {
             <div className="img_wrapper">
               <img src={Img1} alt="Img1" />
             </div>
-            <span className="icon_wrapper">
-              &nbsp;
+            <span className="icon_wrapper" style={{ '--bg_color': '#52459f' }}>
               <Icons.Pause className="" />
             </span>
           </div>
@@ -34,8 +33,20 @@ export default function Analytics() {
           <h4 className="h4"> Strange Clouds Formation </h4>
           <p> By Mike Taylor </p>
         </div>
-        <div id="item-3">&nbsp;</div>
-        <div id="item-4">&nbsp;</div>
+
+        <div id="card_1" className="feature_card">
+          <span className="icon_wrapper" style={{ '--bg_color': '#84e9f5' }}>
+            <Icons.Pause className="" />
+          </span>
+          <h4 className="h4"> Scheduled Posts </h4>
+        </div>
+
+        <div id="card_2" className="feature_card">
+          <span className="icon_wrapper" style={{ '--bg_color': '#84e9f5' }}>
+            <Icons.Pause className="" />
+          </span>
+          <h4 className="h4"> Add new Post </h4>
+        </div>
       </div>
 
       {/* <div className="analytics">
