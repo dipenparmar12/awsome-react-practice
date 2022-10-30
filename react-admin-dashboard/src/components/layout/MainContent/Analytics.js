@@ -5,6 +5,7 @@ import CircleImg from 'assets/circle.png'
 
 import './Analytics.scss'
 import Icons from 'components/Icons'
+import Heading4 from 'components/atoms/Heading4'
 
 export default function Analytics() {
   return (
@@ -14,9 +15,9 @@ export default function Analytics() {
         <Heading3> Event Distribution </Heading3>
       </div>
 
-      <div class="analytics_container">
+      <div class="analytics_content">
         <div id="line_chart">
-          <h4 className="h4">Daily views</h4>
+          <Heading4>Daily views</Heading4>
         </div>
 
         <div id="event_dist">
@@ -69,7 +70,7 @@ export default function Analytics() {
             </span>
           </div>
 
-          <h4 className="h4"> Strange Clouds Formation </h4>
+          <Heading4> Strange Clouds Formation </Heading4>
           <p> By Mike Taylor </p>
         </div>
 
@@ -77,14 +78,14 @@ export default function Analytics() {
           <span className="icon_wrapper" style={{ '--bg_color': '#84e9f5' }}>
             <Icons.Pause className="" />
           </span>
-          <h4 className="h4"> Scheduled Posts </h4>
+          <Heading4> Scheduled Posts </Heading4>
         </div>
 
         <div id="card_2" className="feature_card">
           <span className="icon_wrapper" style={{ '--bg_color': '#84e9f5' }}>
             <Icons.Pause className="" />
           </span>
-          <h4 className="h4"> Add new Post </h4>
+          <Heading4> Add new Post </Heading4>
         </div>
       </div>
     </div>

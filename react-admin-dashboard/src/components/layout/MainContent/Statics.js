@@ -1,5 +1,6 @@
-import Heading3 from 'components/atoms/Heading3'
 import React from 'react'
+import Heading3 from 'components/atoms/Heading3'
+import Heading4 from 'components/atoms/Heading4'
 
 import './Statics.scss'
 
@@ -11,10 +12,11 @@ export default function Statics() {
       <div className="statics_cards_container">
         <div className="statics_card">
           <div className="statics_card__content">
-            <h4 className="statics_card__heading"> Weekly Target </h4>
-            <p className="statics_card__sub_heading"> 25% archived </p>
+            <Heading3 className="statics_card__heading">Weekly Target</Heading3>
+            <Heading4> 25% archived </Heading4>
           </div>
-          <div className="statics_card__progress">25% </div>
+
+          <div className="statics_card__progress"> 25% </div>
         </div>
       </div>
     </div>

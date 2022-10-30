@@ -47,12 +47,6 @@ ul {
   list-style-type: none;
 }
 
-h4.h4 {
-  font-size: 13px;
-  font-weight: 800;
-  // color: var(--color_blue_4);
-}
-
 .hr {
   border: 1px solid var(--color_gray_3);
 }
@@ -69,6 +63,8 @@ h4.h4 {
   margin-bottom: 1.5rem;
 }
 
-// .radius_1 {
-//   border-radius: var(--border_radius_1);
-// }
+.heading_4,
+h4.h4 {
+  font-size: 13px;
+  font-weight: 800;
+}
