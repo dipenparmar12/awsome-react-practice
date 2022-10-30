@@ -6,6 +6,19 @@
   display: flex;
   gap: 4rem;
 
+  & .statics_card.variant_blue {
+    background-color: var(--color_blue_2);
+    color: var(--color_white);
+
+    &__heading {
+      color: var(--color_white);
+    }
+
+    &__sub_heading {
+      color: var(--color_gray_5);
+    }
+  }
+
   & .statics_card {
     flex: 1 1 100%;
     display: flex;

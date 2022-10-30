@@ -4,14 +4,6 @@ import './ProgressCircle.scss'
 
 export default function ProgressCircle({ progress, children }) {
   return (
-    // <div className="pie-wrapper progress-25 ">
-    //   <div className="pie">
-    //     <div className="left-side half-circle" />
-    //     {/* <div className="right-side half-circle" /> */}
-    //   </div>
-    //   <div className="shadow" />
-    // </div>
-
     <div className="progress_container">
       <div className="progress-circle over50 p83">
         {/* <span>25%</span> */}
@@ -24,3 +16,11 @@ export default function ProgressCircle({ progress, children }) {
     </div>
   )
 }
+
+// <div className="pie-wrapper progress-25 ">
+//   <div className="pie">
+//     <div className="left-side half-circle" />
+//     {/* <div className="right-side half-circle" /> */}
+//   </div>
+//   <div className="shadow" />
+// </div>
