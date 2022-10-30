@@ -2,6 +2,7 @@ import React from 'react'
 import Heading3 from 'components/atoms/Heading3'
 import Img1 from 'assets/image_1.png'
 import CircleImg from 'assets/circle.png'
+import GraphDummyImg from 'assets/graph-dummy.png'
 
 import './Analytics.scss'
 import Icons from 'components/Icons'
@@ -18,6 +19,7 @@ export default function Analytics() {
       <div className="analytics_content">
         <div id="line_chart">
           <Heading4>Daily views</Heading4>
+          <img src={GraphDummyImg} alt="GraphDummyImg" />
         </div>
 
         <div id="event_dist">
