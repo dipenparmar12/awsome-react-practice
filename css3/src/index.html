@@ -7,6 +7,21 @@
     <title>Html Ccs3 Example & Practice</title>
     <link rel="stylesheet" href="index.min.css" />
     <link rel="stylesheet" href="index.css" />
+
+    <script>
+      // @src: https://joyofcode.xyz/simple-css-debug-trick
+      ;(function () {
+        const headElement = document.head
+        const styleElement = document.createElement('style')
+        styleElement.setAttribute('debug-css', '')
+        styleElement.innerText = '* { outline: 1px solid tomato; }'
+
+        const debugElement = headElement.querySelector('[debug-css]')
+        if (debugElement) return debugElement.remove()
+
+        headElement.append(styleElement)
+      })()
+    </script>
   </head>
   <body>
     <h1>Hello there</h1>
