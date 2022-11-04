@@ -16,3 +16,13 @@ Start wth new project or concept.
  - Copy `start` directory -> `project_name`
  - `git add .` && `git commit -m "Sub-Project init"` && `git push origin new_project_branch`
  - `git checkout main` && `git merge new_project_branch`
+
+
+       __
+  w  c(..)o   (
+   \__(-)    __)
+       /\   (
+      /(_)___)
+      w /|
+       | \ 
+      m  m
