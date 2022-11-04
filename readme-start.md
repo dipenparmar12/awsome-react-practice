@@ -1,9 +1,10 @@
+## React/Tailwind/Css
 
-
-## Start wth new project or concept. 
+Start wth new project or concept. 
 
 ### Bash script 
 > `bash make_project.sh project_name` 
+
 > `code ./project_name/project_name `
 
 
