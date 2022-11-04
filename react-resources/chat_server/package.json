@@ -1,0 +1,18 @@
+{
+  "name": "chat_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "TODO NOTE--->": "yarn add socket.io-client",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
