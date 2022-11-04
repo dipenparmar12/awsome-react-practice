@@ -1,1 +1,16 @@
-### Tailwind-3,  "react: ^17.0.2",  "react-scripts : 5.0.0-next.58"
+### 
+ - Eslint
+ - Sass 
+ - Tailwind-3
+
+
+```
+       __
+  w  c(..)o   (
+   \__(-)    __)
+       /\   (
+      /(_)___)
+      w /|
+       | \ 
+      m  m
+```
