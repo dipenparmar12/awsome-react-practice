@@ -17,7 +17,7 @@ Start wth new project or concept.
  - `git add .` && `git commit -m "Sub-Project init"` && `git push origin new_project_branch`
  - `git checkout main` && `git merge new_project_branch`
 
-
+```
        __
   w  c(..)o   (
    \__(-)    __)
@@ -26,3 +26,4 @@ Start wth new project or concept.
       w /|
        | \ 
       m  m
+```
