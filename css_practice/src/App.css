@@ -1,0 +1,9 @@
+a {
+  text-decoration: none !important;
+  color: gray !important;
+  margin-right: 7px;
+}
+
+a:last-child {
+  margin-right: auto;
+}
