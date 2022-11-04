@@ -1,0 +1,66 @@
+{
+  "name": "react-resources",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "googleapis": "^78.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "node-sass": "^6.0.1",
+    "prettier": "^2.3.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-google-charts": "^3.0.15",
+    "react-google-login": "^5.2.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-transition-group": "^4.4.2",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "socket.io-client": "^4.0.1",
+    "styled-components": "^5.2.3",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "server:auth": "nodemon ./auth_server/server.js",
+    "server:chat": "nodemon ./chat_server/chatServer.js",
+    "eject": "react-scripts eject",
+    "format": "prettier --write ./src && eslint --fix ./src",
+    "lint:fix": "eslint \"./src/**/*.{js,jsx}\" --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  }
+}

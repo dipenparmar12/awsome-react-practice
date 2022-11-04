@@ -1,0 +1,28 @@
+$bg_color: rgb(239, 239, 239);
+
+.tabButton {
+  padding: 7px 15px;
+  border: none;
+  background-color: $bg_color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($bg_color, 10);
+  }
+
+  &.activeTab {
+    background-color: darken($bg_color, 10);
+    border-bottom: 1px solid black;
+  }
+}
+
+.tabContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabButtons {
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
