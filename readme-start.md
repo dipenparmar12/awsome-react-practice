@@ -15,3 +15,9 @@
  - Copy `start` directory -> `project_name`
  - `git add .` && `git commit -m "Sub-Project init"` && `git push origin new_project_branch`
  - `git checkout main` && `git merge new_project_branch`
+
+
+### Fetch/Pull All branch's 
+> `git checkout --detach`
+> `git fetch origin '+refs/heads/*:refs/heads/*'`
+> `git checkout main`
