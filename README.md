@@ -1,11 +1,13 @@
-### ReactJs
+## React/Tailwind/Css
+
+Start wth new project or concept. 
+
+### Bash script 
+> `bash make_project.sh project_name` 
+> `code ./project_name/project_name `
 
 
-My day to day practice, and examples done by me. 
-
-
-
-## Start wth new project or concept. 
+### Manual 
 
  - `git clone -b start git@github.com:dipenparmar12/awsome-react-practice.git`: Clone *start* 
  - OR `git checkout start`
