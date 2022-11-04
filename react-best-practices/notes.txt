@@ -1,0 +1,8 @@
+# Fake API
+Users: https://jsonplaceholder.typicode.com/users
+Per Page limit: http://jsonplaceholder.typicode.com/photos?_start=2&_limit=25
+
+
+PerPage, filter: https://fakerapi.it/api/v1/persons?_quantity=1&_gender=male&_birthday_start=2005-01-01
+
+# Etc
