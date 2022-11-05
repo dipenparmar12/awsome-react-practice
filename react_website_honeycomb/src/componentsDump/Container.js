@@ -1,16 +1,20 @@
 import classNames from 'classnames'
 import React from 'react'
 
-export default function Container({ className, children, ...rest }) {
+export default function Container({
+  className,
+  classNameContainer,
+  children,
+  ...rest
+}) {
   return (
     <section
-      className={classNames(
-        'container px-20 mx-auto w-full sm:w-auto',
-        className,
-      )}
+      className={classNames('container mx-auto', classNameContainer)}
       {...rest}
     >
-      {children}
+      <div className={classNames('px-20 mx-auto w-full sm:w-auto', className)}>
+        {children}
+      </div>
     </section>
   )
 }

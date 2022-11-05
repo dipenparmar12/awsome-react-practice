@@ -50,8 +50,8 @@ export default function TopNav() {
           </nav>
           <p className="border-r-2 my-4"> </p>
           <div className="flex gap-5 py-3 px-10 pr-20 ">
-            <Paragraph className="bg-blue-1  rounded-full w-14 h-14 text-white flex justify-center items-center">
-              <Icons.Calling3 className="text-white text-2xl" />
+            <Paragraph className="bg-blue-1  rounded-full w-14 h-14  text-white  bg-secondary-1 flex justify-center items-center">
+              <Icons.Calling3 className="!text-white  text-2xl" />
             </Paragraph>
             <Paragraph>
               <Paragraph className="text-sm">Call Anytime</Paragraph>

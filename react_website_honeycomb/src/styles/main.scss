@@ -29,3 +29,11 @@
   bottom: 2px;
   background-color: hsla(256, 81%, 56%, 0.525);
 }
+
+.bg-radial {
+  background-image: radial-gradient(
+    farthest-corner at 50% 40%,
+    hsla(263, 22%, 16%, 0.926),
+    black
+  );
+}

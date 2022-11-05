@@ -18,7 +18,7 @@ import Icon5 from 'assets/Icon5.png'
 export default function SectionHeroSecondary() {
   return (
     <Container>
-      <section className="text-gray-600 body-font mx-auto px-20 py-5">
+      <section className="text-gray-600 body-font mx-auto px-20 py-5 ">
         <div className="container flex flex-wrap px-5 py-24 mx-auto items-center">
           <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 ">
             LEFT TODO::
@@ -70,7 +70,7 @@ export default function SectionHeroSecondary() {
           </div>
         </div>
 
-        <div className="flex gap-10 mt-5 SectionFeatureCards">
+        <div className="flex gap-10 mt-5 SectionFeatureCards translate-y-14 relative z-10 ">
           <FeatureCard
             img={Img1}
             icon={Icon3}
@@ -98,7 +98,7 @@ function FeatureCard({
   content = ' Perfect solutions that bushiness demands',
 }) {
   return (
-    <div className="relative w-[32rem] h-[24rem]">
+    <div className="relative w-[32rem] h-[24rem] z-10 ">
       <img src={img} alt="" className="absolute object-cover w-full h-full" />
       <Heading4 className="w-10/12 mx-auto absolute -bottom-10 left-1/2 -translate-x-1/2 bg-white text-center  px-10 py-5 ">
         {content}
