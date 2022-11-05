@@ -1,7 +1,7 @@
 import { TbSmartHome } from 'react-icons/tb'
 import { RiPauseMiniLine } from 'react-icons/ri'
 import { BsTwitter, BsFacebook } from 'react-icons/bs'
-import { HiOutlinePlusCircle } from 'react-icons/hi'
+import { HiOutlineArrowRight, HiOutlinePlusCircle } from 'react-icons/hi'
 import { CiBookmarkMinus } from 'react-icons/ci'
 import { AiFillClockCircle } from 'react-icons/ai'
 import { BiSearch } from 'react-icons/bi'
@@ -39,6 +39,8 @@ const Icons = {
   Search: ({ ...rest }) => IconHOC({ Icon: BiSearch, ...rest }),
   ShoppingCart: ({ ...rest }) => IconHOC({ Icon: FiShoppingCart, ...rest }),
   CheckCircle: ({ ...rest }) => IconHOC({ Icon: FaCheckCircle, ...rest }),
+  LineArrowRight: ({ ...rest }) =>
+    IconHOC({ Icon: HiOutlineArrowRight, ...rest }),
 }
 
 export default Icons
