@@ -9,10 +9,23 @@ export default function SectionHero() {
           TODO_backgroundImage: `url(${`${process.env.PUBLIC_URL}/img/herobg.jpg`}) `, // TODO::hero-image
           background: 'gray',
         }}
-        className=" bg-hero backdrop-grayscale-0 body-font bg-no-repeat bg-cover bg-center bg-fixed min-h-[85vh] flex justify-center items-center"
+        className="relative overflow-hidden bg-hero backdrop-grayscale-0 body-font bg-no-repeat bg-cover bg-center bg-fixed min-h-[85vh] flex justify-center items-center"
       >
+        <div
+          style={{
+            clipPath: '   polygon(29% 0, 3% 99%, 0 86%, 0 49%, 11% 0) ',
+          }}
+          className="opacity-90  absolute w-full top-0 h-[100vh] bg-purple-500/50"
+        />
+        <div
+          style={{
+            clipPath: '  polygon(100% 34%, 72% 0, 100% 0) ',
+          }}
+          className="opacity-90  absolute w-full top-0 h-[100vh] bg-purple-500/50"
+        />
+
         <div className="w-full h-full flex-col mx-auto px-4 text-center  ">
-          <h2 className=" text-gray-200 tracking-widest font-medium title-font mb-1 underline leading-loose 	">
+          <h2 className=" text-gray-200 tracking-widest font-medium title-font mb-2 underline leading-loose 	">
             EXPERIENCE THE BEST IT SOLUTIONS
           </h2>
           <h1 className="font-extrabold text-8xl text-white title-font py-2 tracking-wider">
