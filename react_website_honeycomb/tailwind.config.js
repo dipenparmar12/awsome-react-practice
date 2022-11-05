@@ -5,14 +5,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        red: 'red', // bg-red
+        'purple-1': '#1e1729',
+        'blue-1': '#5f2dee',
+        // 'purple-2': '#b682fc',
+        // 'gray-1': '#848388',
       },
-      // boxShadow: {
-      //   'outline-blue': '0 0 0 4px rgb(96 165 250 / 10%)',
-      //   'outline-blue-dark': '0 0 0 4px rgb(96 165 250 / 15%)',
-      //   'outline-danger': '0 0 0 4px rgb(255 0 0 / 10%)',
-      // },
     },
   },
   plugins: [],
 }
+
+/* 
+========================================================
+  bg-purple-500
+  bg-gray-200
+  text-gray-600
+======================================================== 
+*/

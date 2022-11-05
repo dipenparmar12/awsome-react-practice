@@ -18,6 +18,7 @@ specifiers:
   prettier: ^2.7.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-icons: ^4.6.0
   react-scripts: 5.0.0-next.58
   sass: ^1.55.0
   tailwindcss: ^3.0.1
@@ -30,6 +31,7 @@ dependencies:
   classnames: 2.3.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-icons: 4.6.0_react@17.0.2
   react-scripts: 5.0.0-next.58_react@17.0.2+sass@1.56.0
   sass: 1.56.0
   web-vitals: 2.1.4
@@ -8249,6 +8251,14 @@ packages:
 
   /react-error-overlay/7.0.0-next.65:
     resolution: {integrity: sha512-tOAxyTOaOrwon2GMS6cTfFdTHBIifyf7i/SphLxHZtWVhD/dk+pfEp/ACaQe3J1lO7qEv/ei2np3XxRezyedrg==}
+    dev: false
+
+  /react-icons/4.6.0_react@17.0.2:
+    resolution: {integrity: sha512-rR/L9m9340yO8yv1QT1QurxWQvWpbNHqVX0fzMln2HEb9TEIrQRGsqiNFQfiv9/JEUbyHmHPlNTB2LWm2Ttz0g==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 17.0.2
     dev: false
 
   /react-is/16.13.1:

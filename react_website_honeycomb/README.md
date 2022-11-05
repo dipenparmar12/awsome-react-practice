@@ -8,12 +8,12 @@
 Navigation
  - Branding
  - NavMeta
-    - TOP
-	    - paragraph
+    - NavMeta_Top
+	    - Paragraph
 	    - ContactInfo
 	    - SocialIcons
-	  - Bottom 
-	   	- NavigationItems [Search, Cart]
+	  - NavMeta_Bottom 
+	   	- Navigation_Items [Search, Cart]
 	   	- ContactInfo
 
 SectionHero
