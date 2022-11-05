@@ -1,21 +1,12 @@
-import { TbCalendarStats, TbSmartHome } from 'react-icons/tb'
+import { TbSmartHome } from 'react-icons/tb'
 import { RiPauseMiniLine } from 'react-icons/ri'
-import {
-  BsCaretRightFill,
-  BsBookmarkDash,
-  BsTwitter,
-  BsFacebook,
-} from 'react-icons/bs'
+import { BsTwitter, BsFacebook } from 'react-icons/bs'
 import { HiOutlinePlusCircle } from 'react-icons/hi'
-import { CiCirclePlus, CiBookmarkMinus } from 'react-icons/ci'
-import {
-  AiFillClockCircle,
-  AiFillPauseCircle,
-  AiOutlineMail,
-} from 'react-icons/ai'
-import { BiMessageSquareCheck, BiSearch } from 'react-icons/bi'
+import { CiBookmarkMinus } from 'react-icons/ci'
+import { AiFillClockCircle } from 'react-icons/ai'
+import { BiSearch } from 'react-icons/bi'
 import { IoPause } from 'react-icons/io'
-import { FiHeart, FiInstagram, FiShoppingCart } from 'react-icons/fi'
+import { FiInstagram, FiShoppingCart } from 'react-icons/fi'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdEmail, MdWifiCalling3 } from 'react-icons/md'
 import { FaPinterestP } from 'react-icons/fa'
