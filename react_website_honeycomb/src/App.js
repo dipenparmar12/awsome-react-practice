@@ -3,9 +3,10 @@ import SectionHero from 'components/SectionHero/SectionHero'
 import SectionHeroSecondary from 'components/SectionHeroSecondary/SectionHeroSecondary'
 import SectionServices from 'components/SectionServices/SectionServices'
 import SectionProjects from 'components/SectionProjects/SectionProjects'
+import SectionPartners from 'components/SectionPartners/SectionPartners'
+import SectionTeams from 'components/SectionTeams/SectionTeams'
 
 import './index.scss'
-import SectionPartners from 'components/SectionPartners/SectionPartners'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <SectionServices />
       <SectionProjects />
       <SectionPartners />
+      <SectionTeams />
     </>
   )
 }
