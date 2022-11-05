@@ -88,6 +88,7 @@ module.exports = {
     'jsx-a11y/heading-has-content': 'off',
     'no-loop-func': 'off',
     'import/no-unresolved': 'off',
+    'jsx-a11y/alt-text': 'off',
     radix: 'off',
     indent: [
       'warn',

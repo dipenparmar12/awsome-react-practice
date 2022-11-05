@@ -8,11 +8,17 @@ import Icon2 from 'assets/Icon2.png'
 import Heading4 from 'componentsDump/Heading4'
 import Icons from 'componentsDump/Icons'
 import Button from 'componentsDump/Button'
+import Img1 from 'assets/image_1.jpg'
+import Img2 from 'assets/image_2.jpg'
+import Img3 from 'assets/image_3.jpg'
+import Icon3 from 'assets/Icon3.png'
+import Icon4 from 'assets/Icon4.png'
+import Icon5 from 'assets/Icon5.png'
 
 export default function SectionHeroSecondary() {
   return (
     <Container>
-      <section className="text-gray-600 body-font mx-auto px-10 py-5">
+      <section className="text-gray-600 body-font mx-auto px-20 py-5">
         <div className="container flex flex-wrap px-5 py-24 mx-auto items-center">
           <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 ">
             LEFT TODO::
@@ -63,8 +69,45 @@ export default function SectionHeroSecondary() {
             </div>
           </div>
         </div>
+
+        <div className="flex gap-10 mt-5 SectionFeatureCards">
+          <FeatureCard
+            img={Img1}
+            icon={Icon3}
+            content="Perfect solutions that bushiness demands"
+          />
+          <FeatureCard
+            img={Img2}
+            icon={Icon4}
+            content="Perfect solutions that bushiness demands"
+          />
+          <FeatureCard
+            img={Img3}
+            icon={Icon5}
+            content="Perfect solutions that bushiness demands"
+          />
+        </div>
       </section>
     </Container>
+  )
+}
+
+function FeatureCard({
+  img,
+  icon,
+  content = ' Perfect solutions that bushiness demands',
+}) {
+  return (
+    <div className="relative w-[32rem] h-[24rem]">
+      <img src={img} alt="" className="absolute object-cover w-full h-full" />
+      <Heading4 className="w-10/12 mx-auto absolute -bottom-10 left-1/2 -translate-x-1/2 bg-white text-center  px-10 py-5 ">
+        {content}
+        <img
+          src={icon}
+          className="absolute object-cover w-2/12 -bottom-10 right-0 top-0 -translate-y-full"
+        />
+      </Heading4>
+    </div>
   )
 }
 
