@@ -7,7 +7,7 @@ import Icons from 'componentsDump/Icons'
 export default function TopNav() {
   return (
     <div className="flex shadow-lg Navigation">
-      <div className="w-2/12 px-5 py-9 bg-purple-1 flex justify-center mr-12 Branding">
+      <div className="w-2/12 px-5 py-9 bg-primary-1 flex justify-center mr-12 Branding">
         <img src={BrandingImg} alt={'Branding'} className={'w-7/12'} />
       </div>
 

@@ -10,8 +10,22 @@
 .bbg {
   background-color: #fb7185 !important;
 }
+.bbg > .bbg {
+  background-color: greenyellow !important;
+}
 
-// style={{
-//   backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0, 0, 0, 0.73)), url(${'https://media.istockphoto.com/photos/business-people-having-casual-discussion-during-meeting-picture-id1347197740?b=1&k=20&m=1347197740&s=170667a&w=0&h=wgx6rJaa-q2k8twujrAe-KV5-0uEnGKrt_W88BwM12U='}) `,
-//   filter: 'gray',
-// }}
+.hyphen {
+  display: inline-block;
+  position: relative;
+  margin-right: 20px;
+}
+
+.hyphen::before {
+  content: '';
+  width: 11px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  background-color: hsla(256, 81%, 56%, 0.525);
+}
