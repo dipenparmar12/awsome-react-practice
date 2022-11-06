@@ -33,15 +33,15 @@ export default function TopNav() {
 
         <div className="flex NavMeta_Bottom">
           <nav className="flex flex-1 items-center pr-8">
-            <ul className="flex-1 flex gap-12">
+            <ul className="nav-list flex-1 flex gap-12">
               {/* TODO::active */}
-              <li className=" text-lg text-black font-extrabold ">Home</li>
-              <li className=" text-lg text-gray-600"> About </li>
-              <li className=" text-lg text-gray-600"> Pages </li>
-              <li className=" text-lg text-gray-600"> Services </li>
-              <li className=" text-lg text-gray-600"> Projects </li>
-              <li className=" text-lg text-gray-600"> Blog </li>
-              <li className=" text-lg text-gray-600"> Contact </li>
+              <li className=" text-lg  active">Home</li>
+              <li className=" text-lg "> About </li>
+              <li className=" text-lg "> Pages </li>
+              <li className=" text-lg "> Services </li>
+              <li className=" text-lg "> Projects </li>
+              <li className=" text-lg "> Blog </li>
+              <li className=" text-lg "> Contact </li>
             </ul>
             <div>
               <Icons.Search className="mx-2 text-3xl text-gray-600" />

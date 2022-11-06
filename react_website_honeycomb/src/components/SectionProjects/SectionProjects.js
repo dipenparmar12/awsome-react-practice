@@ -13,7 +13,7 @@ import Heading3 from 'componentsDump/Heading3'
 import Text from 'componentsDump/Text'
 import Icons from 'componentsDump/Icons'
 
-export default function SectionTeams() {
+export default function SectionProjects() {
   const projects = [
     {
       img: `image_5.jpg`,

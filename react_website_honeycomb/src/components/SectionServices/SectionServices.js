@@ -97,7 +97,10 @@ function ServiceCard({ card }) {
 
   return (
     <div
-      className={classNames('flex-1 px-10 py-4 relative ', styles.container)}
+      className={classNames(
+        'group flex-1 px-10 py-4 relative hover:scale-105 default_transition',
+        styles.container,
+      )}
     >
       <div
         className={classNames(

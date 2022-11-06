@@ -98,13 +98,17 @@ function FeatureCard({
   content = ' Perfect solutions that bushiness demands',
 }) {
   return (
-    <div className="relative w-[32rem] h-[24rem] z-10 ">
-      <img src={img} alt="" className="absolute object-cover w-full h-full" />
-      <Heading4 className="w-10/12 mx-auto absolute -bottom-10 left-1/2 -translate-x-1/2 bg-white text-center  px-10 py-5 ">
+    <div className="group relative w-[32rem] h-[24rem] z-10 ">
+      <img
+        src={img}
+        alt=""
+        className="absolute object-cover w-full h-full group-hover:brightness-90 default_transition"
+      />
+      <Heading4 className="w-10/12 mx-auto absolute -bottom-10 left-1/2 -translate-x-1/2 bg-white text-center  px-10 py-5 group-hover:shadow-lg group-hover:scale-105 default_transition">
         {content}
         <img
           src={icon}
-          className="absolute object-cover w-2/12 -bottom-10 right-0 top-0 -translate-y-full"
+          className="absolute object-cover w-2/12 -bottom-10 right-0 top-0 -translate-y-full  default_transition"
         />
       </Heading4>
     </div>
