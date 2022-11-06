@@ -4,36 +4,31 @@ import classNames from 'classnames'
 import Container from 'componentsDump/Container'
 import Heading2 from 'componentsDump/Heading2'
 import Heading5 from 'componentsDump/Heading5'
-import Heading4 from 'componentsDump/Heading4'
 import Paragraph from 'componentsDump/Paragraph'
-import Icon6 from 'assets/icon6.png'
-import Icon7 from 'assets/icon7.png'
-import Icon8 from 'assets/icon8.png'
 import Heading3 from 'componentsDump/Heading3'
 import Text from 'componentsDump/Text'
 import Icons from 'componentsDump/Icons'
 
+import ImgTeamMember1 from 'assets/team-member-1.jpg'
+import ImgTeamMember2 from 'assets/team-member-2.jpg'
+import ImgTeamMember3 from 'assets/team-member-3.jpg'
+
 export default function SectionTeams() {
   const projects = [
     {
-      img: `image_5.jpg`,
-      title: 'Tech Solutions',
-      text: ' Design/Ideas ',
+      img: ImgTeamMember1,
+      name: 'Christine Eve',
+      designation: ' Developer ',
     },
     {
-      img: `image_6.jpg`,
-      title: 'Smart visions',
-      text: ' Design/Ideas',
+      img: ImgTeamMember2,
+      name: 'Mike Hardson',
+      designation: ' Developer',
     },
     {
-      img: `image_7.jpg`,
-      title: 'Platform integration',
-      text: ' Design/Ideas',
-    },
-    {
-      img: `image_6.jpg`,
-      title: 'Web Development',
-      text: ' Design/Ideas',
+      img: ImgTeamMember3,
+      name: 'Jessica Brown',
+      designation: ' Designer ',
     },
   ]
 
@@ -59,75 +54,63 @@ export default function SectionTeams() {
           </Paragraph>
         </div>
 
-        <div className="flex gap-8 px-14 py-10 text-gray-1">
-          {/* {projects.map((project, i) => (
-            <ServiceCard key={i} data={project} />
-          ))} */}
+        <div className="flex gap-24 mt-5 SectionFeatureCards translate-y-14 relative z-10  ">
+          {projects.map((data, i) => (
+            <FeatureCard key={i} data={data} img={data.img} />
+          ))}
         </div>
       </Container>
     </div>
   )
 }
 
-// function ServiceCard({ data }) {
-//   // React.useEffect(() => {
-//   //   console.log('SectionProjects.js::[72]', data.img)
-//   // }, [])
+function FeatureCard({ data }) {
+  return (
+    <div className="card_team  h-[31rem] p5-10  flex-1 relative half-a-border-on-top ">
+      <div className="p-7  hover:g default_transition">
+        <div>
+          <img
+            src={data.img}
+            alt={data.img}
+            className="w-full h-full hover:brightness-90 default_transition"
+          />
+        </div>
 
-//   return (
-//     <div
-//       className="group cursor-pointer card h-[31rem] flex-1 relative bg-gradient-to-b from-black/10 to-black/60 "
-//       // style={{
-//       //   '--url': `${process.env.PUBLIC_URL}/img/${data.img}`,
-//       // }}
-//     >
-//       {/* <img
-//         src={`/img/${data.img}`}
-//         alt=""
-//         className="absolute w-full h-full object-cover  opacity-90 bg-gradient-to-b from-black/10 to-black/80"
-//         // style={{
-//         //   backgroundImage: `/img/${data.img}`,
-//         // }}
-//       /> */}
-
-//       <div className=" absolute bottom-0 w-full flex justify-around items-center">
-//         <div>
-//           <Heading3 className={classNames('!text-white mb-0  ')}>
-//             {data.title}
-//           </Heading3>
-//           <Text className={classNames('!text-secondary-2 mb-7 ')}>
-//             {data.text}
-//           </Text>
-//         </div>
-//         <div className=" default_transition invisible group-hover:!visible border-2 border-transparent group-hover:!border-white aspect-square text-center align-middle p-2 rounded-full ">
-//           <Icons.LineArrowRight className="!text-white text-2xl  " />
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
+        <div className="flex mt-5 ">
+          <div className="flex-1 ">
+            <Heading3 className={classNames('!text-black mb-0  ')}>
+              {data.name}
+            </Heading3>
+            <Text className={classNames('!text-gray-1 ')}>
+              {data.designation}
+            </Text>
+          </div>
+          <div className="relative group">
+            <div className=" absolute right-0 cursor-pointer w-16 h-16  p-5 bg-secondary-1 hover:brightness-90 flex place-items-center">
+              <Icons.ShareAlt className="!text-white !text-2xl h-full w-full inline-block mr-2 " />
+            </div>
+            <ul className="hidden default_transition group-hover:!flex group-hover:-translate-y-full  absolute py-4 -right-full  translate-y-0 flex-col bg-white border z-10">
+              <li className="w-16 h-12 p-3">
+                <Icons.Twitter className="!text-black w-full h-full" />
+              </li>
+              <li className="w-16 h-12 p-3">
+                <Icons.Facebook className="!text-black w-full h-full" />
+              </li>
+              <li className="w-16 h-12 p-3">
+                <Icons.PinterestP className="!text-black w-full h-full" />
+              </li>
+              <li className="w-16 h-12 p-3">
+                <Icons.Instagram className="!text-black w-full h-full" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 /* 
 ========================================================
-
-SectionProjects
- - ContainerWrapper	
-	 - MarketingBanner
-	 		- 2:12 (Layout)
-		  - Heading3
-		  - FeatureList
-		  - ButtonSecondary
- 	 - SubSection
- 	    - Heading5
- 	    - Heading2
-			- Paragraph	
- - ProjectCards
-   - Card (Bg-img, Transparent-gradient)
-    	- Title
-    	- SubTitle
-   		- SourceLink (hovered)
-   - NavigationDots
-   - PartnerBranding
-      - Branding
 ======================================================== 
 */

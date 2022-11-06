@@ -24,10 +24,10 @@ export default function TopNav() {
             </Paragraph>
           </div>
           <div className="flex justify-between items-center gap-6 px-16 py-3 bg-gray-200 ">
-            <Icons.Twitter className="text-black " />
-            <Icons.Facebook className="text-black " />
-            <Icons.PinterestP className="text-black " />
-            <Icons.Instagram className="text-black " />
+            <Icons.Twitter className="!text-black " />
+            <Icons.Facebook className="!text-black " />
+            <Icons.PinterestP className="!text-black " />
+            <Icons.Instagram className="!text-black " />
           </div>
         </div>
 

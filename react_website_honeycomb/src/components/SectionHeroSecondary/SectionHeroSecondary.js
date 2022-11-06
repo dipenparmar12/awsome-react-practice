@@ -8,6 +8,7 @@ import Icon2 from 'assets/Icon2.png'
 import Heading4 from 'componentsDump/Heading4'
 import Icons from 'componentsDump/Icons'
 import Button from 'componentsDump/Button'
+import Img0 from 'assets/image_0.jpg'
 import Img1 from 'assets/image_1.jpg'
 import Img2 from 'assets/image_2.jpg'
 import Img3 from 'assets/image_3.jpg'
@@ -21,7 +22,7 @@ export default function SectionHeroSecondary() {
       <section className="text-gray-600 body-font mx-auto px-20 py-5 ">
         <div className="container flex flex-wrap px-5 py-24 mx-auto items-center">
           <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 ">
-            LEFT TODO::
+            <img src={Img0} className="object-cover" />
           </div>
 
           <div className="flex flex-col md:w-1/2 md:pl-12">

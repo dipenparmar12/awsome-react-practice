@@ -9,7 +9,7 @@ import { IoPause } from 'react-icons/io'
 import { FiInstagram, FiShoppingCart } from 'react-icons/fi'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdEmail, MdWifiCalling3 } from 'react-icons/md'
-import { FaCheckCircle, FaPinterestP } from 'react-icons/fa'
+import { FaCheckCircle, FaPinterestP, FaShareAlt } from 'react-icons/fa'
 
 import classNames from 'classnames'
 
@@ -41,6 +41,7 @@ const Icons = {
   CheckCircle: ({ ...rest }) => IconHOC({ Icon: FaCheckCircle, ...rest }),
   LineArrowRight: ({ ...rest }) =>
     IconHOC({ Icon: HiOutlineArrowRight, ...rest }),
+  ShareAlt: ({ ...rest }) => IconHOC({ Icon: FaShareAlt, ...rest }),
 }
 
 export default Icons

@@ -71,3 +71,27 @@
     }
   }
 }
+
+.card_team {
+  // border: 2px solid greenyellow;
+  position: relative;
+
+  &::after {
+    --border: rgba(128, 128, 128, 0.3);
+
+    content: '';
+    border-top: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    width: 30%;
+    height: 30%;
+
+    right: -0px;
+    top: -0px;
+    position: absolute;
+  }
+}
+
+// .half-a-border-on-top {
+//   border-top: 1px solid;
+//   border-image: linear-gradient(to right, #000 50%, transparent 50%) 100% 1;
+// }

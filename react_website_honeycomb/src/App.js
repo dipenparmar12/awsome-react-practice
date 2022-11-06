@@ -18,6 +18,8 @@ function App() {
       <SectionProjects />
       <SectionPartners />
       <SectionTeams />
+
+      <div className="pb-96" />
     </>
   )
 }
