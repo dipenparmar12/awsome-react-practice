@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Honeycomb/static/css/main.b2161895.css",
+    "main.js": "/Honeycomb/static/js/main.a68bf294.js",
+    "static/js/296.6abfbd36.chunk.js": "/Honeycomb/static/js/296.6abfbd36.chunk.js",
+    "static/media/image_1.jpg": "/Honeycomb/static/media/image_1.77caf9ad39f3af596b2d.jpg",
+    "static/media/image_3.jpg": "/Honeycomb/static/media/image_3.6a45d355d1d08586bf94.jpg",
+    "static/media/image_2.jpg": "/Honeycomb/static/media/image_2.b38a42c8e99a0ce0b2bd.jpg",
+    "static/media/image_0.jpg": "/Honeycomb/static/media/image_0.3de61dc2ddb9785fd1e0.jpg",
+    "static/media/Icon1.png": "/Honeycomb/static/media/Icon1.9ca5ebc6fcd4304fc2df.png",
+    "static/media/team-member-3.jpg": "/Honeycomb/static/media/team-member-3.d349d94df118b58d4de8.jpg",
+    "static/media/team-member-1.jpg": "/Honeycomb/static/media/team-member-1.9a20c9c79682b725be6a.jpg",
+    "static/media/team-member-2.jpg": "/Honeycomb/static/media/team-member-2.ababb8d83bd86af95ff4.jpg",
+    "static/media/Icon2.png": "/Honeycomb/static/media/Icon2.de3086a5e5cd0be52bfb.png",
+    "static/media/icon8.png": "/Honeycomb/static/media/icon8.f80f834da773cdd0eeeb.png",
+    "static/media/icon6.png": "/Honeycomb/static/media/icon6.43f0e9a3347bfe43cb30.png",
+    "static/media/icon7.png": "/Honeycomb/static/media/icon7.890f035833d075ac27be.png",
+    "static/media/Icon5.png": "/Honeycomb/static/media/Icon5.98db48aae75cb7989db4.png",
+    "static/media/brand.png": "/Honeycomb/static/media/brand.23711325f96109711219.png",
+    "static/media/Icon3.png": "/Honeycomb/static/media/Icon3.c20de4d04ba1920cd03a.png",
+    "index.html": "/Honeycomb/index.html",
+    "main.b2161895.css.map": "/Honeycomb/static/css/main.b2161895.css.map",
+    "main.a68bf294.js.map": "/Honeycomb/static/js/main.a68bf294.js.map",
+    "296.6abfbd36.chunk.js.map": "/Honeycomb/static/js/296.6abfbd36.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2161895.css",
+    "static/js/main.a68bf294.js"
+  ]
+}
