@@ -2,11 +2,13 @@
   "name": "my-project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dipenparmar12.github.io/Honeycomb",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "deploy": "gh-pages -d build",
     "format": "prettier --config ./prettier.config.js --write ./src/**/*.{js,jsx} && eslint --fix ./src/**/*.{js,jsx}",
     "lint": "eslint \"./**/*.{js,jsx}\"",
     "eject": "react-scripts eject"
