@@ -40,17 +40,20 @@ export default function SectionProjects() {
   return (
     <div className="flex justify-center items-center bg-white">
       <Container className="py-20 ">
-        <div className="flex items-center py-20 ">
-          <div className="w-6/12">
-            <Heading5 className={'pl-14 '}> Our Completed Projects </Heading5>
-            <Heading2 className="pl-14 font-medium title-font mb-2  !text-black">
+        <div className="md:flex items-center py-20 ">
+          <div className="w-full md:w-6/12">
+            <Heading5 className={'md:pl-14 '}>
+              {' '}
+              Our Completed Projects{' '}
+            </Heading5>
+            <Heading2 className="md:pl-14 font-medium title-font mb-2  !text-black">
               Improve & Enhance our <br /> Tech Projects
             </Heading2>
           </div>
 
           <div className="px-10" />
 
-          <Paragraph className="w-6/12 !text-lg !text-gray-400/90 !leading-loose">
+          <Paragraph className="w-full md:w-6/12 !text-lg !text-gray-400/90 !leading-loose">
             There are many variations of passages of available but majority have
             <br />
             suffered alteration in some form, by humour or randomized words
@@ -59,7 +62,7 @@ export default function SectionProjects() {
           </Paragraph>
         </div>
 
-        <div className="flex gap-8 px-14 py-10 text-gray-1">
+        <div className="md:flex gap-8 md:px-14 py-10 text-gray-1 ">
           {projects.map((project, i) => (
             <ServiceCard key={i} data={project} />
           ))}
@@ -76,7 +79,7 @@ function ServiceCard({ data }) {
 
   return (
     <div
-      className="group cursor-pointer card h-[31rem] flex-1 relative bg-gradient-to-b from-black/10 to-black/60 "
+      className="group cursor-pointer card h-[31rem] flex-1 relative bg-gradient-to-b from-black/10 to-black/60 mb-16 md:mb-0"
       // style={{
       //   '--url': `${process.env.PUBLIC_URL}/img/${data.img}`,
       // }}

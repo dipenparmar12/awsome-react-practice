@@ -35,17 +35,17 @@ export default function SectionTeams() {
   return (
     <div className="flex justify-center items-center bg-white">
       <Container className="py-28 ">
-        <div className="flex items-center py-20 ">
-          <div className="w-6/12">
-            <Heading5 className={'pl-14 '}> Our Expert People </Heading5>
-            <Heading2 className="pl-14 font-medium title-font mb-2  !text-black">
+        <div className="md:flex items-center py-20 ">
+          <div className="md:w-6/12">
+            <Heading5 className={'md:pl-14 '}> Our Expert People </Heading5>
+            <Heading2 className="md:pl-14 font-medium title-font mb-2  !text-black">
               Meet Our Professional <br /> Team Members
             </Heading2>
           </div>
 
           <div className="px-10" />
 
-          <Paragraph className="w-6/12 !text-lg !text-gray-400/90 !leading-loose">
+          <Paragraph className="md:w-6/12 !text-lg !text-gray-400/90 !leading-loose">
             There are many variations of passages of available but majority have
             <br />
             suffered alteration in some form, by humour or randomized words
@@ -54,7 +54,7 @@ export default function SectionTeams() {
           </Paragraph>
         </div>
 
-        <div className="flex gap-24 mt-5 SectionFeatureCards translate-y-14 relative z-10  ">
+        <div className="md:flex gap-24 mt-5 SectionFeatureCards translate-y-14 relative z-10  ">
           {projects.map((data, i) => (
             <FeatureCard key={i} data={data} img={data.img} />
           ))}
@@ -66,7 +66,7 @@ export default function SectionTeams() {
 
 function FeatureCard({ data }) {
   return (
-    <div className="card_team  h-[31rem] p5-10  flex-1 relative half-a-border-on-top ">
+    <div className="card_team  h-[31rem] flex-1 relative half-a-border-on-top mb-36 md:mb-0">
       <div className="p-7  hover:g default_transition">
         <div>
           <img

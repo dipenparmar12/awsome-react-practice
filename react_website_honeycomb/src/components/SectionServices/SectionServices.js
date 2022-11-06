@@ -46,17 +46,17 @@ export default function SectionServices() {
   return (
     <div className="flex justify-center items-center bg-radial">
       <Container className="py-28 ">
-        <div className="flex items-center py-20 ">
-          <div className="w-6/12">
-            <Heading5 className={'pl-14 '}> What we're Offering </Heading5>
-            <Heading2 className="pl-14 font-medium title-font mb-2  !text-white">
+        <div className="md:flex items-center py-20 ">
+          <div className="md:w-6/12">
+            <Heading5 className={'md:pl-14 '}> What we're Offering </Heading5>
+            <Heading2 className="md:pl-14 font-medium title-font mb-2  !text-white">
               Dealing in all Professional <br /> IT Services
             </Heading2>
           </div>
 
           <div className="px-10" />
 
-          <Paragraph className="w-6/12 !text-lg !text-gray-400/90 !leading-loose">
+          <Paragraph className="md:w-6/12 !text-lg !text-gray-400/90 !leading-loose">
             There are many variations of passages of available but majority have
             <br />
             suffered alteration in some form, by humour or randomized words
@@ -65,7 +65,7 @@ export default function SectionServices() {
           </Paragraph>
         </div>
 
-        <div className="flex gap-8 px-20 py-10 text-gray-1">
+        <div className="md:flex gap-8 px-7 md:px-20 py-10 text-gray-1 ">
           {cards.map((card, i) => (
             <ServiceCard card={card} key={i} />
           ))}
@@ -98,7 +98,7 @@ function ServiceCard({ card }) {
   return (
     <div
       className={classNames(
-        'group flex-1 px-10 py-4 relative hover:scale-105 default_transition',
+        'group flex-wrap flex-1 px-10 py-4 relative hover:scale-105 default_transition mb-20',
         styles.container,
       )}
     >

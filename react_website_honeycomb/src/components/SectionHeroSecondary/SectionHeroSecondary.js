@@ -19,13 +19,13 @@ import Icon5 from 'assets/Icon5.png'
 export default function SectionHeroSecondary() {
   return (
     <Container>
-      <section className="text-gray-600 body-font mx-auto px-20 py-5 ">
+      <section className="text-gray-600 body-font mx-auto md:px-20 py-5 ">
         <div className="container flex flex-wrap px-5 py-24 mx-auto items-center">
-          <div className="md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 ">
+          <div className="w-full md:w-1/2 md:pr-12 md:py-8 md:border-r md:border-b-0 mb-10 md:mb-0 pb-10 ">
             <img src={Img0} className="object-cover" />
           </div>
 
-          <div className="flex flex-col md:w-1/2 md:pl-12">
+          <div className="w-full  md:w-1/2 md:pl-12  flex flex-col">
             <Heading5>About Our Company</Heading5>
             <Heading2>We're Partner of Your Innovations</Heading2>
             <Text>
@@ -35,7 +35,7 @@ export default function SectionHeroSecondary() {
               even.
             </Text>
 
-            <div className="flex my-4">
+            <div className="md:flex my-4">
               <div className="flex flex-1 items-center">
                 <span className="h-36 inline-block">
                   <img src={Icon1} alt="i1" className="h-full" />
@@ -50,7 +50,7 @@ export default function SectionHeroSecondary() {
               </div>
             </div>
 
-            <ul className="flex flex-col gap-3 text-xl text-black font-bold mb-5">
+            <ul className="md:flex flex-col gap-3 text-xl text-black font-bold mb-5">
               <li>
                 <Icons.CheckCircle className="mr-2" /> Exploring version oflorem
                 veritatis proin
@@ -71,7 +71,7 @@ export default function SectionHeroSecondary() {
           </div>
         </div>
 
-        <div className="flex gap-10 mt-5 SectionFeatureCards translate-y-14 relative z-10 ">
+        <div className="md:flex gap-10 mt-5 SectionFeatureCards translate-y-14 relative z-10 pb-20 md:pb-0 ">
           <FeatureCard
             img={Img1}
             icon={Icon3}
@@ -99,7 +99,7 @@ function FeatureCard({
   content = ' Perfect solutions that bushiness demands',
 }) {
   return (
-    <div className="group relative w-[32rem] h-[24rem] z-10 ">
+    <div className="group relative md:w-[32rem] h-[24rem] z-10 mb-20 md:mb-0">
       <img
         src={img}
         alt=""

@@ -5,7 +5,7 @@ export default function Heading2({ className, children, ...rest }) {
   return (
     <h2
       className={classNames(
-        'h2 text-black text-5xl text-md font-extrabold mt-4 mb-8 leading-snug',
+        'h2 text-black text-4xl  md:text-5xl text-md font-extrabold mt-4 mb-8 md:leading-snug',
         className,
       )}
       {...rest}

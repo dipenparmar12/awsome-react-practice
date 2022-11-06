@@ -12,7 +12,12 @@ export default function Container({
       className={classNames('container mx-auto', classNameContainer)}
       {...rest}
     >
-      <div className={classNames('px-20 mx-auto w-full sm:w-auto', className)}>
+      <div
+        className={classNames(
+          'px-8 md:px-28 mx-auto w-full sm:w-auto',
+          className,
+        )}
+      >
         {children}
       </div>
     </section>
