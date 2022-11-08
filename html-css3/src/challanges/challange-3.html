@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 01</title>
+
+    <style>
+      /* INSTRUCTIONS
+      *
+      * 1) Keep the text inside .intro-content
+      *    in the same place, but have the background
+      *    extend from one side of the viewport
+      *    to the other, no matter how wide or narrow
+      *    the browser is.
+      *
+      * 2) Limit the maximum width of the text in the
+      *    bottom area.
+      *
+      * You may modify the HTML if needed
+      * (you probably should for this challenge)
+      *
+      */
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      * { outline: 1px solid tomato; } 
+
+      .container {
+        padding: 80px 0;
+        /*  */
+        background: hsl(196, 40%, 21%);
+        color:white;
+      }
+      
+      .content {
+        max-width: 750px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      /* Styles only */
+      .hero__heading {}
+      .hero__paragraph{
+        margin-top: 16px;
+        margin-bottom: 2em;
+        color: #a6c9d8;
+      }
+      .hero__btn{
+        display: inline-block;
+        background-color: hsl(190, 65%, 55%);
+        color: #05495e;
+        padding: 0.75em 2em;
+        border-radius: 1000px;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .hero__btn:hover{
+        opacity: .9;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="content">
+        <div class="hero">
+          <h1 class="hero__heading"> Lorem ipsum dolor sit amet consectetur.</h1>
+          <p class="hero__paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi autem molestiae ab excepturi, dicta aliquid commodi cumque totam quisquam laborum dolore repellendus voluptatibus reprehenderit eveniet nam perspiciatis ut magni eius.</p>
+          <a class="hero__btn" href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
