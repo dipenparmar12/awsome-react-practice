@@ -6,22 +6,6 @@
     <title>Day 01</title>
 
     <style>
-      /* INSTRUCTIONS
-      *
-      * 1) Keep the text inside .intro-content
-      *    in the same place, but have the background
-      *    extend from one side of the viewport
-      *    to the other, no matter how wide or narrow
-      *    the browser is.
-      *
-      * 2) Limit the maximum width of the text in the
-      *    bottom area.
-      *
-      * You may modify the HTML if needed
-      * (you probably should for this challenge)
-      *
-      */
-
       * {
         box-sizing: border-box;
         margin: 0;
@@ -33,22 +17,24 @@
         font-family: sans-serif;
       }
 
-      * { outline: 1px solid tomato; } 
+      /* * { outline: 1px solid tomato; }  */
 
       .container {
-        padding: 80px 0;
+        padding: 50px 0;
         /*  */
-        background: hsl(196, 40%, 21%);
+        background: hsl(196 40% 21% );
         color:white;
       }
       
       .content {
-        max-width: 750px;
         margin: 0 auto;
+        width: 90%;
+        max-width: 750px;
+        /*  */
+        padding: 20px 0;
       }
 
       .hero {
-        width: 90%;
         margin: 0 auto;
       }
 
@@ -72,6 +58,22 @@
       .hero__btn:hover{
         opacity: .9;
       }
+
+      /* Section */
+      .row {
+        display: flex;
+      }
+
+      .col {
+        width: 100%;
+        background-color: #a6c9d8;
+      }
+
+      .col + .col {
+        margin-left: 20px;
+        background-color: #a6c9d8;
+        border: 1px solid green;
+      }
     </style>
   </head>
 
@@ -86,5 +88,22 @@
         </div>
       </div>
     </div>
+    
+    <section class="content">
+      <div class="row">
+        <div class="col">
+          <h2>Cheap</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In et voluptatum accusamus id natus. Nulla laboriosam odit doloribus dolorum facere neque, doloremque suscipit magni rerum, natus dolorem autem at est.</p>
+        </div>
+        <div class="col">
+          <h2> Quick </h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In et voluptatum accusamus id natus. Nulla laboriosam odit doloribus dolorum facere neque, doloremque suscipit magni rerum, natus dolorem autem at est.</p>
+        </div>
+        <div class="col">
+          <h2> Affordable </h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In et voluptatum accusamus id natus. Nulla laboriosam odit doloribus dolorum facere neque, doloremque suscipit magni rerum, natus dolorem autem at est.</p>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
