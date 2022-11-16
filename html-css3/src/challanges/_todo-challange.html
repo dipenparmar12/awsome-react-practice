@@ -15,141 +15,33 @@
       padding: 0;
     }
 
-    /* 
-    ////// For this challenge ///////
-
-    - All text is in the text.md file
-
-    // Requirements
-    1. Refer to the design specs for the
-      overall layout 
-    2. The image should line up with
-      the sidebar in the section
-      below
-    */
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       font-size: 1.3rem;
     }
 
-    img {
-      max-width: 100%;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 0;
-    }
-
-    .container {
-      width: 80%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .row {
-      /* display: flex => flex container */
-      display: flex;
-      justify-content: space-between;
-
-      /* can't use yet */
-      /* gap: 100px; */
-
-      margin: 20px auto;
-    }
-
-    .col {
-      /* these are now flex items */
-      width: 100%;
-    }
-
-    .col+.col {
-      margin-left: 30px;
-    }
-
-
-    .hero {
-      padding: 100px 0;
-      background-color: #23424A;
-      color: #FFF;
-    }
-
-    .col_1 {
-      width: 62%;
-    }
-
-    .col_2 {
-      width: 32%;
-      align-self: flex-start;
-    }
-
-
-
-    .hero p {
-      margin-bottom: 3em;
-    }
-
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #23424A;
-      font-weight: 900;
-      background-color: #38CFD9;
-      padding: .75em 2em;
-      border-radius: 100px;
-    }
-
-    .btn:hover,
-    .btn:focus {
-      opacity: .75;
-    }
-
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-
-      background-color: #0a6373;
-      color: white;
-      padding: 20px 20px;
-      text-align: center;
-    }
-
-    .sidebar2 {
-      background-color: #0a6373;
-      color: white;
-      padding: 20px 20px;
-      text-align: center;
-    }
-
-    .sidebar2 div:not(:last-child) {
-      margin-bottom: 40px;
-    }
-
     #grand-parent {
-      background-color: #23424A;
-      padding: 100px;
+      background-color: #a578dc;
+      padding: 50px;
     }
 
     #parent {
-      background-color: rgb(223, 55, 55);
-      padding: 100px;
-      border: 10px solid green;
+      background-color: rgb(116, 230, 120);
+      padding: 50px;
+      border: 5px solid black;
     }
 
     #child {
-      background-color: rgb(56, 129, 112);
-      padding: 100px;
-      border: 10px solid green;
+      background-color: rgb(240, 186, 120);
+      padding: 50px;
+      border: 5px solid black;
+    }
+
+    #grand-child {
+      background-color: rgb(250, 149, 203);
+      padding: 50px;
+      border: 5px solid black;
     }
   </style>
   <script>
@@ -159,38 +51,70 @@
     window.addEventListener('load', (event) => {
       console.log('page is fully loaded');
 
-      const grandParent = document.getElementById("grand-parent")
-      const parent = document.getElementById("parent")
-      const child = document.getElementById("child")
-      const grandChild = document.getElementById("grand-child")
+      function cb(e) {
+        console.log('::[184] ', this.id)
+      }
 
-      grandParent.addEventListener("click", () => {
-        console.log('::grandParent',)
-      }, true)
+      /*
+      ========================================================
+        Event capture 
+      ========================================================
+      */
+      // const divNodes = document.querySelectorAll('div');
+      // [...divNodes].forEach(div => {
+      //   div.addEventListener('click', cb, { capture: true }) // default is capture=false
+      // });
 
-      parent.addEventListener("click", () => {
-        console.log('::parent',)
-      }, true)
+      /*
+      ========================================================
+        Event  bubbling
+      ========================================================
+      */
+      // const divNodes1 = document.querySelectorAll('div');
+      // [...divNodes1].forEach(div => {
+      //   div.addEventListener('click', cb, { capture: false }) // default is capture=false
+      // });
 
-      child.addEventListener("click", () => {
-        console.log('::child',)
-      }, true)
 
-      grandChild.addEventListener("click", () => {
-        console.log('::grandChild',)
-      }, true)
+      /* 
+      ========================================================
+        Test
+      ======================================================== 
+      */
+      // const grandParent = document.getElementById("grand-parent")
+      // const parent = document.getElementById("parent")
+      // const child = document.getElementById("child")
+      // const grandChild = document.getElementById("grand-child")
 
+      // grandParent.addEventListener("click", () => {
+      //   console.log('::grandParent',)
+      // }, false)
+
+      // parent.addEventListener("click", () => {
+      //   console.log('::parent',)
+      // }, true)
+
+      // child.addEventListener("click", () => {
+      //   console.log('::child',)
+      // }, false)
+
+      // grandChild.addEventListener("click", () => {
+      //   console.log('::grandChild',)
+      // }, false)
     });
 
   </script>
 </head>
 
 <body>
-  <div id="grand-parent" class="grand-parent">
+  <div id="grand-parent">
+    grand-parent
     <div id="parent">
+      parent
       <div id="child">
+        child
         <div id="grand-child">
-          Hello
+          grand-child
         </div>
       </div>
     </div>
