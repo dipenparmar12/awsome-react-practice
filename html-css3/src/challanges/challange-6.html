@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 01</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.3rem;
+      color: #222C2A;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 0;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 1128px;
+      margin: 0 auto;
+
+      padding: 50px 0;
+      /* background: rgba(76, 76, 76, 0.135); */
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      /* justify-items: center; */
+
+      text-align: center;
+
+      min-height: 450px;
+      background: #F3EED9;
+    }
+
+    .title {
+      color: #824936;
+      line-height: 1;
+      padding: 20px 0;
+    }
+
+    .hero__subtitle {
+      color: #222C2A;
+      letter-spacing: 5px;
+      font-weight: 300;
+    }
+
+    .row {
+      display: block;
+      padding: 10px 0px;
+    }
+
+    .col {
+      flex: 1 1 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+
+    @media (min-width:730px) {
+      .row {
+        display: flex;
+
+        padding: 20px 0px;
+      }
+
+      .col+.col {
+        margin-left: 70px;
+      }
+    }
+
+    @media (min-width:730px) and (max-width: 1024px) {
+      .row {
+        align-items: center;
+      }
+
+      /* .col {
+        background-color: rgba(255, 0, 0, 0.225);
+      } */
+    }
+
+    .dark {
+      background-color: #222C2A;
+      color: #F3EED9;
+    }
+
+    .brown {
+      background-color: #824936;
+      color: #F3EED9;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero">
+    <div class="container">
+      <p class="hero__subtitle">Lorem ipsum dolor</p>
+      <h1 class="hero__title title">
+        Responsive layouts don’t <br> have to be a struggle
+      </h1>
+    </div>
+  </div>
+
+  <section class="container">
+    <h2 class="title" style="text-align: center;"> Quality Designs </h2>
+    <div class="row">
+      <div class="col">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Dui vivamus arcu felis bibendum ut
+        tristique. Arcu dui vivamus arcu felis. Sociis natoque
+        penatibus et magnis dis.
+
+      </div>
+      <div class="col">
+        Felis donec et odio pellentesque diam volutpat. Aliquam
+        purus sit amet luctus venenatis. Turpis in eu mi
+        bibendum neque egestas congue quisque egestas.
+        Pellentesque sit amet porttitor eget dolor morbi non
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="container row">
+      <div class="col">
+        <h2>Made custom for you</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.
+        </p>
+      </div>
+      <div class="col">
+        <img src="https://placeimg.com/444/277/any">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="brown">
+    <div class="container row">
+      <div class="col">
+        <img src="https://placeimg.com/444/278/any">
+      </div>
+      <div class="col">
+        <h2>Made custom for you</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
