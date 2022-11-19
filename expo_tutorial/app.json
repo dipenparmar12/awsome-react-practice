@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoApp",
-    "slug": "ExpoApp",
+    "name": "expo_tutorial",
+    "slug": "expo_tutorial",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,7 +27,13 @@
       }
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "729b2a7b-2e9a-48bc-a2fc-3a954c8e92c5"
+      }
     }
   }
 }
