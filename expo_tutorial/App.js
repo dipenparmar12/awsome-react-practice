@@ -1,20 +1,5 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import AlertTest from './assets/Test/AlertTest'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text> One two </Text>
-      <StatusBar style='auto' />
-    </View>
-  )
+  return <AlertTest />
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-})
