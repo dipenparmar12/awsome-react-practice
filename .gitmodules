@@ -1,0 +1,3 @@
+[submodule "react-native-expo-examples/VirtualEvents"]
+	path = react-native-expo-examples/VirtualEvents
+	url = git@github.com:notJust-dev/VirtualEvents.git
