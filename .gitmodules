@@ -1,0 +1,3 @@
+[submodule "vue-examples/headlessui"]
+	path = vue-examples/headlessui
+	url = git@github.com:tailwindlabs/headlessui.git
