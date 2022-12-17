@@ -1,0 +1,43 @@
+.login_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.login_form input {
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.login_form button {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.access_denied {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.mt {
+  margin-top: 100px;
+}

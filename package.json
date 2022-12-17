@@ -1,0 +1,44 @@
+{
+  "name": "vue-project",
+  "version": "0.0.0",
+  "scripts": {
+    "yarn_add_global": "yarn global add pnpm",
+    "yarn_remove_global": "yarn global remove pnpm",
+    "yarn_list_global": "yarn global list",
+    "pnpm_add_global": "pnpm i -g nodemon",
+    "pnpm_remove_global": "pnpm remove -g nodemon",
+    "npm_add_global": "npm install --global expo-cli",
+    "npm_list_global": "pnpm -g list",
+    "npm_remove_global": "TODO",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5050",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "api": "json-server --watch ./server/db.json --port 8000",
+    "share": "lt --port ",
+    "start": "concurrently --names 'EXPO,SERVER,WORKERS' --prefix-colors 'green,magenta,yellow' --kill-others \"pnpm api\" \"pnpm dev\" ",
+    "pnpm:yarn": "concurrently --names 'EXPO,SERVER,WORKERS' --prefix-colors 'green,magenta,yellow' --kill-others \"yarn expo\" \"yarn web\" \"yarn workers\"",
+    "expo": "yarn --cwd ./client start",
+    "web": "yarn --cwd server-notifier run dev",
+    "workers": "yarn --cwd server-notifier run workers",
+    "docker:it": "docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "react-icons": "^4.6.0",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.10.2",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@vitejs/plugin-vue": "^2.2.2",
+    "@vitejs/plugin-vue-jsx": "^1.3.7",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "concurrently": "^7.0.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "json-server": "^0.17.0",
+    "prettier": "^2.5.1",
+    "vite": "^2.8.4"
+  }
+}

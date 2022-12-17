@@ -1,0 +1,31 @@
+/* Src: https://css-tricks.com/hearts-in-html-and-css/ */
+.heart {
+  display: inline-block;
+  width: calc(var(--icon-size) * 1.0);
+  height: calc(var(--icon-size) * 1.0);
+
+  transform: rotate(-135deg);
+
+  /*position: relative;*/
+  background-color: red;
+}
+
+.heart:after, .heart:before {
+  content: '';
+  width: calc(var(--icon-size) * 1.0);
+  height: calc(var(--icon-size) * 1.0);
+  position: absolute;
+
+  border-radius: 50%;
+  background-color: red;
+  background-color: rgba(100, 0, 0, 0.3);
+}
+
+.heart:after {
+  top: calc(var(--icon-size) * 0.5);
+}
+
+.heart:before {
+  top: 0;
+  left: calc(var(--icon-size) * 0.5);
+}

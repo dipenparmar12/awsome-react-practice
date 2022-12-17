@@ -1,0 +1,21 @@
+.spinner {
+  width: calc(var(--el-size) * 0.90);
+  height: calc(var(--el-size) * 0.90);
+  border: calc(var(--el-size) * 0.10) solid var(--el-color);
+  border-top: calc(var(--el-size) * 0.10) solid orange;
+  border-radius: 50%;
+
+  position: relative;
+  animation: spinner_amin 0.8s infinite ease-in-out both;
+  /*background-color: rgba(0, 0, 0, .1);*/
+}
+
+@keyframes spinner_amin {
+  0% {
+    transform: perspective(10px) rotate(0deg) scale(0.9);
+  }
+
+  100% {
+    transform: perspective(10px) rotate(360deg) scale(1.1);
+  }
+}

@@ -1,0 +1,24 @@
+.clock {
+  color: var(--icon-color);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border: calc(var(--icon-size) * 0.06) solid currentColor;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clock:before {
+  content: '';
+  --ajust-center: 100%;
+
+  position: absolute;
+  top: calc(var(--ajust-center) * 0.2);
+  height: calc(var(--ajust-center) * 0.3);
+  width: 40%;
+
+  border-left: calc(var(--icon-size) * 0.06) solid currentColor;
+  border-bottom: calc(var(--icon-size) * 0.06) solid currentColor;
+
+  transform: translateX(90%);
+  transform-origin: 0% 100%;
+}
