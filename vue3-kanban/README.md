@@ -1,10 +1,15 @@
 # vue-kanban
 
-## Reference 
- - `Eslint+Prettier`: 
-   - https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3/
-   - https://gist.github.com/onlime/37cac1471fd33d8d6661187cd7b18d3a#file-eslintrc-js-L1
-   - https://vuejs.org/guide/quick-start.html
+## Reference
+
+- `TailwindCss`:
+  - https://www.codingthesmartway.com/how-to-use-tailwind-css-with-vue-and-vite/
+  - https://devjavu.space/post/how-to-setup-tailwind-css-in-vue-3/?isDark=true
+  - https://www.educative.io/answers/how-to-setup-tailwind-css-in-vue-3
+- `Eslint+Prettier`:
+  - https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3/
+  - https://gist.github.com/onlime/37cac1471fd33d8d6661187cd7b18d3a#file-eslintrc-js-L1
+  - https://vuejs.org/guide/quick-start.html
 
 This template should help get you started developing with Vue 3 in Vite.
 
