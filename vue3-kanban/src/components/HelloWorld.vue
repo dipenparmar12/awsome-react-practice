@@ -15,6 +15,12 @@ defineProps({
       <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
     </h3>
+    <RouterLink
+      to="/"
+      class="text-blue-700 hover:text-blue-900 hover:underline"
+    >
+      Home
+    </RouterLink>
   </div>
 </template>
 
