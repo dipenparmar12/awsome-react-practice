@@ -10,10 +10,10 @@ import Sidebar from './Sidebar.vue'
       <div class="border-b-2 border-gray-200">
         <header class="px-6">
           <div
-            class="flex justify-between items-center border-b border-gray-200"
+            class="flex justify-between items-center border-b border-gray-200 py-2.5"
           >
-            <div>
-              <div class="relative">
+            <div class="flex-1">
+              <div class="relative w-64">
                 <span class="absolute inset-y-0 pl-3 flex items-center">
                   <svg
                     class="w-4 h-4 text-gray-400 z-10"
@@ -29,15 +29,64 @@ import Sidebar from './Sidebar.vue'
                 </span>
                 <input
                   type="text"
-                  class="py-2 pl-9 pr-3 text-sm text-gray-900 placeholder-gray-600 rounded-md border border-gray-400"
+                  class="block w-full py-1.5 pl-9 pr-3 text-sm text-gray-900 placeholder-gray-600 rounded-md border border-gray-400"
                   placeholder="Search"
                 />
               </div>
             </div>
-            <div></div>
+
+            <div class="flex items-center gap-5">
+              <button>
+                <span>
+                  <svg
+                    class="w-5 h-5 text-gray-500"
+                    viewBox="0 0 184 204"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M180.083 139.979L168.563 120.75C164.439 113.878 162.261 106.014 162.26 98.0001V70.6459C162.26 52.0117 154.858 34.1407 141.682 20.9643C128.505 7.78792 110.634 0.385498 92 0.385498C73.3658 0.385498 55.4948 7.78792 42.3184 20.9643C29.142 34.1407 21.7396 52.0117 21.7396 70.6459V98.0105C21.7551 106.02 19.5948 113.883 15.4896 120.76L3.91666 139.979C1.97517 143.218 0.927242 146.914 0.879703 150.69C0.832163 154.465 1.78672 158.186 3.64605 161.473C5.50538 164.76 8.20299 167.494 11.4639 169.399C14.7247 171.303 18.4322 172.308 22.2083 172.313H63.6667C63.5833 173.188 63.3229 174.031 63.3229 174.917C63.3229 182.514 66.3409 189.8 71.7131 195.172C77.0852 200.545 84.3714 203.563 91.9688 203.563C99.5661 203.563 106.852 200.545 112.224 195.172C117.597 189.8 120.615 182.514 120.615 174.917C120.615 174.031 120.354 173.188 120.271 172.313H161.792C165.564 172.31 169.269 171.307 172.528 169.407C175.787 167.507 178.485 164.778 180.347 161.497C182.209 158.216 183.168 154.5 183.127 150.728C183.086 146.955 182.047 143.261 180.115 140.021L180.083 139.979ZM105.021 174.917C105.021 178.37 103.649 181.682 101.207 184.124C98.7652 186.566 95.4533 187.938 92 187.938C88.5467 187.938 85.2348 186.566 82.7929 184.124C80.351 181.682 78.9792 178.37 78.9792 174.917C79.0044 174.039 79.1196 173.167 79.3229 172.313H104.677C104.88 173.167 104.996 174.039 105.021 174.917V174.917ZM166.76 153.781C166.266 154.672 165.541 155.412 164.661 155.923C163.781 156.435 162.778 156.699 161.76 156.688H22.2083C21.1935 156.692 20.1957 156.427 19.3173 155.919C18.439 155.41 17.7117 154.677 17.2101 153.795C16.7085 152.913 16.4508 151.913 16.4633 150.898C16.4758 149.884 16.7581 148.891 17.2812 148.021L28.8125 128.792C34.3855 119.491 37.3304 108.853 37.3333 98.0105V70.6459C37.3333 56.1557 43.0895 42.259 53.3357 32.0128C63.5818 21.7667 77.4785 16.0105 91.9688 16.0105C106.459 16.0105 120.356 21.7667 130.602 32.0128C140.848 42.259 146.604 56.1557 146.604 70.6459V98.0105C146.607 108.853 149.552 119.491 155.125 128.792L166.656 148.021C167.19 148.883 167.482 149.873 167.5 150.887C167.518 151.901 167.263 152.901 166.76 153.781V153.781Z"
+                    />
+                  </svg>
+                </span>
+              </button>
+
+              <button>
+                <img
+                  class="w-8 h-8 rounded-full bg-cover bg-center"
+                  src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=144&h=144&q=80"
+                  alt="avatar"
+                />
+              </button>
+            </div>
           </div>
 
-          <!-- <div>header2</div> -->
+          <div class="flex justify-between items-center py-2">
+            <div class="flex items-center gap-8">
+              <h2 class="text-gray-900 text-lg font-semibold">All Issues</h2>
+              <div class="flex">
+                <img
+                  class="w-6 h-6 rounded-full -ml-1 outline outline-white"
+                  :src="`http://placeimg.com/50/50/people?${1}`"
+                />
+                <img
+                  class="w-6 h-6 rounded-full -ml-1 outline outline-white"
+                  :src="`http://placeimg.com/50/50/people?${2}`"
+                />
+                <img
+                  class="w-6 h-6 rounded-full -ml-1 outline outline-white"
+                  :src="`http://placeimg.com/50/50/people?${3}`"
+                />
+                <img
+                  class="w-6 h-6 rounded-full -ml-1 outline outline-white"
+                  :src="`http://placeimg.com/50/50/people?${4}`"
+                />
+              </div>
+            </div>
+
+            <div></div>
+          </div>
         </header>
       </div>
 
