@@ -15,5 +15,6 @@ module.exports = {
     // 'vue/no-unused-vars': 'error'
     'vue/require-default-prop': 'off',
     'no-unused-vars': 'warn',
+    'vue/multi-word-component-names': 'off',
   },
 }
