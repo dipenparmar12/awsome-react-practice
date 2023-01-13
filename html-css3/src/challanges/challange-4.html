@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 01</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .row {
+      /* display: flex => flex container */
+      display: flex;
+      text-align: center;
+      /* can't use yet */
+      /* gap: 100px; */
+    }
+
+    .col {
+      /* these are now flex items */
+      width: 100%;
+    }
+
+    .hero {
+      padding: 100px 0;
+      background-color: #23424A;
+      color: #FFF;
+    }
+
+    .hero__text {
+      width: 60%;
+    }
+
+    .hero p {
+      margin-bottom: 3em;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #23424A;
+      font-weight: 900;
+      background-color: #38CFD9;
+      padding: .75em 2em;
+      border-radius: 100px;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      opacity: .75;
+    }
+
+    .container2 {
+      display: flex;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero">
+    <div class="container">
+      <div class="hero__text">
+        <h1>Responsive layouts don’t have to be a struggle</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.</p>
+        <a href="#" class="btn">I want to learn</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Cheap</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.</p>
+      </div>
+      <div class="col">
+        <h2>Quick</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.</p>
+      </div>
+      <div class="col">
+        <h2>Affordable</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container container2">
+      <div class="col">
+        <h2>Cheap</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.</p>
+      </div>
+      <div class="col">
+        <h2>Quick</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam.</p>
+      </div>
+  </div>
+  
+</body>
+
+</html>

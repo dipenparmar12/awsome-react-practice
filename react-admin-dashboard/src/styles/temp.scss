@@ -1,0 +1,257 @@
+@mixin bbg {
+  @include responsive(xl) {
+    background-color: #fb7185 !important;
+  }
+  @include responsive(lg) {
+    background-color: #a78bfa !important;
+  }
+  @include responsive(md) {
+    background-color: #a7f3d0 !important;
+  }
+  // @include responsive(sm) {
+  //   background-color: #ecfccb !important;
+  // }
+  //Use @include bbg
+}
+
+.bbg {
+  background-color: #fb7185 !important;
+}
+
+//600px // sm
+@media only screen and (max-width: 37.5em) {
+}
+//900px // md
+@media only screen and (max-width: 56.25em) {
+}
+//1200px // lg
+@media only screen and (max-width: 75em) {
+}
+//1800 // xl
+@media only screen and (min-width: 112.5em) {
+}
+
+// // Custom.scss
+// // Option B: Include parts of Bootstrap
+
+// // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// @import '../node_modules/bootstrap/scss/functions';
+
+// // 2. Include any default variable overrides here
+
+// // 3. Include remainder of required Bootstrap stylesheets
+// @import '../node_modules/bootstrap/scss/variables';
+
+// // 4. Include any default map overrides here
+
+// // 5. Include remainder of required parts
+// @import '../node_modules/bootstrap/scss/maps';
+// @import '../node_modules/bootstrap/scss/mixins';
+// @import '../node_modules/bootstrap/scss/root';
+
+// // 6. Optionally include any other parts as needed
+// @import '../node_modules/bootstrap/scss/utilities';
+// @import '../node_modules/bootstrap/scss/reboot';
+// @import '../node_modules/bootstrap/scss/type';
+// @import '../node_modules/bootstrap/scss/images';
+// @import '../node_modules/bootstrap/scss/containers';
+// @import '../node_modules/bootstrap/scss/grid';
+// @import '../node_modules/bootstrap/scss/helpers';
+
+// // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// @import '../node_modules/bootstrap/scss/utilities/api';
+
+// // 8. Add additional custom code here
+// @import 'styles/main.scss';
+
+// /*
+// ========================================================
+
+// ========================================================
+// */
+
+// *,
+// *::before,
+// *::after {
+//   box-sizing: border-box;
+// }
+
+// html {
+//   font-family: sans-serif;
+//   line-height: 1.15;
+//   -webkit-text-size-adjust: 100%;
+//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
+
+// article,
+// aside,
+// figcaption,
+// figure,
+// footer,
+// header,
+// hgroup,
+// main,
+// nav,
+// section {
+//   display: block;
+// }
+
+// /*
+// ========================================================
+//   example
+// ========================================================
+// */
+
+// @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+// :root {
+//   --header-height: 3rem;
+//   --nav-width: 68px;
+//   --first-color: #4723d9;
+//   --first-color-light: #afa5d9;
+//   --white-color: #f7f6fb;
+//   --body-font: 'Nunito', sans-serif;
+//   --normal-font-size: 1rem;
+//   --z-fixed: 100;
+// }
+// *,
+// ::before,
+// ::after {
+//   box-sizing: border-box;
+// }
+// body {
+//   position: relative;
+//   margin: var(--header-height) 0 0 0;
+//   padding: 0 1rem;
+//   font-family: var(--body-font);
+//   font-size: var(--normal-font-size);
+//   transition: 0.5s;
+// }
+// a {
+//   text-decoration: none;
+// }
+// .header {
+//   width: 100%;
+//   height: var(--header-height);
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding: 0 1rem;
+//   background-color: var(--white-color);
+//   z-index: var(--z-fixed);
+//   transition: 0.5s;
+// }
+// .header_toggle {
+//   color: var(--first-color);
+//   font-size: 1.5rem;
+//   cursor: pointer;
+// }
+// .header_img {
+//   width: 35px;
+//   height: 35px;
+//   display: flex;
+//   justify-content: center;
+//   border-radius: 50%;
+//   overflow: hidden;
+// }
+// .header_img img {
+//   width: 40px;
+// }
+// .l-navbar {
+//   position: fixed;
+//   top: 0;
+//   left: -30%;
+//   width: var(--nav-width);
+//   height: 100vh;
+//   background-color: var(--first-color);
+//   padding: 0.5rem 1rem 0 0;
+//   transition: 0.5s;
+//   z-index: var(--z-fixed);
+// }
+// .nav {
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   overflow: hidden;
+// }
+// .nav_logo,
+// .nav_link {
+//   display: grid;
+//   grid-template-columns: max-content max-content;
+//   align-items: center;
+//   column-gap: 1rem;
+//   padding: 0.5rem 0 0.5rem 1.5rem;
+// }
+// .nav_logo {
+//   margin-bottom: 2rem;
+// }
+// .nav_logo-icon {
+//   font-size: 1.25rem;
+//   color: var(--white-color);
+// }
+// .nav_logo-name {
+//   color: var(--white-color);
+//   font-weight: 700;
+// }
+// .nav_link {
+//   position: relative;
+//   color: var(--first-color-light);
+//   margin-bottom: 1.5rem;
+//   transition: 0.3s;
+// }
+// .nav_link:hover {
+//   color: var(--white-color);
+// }
+// .nav_icon {
+//   font-size: 1.25rem;
+// }
+// .show {
+//   left: 0;
+// }
+// .body-pd {
+//   padding-left: calc(var(--nav-width) + 1rem);
+// }
+// .active {
+//   color: var(--white-color);
+// }
+// .active::before {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   width: 2px;
+//   height: 32px;
+//   background-color: var(--white-color);
+// }
+// .height-100 {
+//   height: 100vh;
+// }
+// @media screen and (min-width: 768px) {
+//   body {
+//     margin: calc(var(--header-height) + 1rem) 0 0 0;
+//     padding-left: calc(var(--nav-width) + 2rem);
+//   }
+//   .header {
+//     height: calc(var(--header-height) + 1rem);
+//     padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+//   }
+//   .header_img {
+//     width: 40px;
+//     height: 40px;
+//   }
+//   .header_img img {
+//     width: 45px;
+//   }
+//   .l-navbar {
+//     left: 0;
+//     padding: 1rem 1rem 0 0;
+//   }
+//   .show {
+//     width: calc(var(--nav-width) + 156px);
+//   }
+//   .body-pd {
+//     padding-left: calc(var(--nav-width) + 188px);
+//   }
+// }

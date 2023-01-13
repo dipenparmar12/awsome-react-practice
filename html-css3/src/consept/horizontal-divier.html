@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // @src: https://joyofcode.xyz/simple-css-debug-trick
+      ;(function () {
+        const headElement = document.head
+        const styleElement = document.createElement('style')
+        styleElement.setAttribute('debug-css', '')
+        styleElement.innerText = '* { outline: 1px solid tomato; }'
+
+        const debugElement = headElement.querySelector('[debug-css]')
+        if (debugElement) return debugElement.remove()
+
+        headElement.append(styleElement)
+      })()
+    </script>
+
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      .container {
+        background: rgba(255, 182, 193, 0.205);
+        max-width: clamp(280px, 500px, 850px);
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        /* other styles */
+        min-height: 100px;
+      }
+      .section:before {
+        content: '';
+        border: 5px solid #d3d3d3;
+        align-self: stretch;
+        border-image: linear-gradient(45deg, #3f51b5, #cddc39) 1;
+      }
+
+      .section__item {
+        flex: 1;
+      }
+
+      .section__item--start {
+        order: -1;
+      }
+
+      .h_divider {
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        padding: 20px;
+      }
+
+      .h_divider > *:not(.divider) {
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 255, 0.135);
+        /* Logic */
+        flex: 1;
+      }
+
+      .divider {
+        flex-basis: 3px;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- @src: https://codepen.io/wbprice/pen/bVWXOm?editors=1100 -->
+    <!-- @src2: https://stackoverflow.com/questions/29885284/how-to-set-a-fixed-width-column-with-css-flexbox -->
+    <div class="h_divider container">
+      <div>ONE ONE</div>
+      <div class="divider"></div>
+      <div>THREE</div>
+      <div class="divider"></div>
+      <div>FOUR</div>
+      <div>1</div>
+    </div>
+
+    <!-- @src:: https://ishadeed.com/article/flexbox-separator/ -->
+    <section class="section container">
+      <div class="section__item section__item--start">Content 1</div>
+      <div class="section__item section__item--end">Content 2</div>
+    </section>
+  </body>
+</html>

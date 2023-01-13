@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 01</title>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.3rem;
+    }
+
+    #grand-parent {
+      background-color: #a578dc;
+      padding: 50px;
+    }
+
+    #parent {
+      background-color: rgb(116, 230, 120);
+      padding: 50px;
+      border: 5px solid black;
+    }
+
+    #child {
+      background-color: rgb(240, 186, 120);
+      padding: 50px;
+      border: 5px solid black;
+    }
+
+    #grand-child {
+      background-color: rgb(250, 149, 203);
+      padding: 50px;
+      border: 5px solid black;
+    }
+  </style>
+  <script>
+    // var arr = [1, 3, 4, 5, 6]
+    // // output: [36, 16]
+
+    window.addEventListener('load', (event) => {
+      console.log('page is fully loaded');
+
+      function cb(e) {
+        console.log('::[184] ', this.id)
+      }
+
+      /*
+      ========================================================
+        Event capture 
+      ========================================================
+      */
+      // const divNodes = document.querySelectorAll('div');
+      // [...divNodes].forEach(div => {
+      //   div.addEventListener('click', cb, { capture: true }) // default is capture=false
+      // });
+
+      /*
+      ========================================================
+        Event  bubbling
+      ========================================================
+      */
+      // const divNodes1 = document.querySelectorAll('div');
+      // [...divNodes1].forEach(div => {
+      //   div.addEventListener('click', cb, { capture: false }) // default is capture=false
+      // });
+
+
+      /* 
+      ========================================================
+        Test
+      ======================================================== 
+      */
+      // const grandParent = document.getElementById("grand-parent")
+      // const parent = document.getElementById("parent")
+      // const child = document.getElementById("child")
+      // const grandChild = document.getElementById("grand-child")
+
+      // grandParent.addEventListener("click", () => {
+      //   console.log('::grandParent',)
+      // }, false)
+
+      // parent.addEventListener("click", () => {
+      //   console.log('::parent',)
+      // }, true)
+
+      // child.addEventListener("click", () => {
+      //   console.log('::child',)
+      // }, false)
+
+      // grandChild.addEventListener("click", () => {
+      //   console.log('::grandChild',)
+      // }, false)
+    });
+
+  </script>
+</head>
+
+<body>
+  <div id="grand-parent">
+    grand-parent
+    <div id="parent">
+      parent
+      <div id="child">
+        child
+        <div id="grand-child">
+          grand-child
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

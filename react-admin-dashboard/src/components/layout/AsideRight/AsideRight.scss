@@ -1,0 +1,156 @@
+.aside__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    margin-bottom: 2px !important;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 1rem;
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 18px;
+      width: 4rem;
+      height: 4rem;
+      border-radius: var(--border_radius_1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+      color: var(--color_block);
+      // background: rgba(0, 0, 0, 0.515);
+    }
+  }
+}
+
+.aside_avatar {
+  margin-top: 5.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    width: 7.5rem;
+    box-shadow: 0 5px 20px 1px hsla(13, 90%, 69%, 0.517);
+  }
+  &__name {
+    margin-top: 2.5rem;
+    margin-bottom: 0px !important;
+  }
+  &__designation {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+.statics {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+
+  text-align: center;
+
+  & > div {
+    flex: 1 1 100%;
+    // border: 1px solid rgba(0, 0, 0, 0.004);
+  }
+
+  &__value {
+    font-size: 15px;
+    margin-bottom: -1px !important;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+.profile_buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.utility_cards {
+  margin-top: 3rem;
+
+  display: flex;
+  // align-items: flex-end;
+  // justify-content: flex-end;
+
+  gap: 2rem;
+
+  & .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: 16rem;
+    padding: 2rem 1.5rem;
+    border-radius: var(--border_radius_1);
+
+    &_primary {
+      background-color: var(--color_purple_1);
+      color: var(--color_blue_2);
+    }
+
+    &_secondary {
+      background-color: var(--color_orange_4);
+      color: var(--color_orange_3);
+    }
+
+    &__icon {
+      text-align: left;
+      font-size: 30px;
+      margin: 1.4rem auto;
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    &__sub_title {
+      font-size: 11px;
+      font-weight: 700;
+    }
+  }
+}
+
+.image_gallery {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+
+  border-radius: var(--border_radius_1);
+  overflow: hidden;
+
+  &__item {
+    width: 100%;
+    margin: 0 !important;
+    border: 1px solid white;
+
+    &:hover {
+      filter: brightness(85%);
+    }
+
+    & img {
+      width: 100%;
+      overflow: hidden;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

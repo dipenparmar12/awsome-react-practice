@@ -1,0 +1,64 @@
+:root {
+  --el-size: 60px;
+  --el-color: #fff;
+
+  /* --icon-size: 50px; */
+  /* --icon-size: 100px;*/
+   --icon-size: 150px;
+  /* --icon-size: 200px;*/
+  /* --icon-size: 260px; */
+  /*--icon-size: 300px;*/
+  /* --icon-size: 350px; */
+  /* --icon-size: 400px; */
+
+  --icon-color: rgba(255, 255, 255, 1);
+  --pink: rgba(243, 186, 255, 0.548);
+  --sky-blue: rgba(105, 234, 243, 0.5);
+  --green: rgba(62, 253, 94, 0.5);
+  --red-light: rgba(253, 119, 101, 0.87);
+  --yellow-light: rgb(244, 255, 185);
+  --purple: rgba(175, 162, 253, 0.5);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* to set 1rem == 10px */
+}
+
+body {
+  font-family: 'Open Sans', 'sans-serif';
+  font-size: 1.8rem; /* 18px default size */
+  /* margin: 1rem; */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.morpichh {
+  background-color: #1abc9c;
+}
+
+.green {
+  background-color: #27ae60;
+}
+
+.orange {
+  background-color: #d35400;
+}
+
+.yellow {
+  background-color: #ffcb65;
+}
+
+.blue {
+  background-color: #2980b9;
+}

@@ -1,0 +1,28 @@
+/* Src: https://stackoverflow.com/questions/17386168/how-to-create-a-heart-shape-using-css*/
+.heart1 {
+  position: relative;
+  width: calc(var(--icon-size) * 1);
+  height: calc(var(--icon-size) * 1);
+  background-color: rgba(100, 0, 0, 0.05);
+}
+
+.heart1::before, .heart1::after {
+  content: '';
+  position: absolute;
+  width: calc(var(--icon-size) * 1);
+  height: calc(var(--icon-size) * 1.35);
+
+  border-radius: calc(var(--icon-size) * 1.6) calc(var(--icon-size) * 1.6) 0 0;
+  background: red;
+}
+
+.heart1::before {
+  left: calc(var(--icon-size) * 0.99);
+  transform: rotate(-55deg);
+  transform-origin: 0 100%;
+}
+
+.heart1::after {
+  transform: rotate(55deg);
+  transform-origin: 100% 100%;
+}

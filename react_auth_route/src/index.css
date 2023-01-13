@@ -1,0 +1,9 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .res_bg {
+    @apply bg-red-300 sm:bg-green-300 md:bg-blue-300 lg:bg-yellow-300 xl:bg-purple-300
+  }
+} */

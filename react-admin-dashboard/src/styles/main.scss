@@ -1,0 +1,59 @@
+@import './mixins';
+@import './colors';
+@import './reset';
+@import './base';
+@import './utilities';
+
+@import './temp.scss';
+
+// .main_container {
+//   @include bbg;
+// }
+
+/* 
+========================================================
+  Components and Utilities 
+======================================================== 
+*/
+.heading_3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color_black);
+}
+
+.heading_4,
+h4.h4 {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.btn {
+  font-size: 13px;
+  padding: 0.7rem 2.2rem;
+  border-radius: var(--border_radius_1);
+  cursor: pointer;
+  // transition: all 0.05s ease-in;
+
+  &:hover {
+    box-shadow: 0 2px 10px 0.5px rgba(0, 0, 0, 0.1);
+    // transform: translateY(4px);
+  }
+
+  &:active {
+    box-shadow: 0 2px 5px 0.5px rgba(0, 0, 0, 0.1);
+    transform: scale(0.97);
+  }
+}
+
+.btn_primary {
+  background-color: var(--color_blue_1);
+  color: var(--color_white);
+  border: none;
+}
+
+.btn_secondary {
+  background-color: var(--color_white);
+  color: var(--color_gray_6);
+  border: 1px solid var(--color_gray_3);
+}

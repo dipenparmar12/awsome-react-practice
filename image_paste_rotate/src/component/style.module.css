@@ -1,0 +1,27 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+
+.imageContainer {
+  margin: auto;
+  min-width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  margin-top: 150px;
+  min-height: 200px;
+}
+
+.image {
+  background-color: rgba(221, 221, 221, 0.397);
+}

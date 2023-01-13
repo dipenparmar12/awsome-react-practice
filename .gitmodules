@@ -4,3 +4,6 @@
 [submodule "vue-examples/hoppscotch-postman-ui"]
 	path = vue-examples/hoppscotch-postman-ui
 	url = https://github.com/hoppscotch/hoppscotch
+[submodule "react-native-expo-examples/VirtualEvents"]
+	path = react-native-expo-examples/VirtualEvents
+	url = git@github.com:notJust-dev/VirtualEvents.git
