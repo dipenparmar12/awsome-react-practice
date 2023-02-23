@@ -1,0 +1,66 @@
+.container {
+  background-color: darkgray;
+  margin: 0 auto;
+}
+
+/* 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    background-color: pink;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    background-color: coral;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    background-color: blue;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    background-color: red;
+  }
+} */
+
+/* Required only 1-media query. */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    background-color: greenyellow;
+  }
+}
+
+.card_responsive {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  /* align-items: flex-end; */
+  /* flex-wrap: wrap; */
+}
+.card__img {
+  /* flex: 1 1 400px; */
+  flex-basis: 400px;
+}
+.card__content {
+  /* flex: 1 1 300px; */
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+
+/* 
+========================================================
+  Extra not important
+======================================================== 
+*/
+.card_responsive {
+  margin: 30px auto;
+}
