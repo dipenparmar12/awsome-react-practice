@@ -8,17 +8,23 @@
   <title>Index Page</title>
 
   <link rel="stylesheet" href="./test.css">
+
 </head>
+
+<!-- 
+  @src: https://ishadeed.com/article/responsive-design
+  @src: https://css-tricks.com/useful-flexbox-technique-alignment-shifting-wrapping/  https://jsfiddle.net/phloe/ao989zs7/
+ -->
 
 <body>
   <main class="container">
     This is Simple container for practice and testing purpose's
   </main>
 
-  <main class="container">
+  <section class="container">
     <div class="card_responsive">
       <div class="card__img">
-        <img src="https://picsum.photos/300" alt="picsum.photos" style="display: block;">
+        <img src="https://picsum.photos/300" alt="picsum.photos" style="display: block;" height="300">
       </div>
 
       <div class="card__content">
@@ -34,7 +40,35 @@
         </p>
       </div>
     </div>
-    </section>
+  </section>
+
+  <!-- Src: https://css-tricks.com/useful-flexbox-technique-alignment-shifting-wrapping/ -->
+  <section class="container">
+    <h3 class="title abs-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This is absolutely positioned.</span>
+    </h3>
+
+    <h3 class="title float-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This subtitle is floated.</span>
+    </h3>
+
+    <h3 class="title table-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">I am a table cell.</span>
+    </h3>
+
+    <h3 class="title flex-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This is a good look, right here.</span>
+    </h3>
+
+    <h3 class="title justify-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This is a good look, right here.</span>
+    </h3>
+  </section>
 </body>
 
 </html>
