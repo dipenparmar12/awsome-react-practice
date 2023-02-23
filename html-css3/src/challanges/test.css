@@ -1,5 +1,5 @@
 .container {
-  background-color: darkgray;
+  background-color: rgba(169, 169, 169, 0.169);
   margin: 0 auto;
 }
 
@@ -54,6 +54,73 @@
   /* flex: 1 1 300px; */
   flex-grow: 1;
   flex-basis: 300px;
+}
+
+.title {
+  border-bottom: 1px solid #ccc;
+  max-width: 500px;
+  margin: 40px auto;
+}
+.title-note {
+  font-size: 60%;
+  color: #999;
+}
+
+.abs-title {
+  position: relative;
+}
+
+.abs-title .title-note {
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+}
+
+.float-title .title-note {
+  float: right;
+  position: relative;
+  top: 12px;
+}
+
+.table-title {
+  display: table;
+  width: 100%;
+}
+.table-title > span {
+  display: table-cell;
+  white-space: nowrap;
+}
+.table-title .title-main {
+  width: 99%;
+}
+
+.flex-title {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.flex-title > span {
+  white-space: nowrap;
+}
+.flex-title .title-main {
+  flex-grow: 1;
+}
+
+.justify-title {
+  text-align: justify;
+  line-height: 0;
+}
+.justify-title > span {
+  white-space: nowrap;
+  text-align: left;
+  display: inline-block;
+  line-height: normal;
+}
+.justify-title:after {
+  display: inline-block;
+  width: 100%;
+  content: '';
+  vertical-align: top;
 }
 
 /* 
