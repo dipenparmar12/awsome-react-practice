@@ -2,14 +2,208 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Index Page</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Some simple ways to make content look good
+    <!-- @src:https://set.studio/some-simple-ways-to-make-content-look-good/ -->
+
+    <!-- 
+      @src:https://typescale.com/
+     -->
+  </title>
+
+  <style>
+    /* 
+    ========================================================
+      CSS_RESET
+    ======================================================== 
+    */
+
+    /*
+      1. Use a more-intuitive box-sizing model.
+    */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /*
+      2. Remove default margin
+    */
+    * {
+      margin: 0;
+    }
+
+    /*
+      3. Allow percentage-based heights in the application
+    */
+    html,
+    body {
+      height: 100%;
+    }
+
+    /*
+      Typographic tweaks!
+      4. Add accessible line-height
+      5. Improve text rendering
+    */
+    body {
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /*
+      6. Improve media defaults
+    */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /*
+      7. Remove built-in form typography styles
+    */
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /*
+      8. Avoid text overflows
+    */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    /*
+      9. Create a root stacking context
+    */
+    #root,
+    #__next {
+      isolation: isolate;
+    }
+  </style>
+
+  <style>
+    :root {
+      /* --debug: 0.5px solid rgba(237, 213, 1, 0.978);
+      --debug-hover: 2px solid rgba(244, 10, 10, 0.831); */
+
+      --color-dark: #000000;
+      --color-light: #ffffff;
+      --color-primary: #1a8fe3;
+
+      --size-step-0: 1rem;
+      --size-step-1: 1.25rem;
+      --size-step-2: 1.56rem;
+      --size-step-3: 1.95rem;
+      --size-step-4: 2.43rem;
+      /* 
+        Explanation 
+      --size-step-0: 1rem;
+      --size-step-1: calc(var(--size-step-0) * 1.25);
+      --size-step-2: calc(var(--size-step-1) * 1.25);
+      --size-step-3: calc(var(--size-step-2) * 1.25);
+      --size-step-4: calc(var(--size-step-3) * 1.25); 
+      */
+    }
+
+    * {
+      outline: var(--debug);
+    }
+
+    *:hover {
+      outline: var(--debug-hover);
+    }
+
+    body {
+      background: var(--color-light);
+      color: var(--color-dark);
+      padding: 2em;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      line-height: 1.75;
+    }
+
+    p {
+      font-size: var(--size-step-4);
+    }
+  </style>
 </head>
 
 <body>
-
+  <article class="flow">
+    <h1>Nulla vitae elit libero, a pharetra augue</h1>
+    <p class="lede">
+      Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas
+      eget quam. Maecenas faucibus mollis interdum. Donec sed odio dui.
+    </p>
+    <p>
+      Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo,
+      tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia
+      bibendum nulla sed consectetur.
+    </p>
+    <h2>Donec id elit non mi porta gravida at eget metus</h2>
+    <p>
+      Aenean eu leo quam. <a href="http://example.com">Pellentesque ornare sem</a> lacinia quam
+      venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer
+      posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a
+      pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna.
+    </p>
+    <p>
+      Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur
+      purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
+      Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.
+    </p>
+    <blockquote>
+      <q>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+        <strong>Sed posuere</strong> consectetur est at lobortis. Integer posuere erat a ante
+        venenatis dapibus posuere velit aliquet.</q>
+    </blockquote>
+    <h3>Sed posuere consectetur est at lobortis</h3>
+    <p>
+      Fusce dapibus, <em>tellus ac cursus commodo</em>, tortor mauris condimentum nibh, ut
+      fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum
+      at eros. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra
+      augue.
+    </p>
+    <h2>Ut fermentum massa justo sit amet risus</h2>
+    <ul>
+      <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</li>
+      <li>Aliquam tincidunt mauris eu risus</li>
+      <li>Vestibulum auctor dapibus neque</li>
+    </ul>
+    <p>
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+      egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
+      eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+      eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
+      condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
+      condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in
+      turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
+      neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi,
+      tincidunt quis, accumsan porttitor, facilisis luctus, metus
+    </p>
+  </article>
 </body>
 
 </html>
