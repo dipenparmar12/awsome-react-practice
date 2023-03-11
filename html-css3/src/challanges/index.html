@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
-    Some simple ways to make content look good
-    <!-- @src:https://set.studio/some-simple-ways-to-make-content-look-good/ -->
-
-    <!-- 
-      @src:https://typescale.com/
-     -->
+    Some simple ways to make content look good <!--
+      @src:https://set.studio/some-simple-ways-to-make-content-look-good/ --> <!-- @src:
+      https://typescale.com/ @src:
+      https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,18,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+      @src: https://andy-bell.co.uk/my-favourite-3-lines-of-css/ -->
   </title>
 
   <style>
@@ -113,6 +112,7 @@
       --size-step-2: 1.56rem;
       --size-step-3: 1.95rem;
       --size-step-4: 2.43rem;
+
       /* 
         Explanation 
       --size-step-0: 1rem;
@@ -121,6 +121,31 @@
       --size-step-3: calc(var(--size-step-2) * 1.25);
       --size-step-4: calc(var(--size-step-3) * 1.25); 
       */
+
+      /* @src:https://utopia.fyi/type/calculator/?c=320,16,1.25,1240,18,1.333,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
+      /* Step -2: 10.24px → 10.13px */
+      --step--2: clamp(0.63rem, calc(0.64rem + -0.01vw), 0.64rem);
+
+      /* Step -1: 12.80px → 13.50px */
+      --step--1: clamp(0.8rem, calc(0.78rem + 0.08vw), 0.84rem);
+
+      /* Step 0: 16.00px → 18.00px */
+      --step-0: clamp(1rem, calc(0.96rem + 0.22vw), 1.13rem);
+
+      /* Step 1: 20.00px → 23.99px */
+      --step-1: clamp(1.25rem, calc(1.16rem + 0.43vw), 1.5rem);
+
+      /* Step 2: 25.00px → 31.98px */
+      --step-2: clamp(1.56rem, calc(1.41rem + 0.76vw), 2rem);
+
+      /* Step 3: 31.25px → 42.63px */
+      --step-3: clamp(1.95rem, calc(1.71rem + 1.24vw), 2.66rem);
+
+      /* Step 4: 39.06px → 56.83px */
+      --step-4: clamp(2.44rem, calc(2.05rem + 1.93vw), 3.55rem);
+
+      /* Step 5: 48.83px → 75.76px */
+      --step-5: clamp(3.05rem, calc(2.47rem + 2.93vw), 4.74rem);
     }
 
     * {
@@ -137,63 +162,135 @@
       padding: 2em;
     }
 
+    /* Typography & Font-family */
     body {
       font-family: 'Poppins', sans-serif;
-      font-weight: 400;
+      font-size: var(--size-step-0);
       line-height: 1.75;
+      font-weight: 400;
     }
 
-    p {
+    h1 {
       font-size: var(--size-step-4);
+    }
+
+    h2 {
+      font-size: var(--size-step-3);
+    }
+
+    h3 {
+      font-size: var(--size-step-2);
+    }
+
+    blockquote {
+      padding-inline-start: 1em;
+      border-inline-start: 0.3em solid;
+      font-style: italic;
+      font-size: var(--size-step-1);
+    }
+
+
+    /* Flow and rhythm */
+    .flow>*+* {
+      margin-block-start: var(--flow-space, 1em);
+    }
+
+    :is(h1, h2, h3, blockquote) {
+      --flow-space: 1.5em;
+    }
+
+    :is(h1, h2, h3)+* {
+      --flow-space: 0.5em;
+    }
+
+    /* Line heights */
+    h1,
+    h2,
+    h3 {
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    /* Line lengths */
+    article>* {
+      max-width: 65ch;
+    }
+
+    blockquote {
+      max-width: 50ch;
+    }
+
+    h1 {
+      max-width: 20ch;
+    }
+
+    h2,
+    h3 {
+      max-width: 28ch;
+    }
+
+    /* Colour and contrast */
+    a {
+      color: currentColor;
+      text-decoration-color: var(--color-primary);
+      text-decoration-thickness: 0.3ex;
+      text-underline-offset: 0.3ex;
+    }
+
+    article.flow {
+      max-width: 65ch;
+      margin-inline: auto;
     }
   </style>
 </head>
 
 <body>
   <article class="flow">
-    <h1>Nulla vitae elit libero, a pharetra augue</h1>
+    <h1>{h1} Nulla vitae elit libero, a pharetra augue</h1>
     <p class="lede">
-      Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas
-      eget quam. Maecenas faucibus mollis interdum. Donec sed odio dui.
+      {p} Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in,
+      egestas eget quam. Maecenas faucibus mollis interdum. Donec sed odio dui.
     </p>
     <p>
-      Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis
-      dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo,
-      tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia
-      bibendum nulla sed consectetur.
+      {p} Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et
+      magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus
+      commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean
+      lacinia bibendum nulla sed consectetur.
     </p>
-    <h2>Donec id elit non mi porta gravida at eget metus</h2>
+    <h2>{h2} Donec id elit non mi porta gravida at eget metus</h2>
     <p>
-      Aenean eu leo quam. <a href="http://example.com">Pellentesque ornare sem</a> lacinia quam
-      venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer
-      posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a
-      pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna.
+      {p} Aenean eu leo quam. <a href="http://example.com">Pellentesque ornare sem</a> lacinia
+      quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+      Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit
+      libero, a pharetra augue. Maecenas sed diam eget risus varius blandit sit amet non magna.
     </p>
     <p>
-      Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur
+      {p} Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur
       purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
       Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor.
     </p>
     <blockquote>
-      <q>Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+      <q>
+        {blockquote}Cras justo odio, dapibus ac facilisis in, egestas eget quam.
         <strong>Sed posuere</strong> consectetur est at lobortis. Integer posuere erat a ante
-        venenatis dapibus posuere velit aliquet.</q>
+        venenatis dapibus posuere velit aliquet.
+      </q>
     </blockquote>
-    <h3>Sed posuere consectetur est at lobortis</h3>
+    <h3> {h3} Sed posuere consectetur est at lobortis</h3>
     <p>
-      Fusce dapibus, <em>tellus ac cursus commodo</em>, tortor mauris condimentum nibh, ut
+      {p} Fusce dapibus, <em>tellus ac cursus commodo</em>, tortor mauris condimentum nibh, ut
       fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum
       at eros. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra
       augue.
     </p>
-    <h2>Ut fermentum massa justo sit amet risus</h2>
+    <h2> {h2} Ut fermentum massa justo sit amet risus</h2>
     <ul>
-      <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</li>
-      <li>Aliquam tincidunt mauris eu risus</li>
-      <li>Vestibulum auctor dapibus neque</li>
+      <li> {li} Lorem ipsum dolor sit amet, consectetuer adipiscing elit</li>
+      <li> {li} Aliquam tincidunt mauris eu risus</li>
+      <li> {li} Vestibulum auctor dapibus neque</li>
     </ul>
     <p>
-      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+      {p} Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
       egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
       eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
       eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
