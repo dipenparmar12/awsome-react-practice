@@ -33,9 +33,14 @@
     "prettier/prettier": [
       "warn",
       {
-        "endOfLine": "auto",
-        "singleQuote": true
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "semi": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "endOfLine": "auto"
       }
-    ]
+    ],
+    "no-console": 1 // Means warning
   }
 }

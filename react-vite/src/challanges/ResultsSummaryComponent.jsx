@@ -1,4 +1,4 @@
-import './ResultsSummaryComponent.scss';
+import './ResultsSummaryComponent.scss'
 
 function ResultsSummaryComponent() {
   return (
@@ -7,8 +7,9 @@ function ResultsSummaryComponent() {
       <p className="text-blue-800"> Eslint </p>
       <p className="text-blue-800"> SASS </p>
       <p className="text-blue-800"> Tailwind </p>
+      <p> Hello</p>
     </div>
-  );
+  )
 }
 
-export default ResultsSummaryComponent;
+export default ResultsSummaryComponent

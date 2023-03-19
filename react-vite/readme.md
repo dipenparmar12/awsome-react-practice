@@ -19,6 +19,7 @@ EsLint + Prettier
 
 @src: 
   https://github.com/igdev116/vite-react-ts-eslint-prettier/blob/main/.eslintrc
+  https://khalilstemmler.com/blogs/tooling/prettier/
   https://stackoverflow.com/a/41922950/8592918
   https://github.com/igdev116/vite-react-ts-eslint-prettier
   https://cathalmacdonnacha.com/setting-up-eslint-prettier-in-vitejs
