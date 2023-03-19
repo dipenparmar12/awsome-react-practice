@@ -1,13 +1,14 @@
-import React from 'react'
-import './ResultsSummaryComponent.scss'
+import './ResultsSummaryComponent.scss';
 
 function ResultsSummaryComponent() {
-  return  (<div className="ResultsSummaryComponent mx-auto w-[20rem] mt-10 p-10 px-16 bg-blue-200 shadow-xl">
-          <p className="text-2xl"> React </p>
-          <p className="text-blue-800"> Eslint </p>
-          <p className="text-blue-800"> SASS </p>
-          <p className="text-blue-800"> Tailwind </p>
-        </div>)
+  return (
+    <div className="ResultsSummaryComponent mx-auto w-[20rem] mt-10 p-10 px-16 bg-blue-200 shadow-xl">
+      <p className="text-2xl"> React </p>
+      <p className="text-blue-800"> Eslint </p>
+      <p className="text-blue-800"> SASS </p>
+      <p className="text-blue-800"> Tailwind </p>
+    </div>
+  );
 }
 
-export default ResultsSummaryComponent
+export default ResultsSummaryComponent;

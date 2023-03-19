@@ -1,11 +1,11 @@
-import ResultsSummaryComponent from './challanges/ResultsSummaryComponent'
+import ResultsSummaryComponent from './challanges/ResultsSummaryComponent';
 
 function App() {
-  return <div className='App'>
-    <h1 className="text-3xl !text-blue-400 font-bold underline text-center">Hello world!</h1> 
-
-    <ResultsSummaryComponent/>
-  </div>
+  return (
+    <div className="App">
+      <ResultsSummaryComponent />
+    </div>
+  );
 }
 
-export default App
+export default App;
