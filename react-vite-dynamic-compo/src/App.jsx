@@ -15,6 +15,8 @@ for (const path of Object.keys(pages)) {
     continue
   }
 
+  console.log('App[17]: routes', fileName)
+
   const normalizedPathName = fileName.includes('$')
     ? fileName.replace('$', ':')
     : fileName.replace(/\/index/, '')
