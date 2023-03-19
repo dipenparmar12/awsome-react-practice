@@ -19,6 +19,17 @@
   },
   "plugins": ["react", "import", "react-hooks", "prettier"],
   "rules": {
+    "prettier/prettier": [
+      "warn",
+      {
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "semi": false,
+        "singleQuote": true,
+        "bracketSpacing": false,
+        "endOfLine": "auto"
+      }
+    ],
     "no-unused-vars": [
       "warn",
       {
@@ -30,12 +41,6 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
 
-    "prettier/prettier": [
-      "warn",
-      {
-        "endOfLine": "auto",
-        "singleQuote": true
-      }
-    ]
+    "no-console": 1 // Means warning
   }
 }
