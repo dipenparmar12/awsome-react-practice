@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Navbar from './layout/Navbar'
 
 const pages = import.meta.glob('./pages/**/*.jsx', { eager: true })
 
@@ -41,7 +42,11 @@ const router = createBrowserRouter(
 )
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  )
 }
 
 export default App

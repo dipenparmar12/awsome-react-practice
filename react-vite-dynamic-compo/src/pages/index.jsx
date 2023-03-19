@@ -1,5 +1,11 @@
+import Navbar from '../layout/Navbar'
+
 function index() {
-  return <div>index</div>
+  return (
+    <>
+      <Navbar />
+    </>
+  )
 }
 
 export default index
