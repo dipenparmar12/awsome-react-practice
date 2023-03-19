@@ -1,4 +1,4 @@
-import { isProdEnv } from 'src/utils/Env'
+import { isProdEnv } from '@/utils/Env'
 
 export default function Print({
   data,

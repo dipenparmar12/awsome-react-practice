@@ -26,4 +26,4 @@ EsLint + Prettier
 
 ### MISC
   - `React Dynamic routes`: https://dev.to/franciscomendes10866/file-based-routing-using-vite-and-react-router-3fdo
-      
+  - `Vite Path aliases`: https://dev.to/avxkim/setup-path-aliases-w-react-vite-ts-poa

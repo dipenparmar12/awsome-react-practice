@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Navbar from './layout/Navbar'
+import Print from '@/components/Print'
 
 const pages = import.meta.glob('./pages/**/*.jsx', { eager: true })
 
