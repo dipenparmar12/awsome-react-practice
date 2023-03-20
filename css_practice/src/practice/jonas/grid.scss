@@ -1,0 +1,112 @@
+// [class*='grid'] > * {
+//   padding: 20px;
+// }
+
+.grid-names {
+  height: 450px;
+  justify-content: center;
+
+  display: grid;
+  gap: 15px;
+
+  // grid-template-columns: repeat(3, 1fr) 200px;
+  grid-template-columns: repeat(3, [col-s] 1fr) [col-e ]  200px;
+
+  // grid-template-rows: auto 140px 250px auto;
+  grid-template-rows: [header-s] auto [header-e box-s] 140px [box-e content-s] 250px [content-e footer-s] auto [footer-e];
+
+  & .header {
+    background-color: rgb(209, 236, 133);
+    grid-column: col-s 1 / col-e;
+  }
+  & .box {
+    background-color: lightseagreen;
+  }
+  & .sidebar {
+    background-color: coral;
+    // grid-column: box-e / content-e;
+  }
+  & .content {
+    background-color: yellowgreen;
+    grid-column: 1 / -2;
+  }
+  & .footer {
+    background-color: lightsteelblue;
+    grid-column: 1 / -1;
+  }
+}
+
+.grid {
+  padding: 25px;
+  height: 450px;
+  display: grid;
+  justify-content: center;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr) 0.8fr;
+  grid-template-rows: auto repeat(2, 1fr) auto;
+
+  & .header {
+    background-color: rgb(209, 236, 133);
+    grid-column: 1 / -1;
+    min-height: 40px;
+  }
+  & .box {
+    background-color: lightseagreen;
+  }
+  & .sidebar {
+    background-color: coral;
+    grid-row-end: span 2;
+  }
+  & .content {
+    background-color: yellowgreen;
+    grid-column: 1 / -2;
+  }
+  & .footer {
+    background-color: lightsteelblue;
+    grid-column: 1 / -1;
+  }
+}
+
+.blue {
+  background-color: rgb(220, 248, 233);
+}
+.w-1200 {
+  width: 1200px;
+}
+.center-h {
+  margin: 0 auto;
+}
+.py-2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* 
+my approch 
+.grid {
+  display: grid;
+  justify-content: center;
+  gap: 15px 5%;
+  grid-template-columns: repeat(3, calc(300px - 5%)) calc(250px - 5%);
+
+  & .header {
+    background-color: rgb(209, 236, 133);
+    grid-column: 1 / -1;
+  }
+  & .box {
+    background-color: lightseagreen;
+  }
+  & .sidebar {
+    background-color: coral;
+    grid-row-end: span 2;
+  }
+  & .content {
+    background-color: yellowgreen;
+    grid-column: 1 / -2;
+  }
+  & .footer {
+    background-color: lightsteelblue;
+    grid-column: 1 / -1;
+  }
+}
+ */

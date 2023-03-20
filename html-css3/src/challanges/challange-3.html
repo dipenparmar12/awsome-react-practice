@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 01</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      /* * { outline: 1px solid tomato; }  */
+
+      .container {
+        padding: 50px 0;
+        /*  */
+        background: hsl(196 40% 21% );
+        color:white;
+      }
+      
+      .content {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 750px;
+        /*  */
+        padding: 20px 0;
+      }
+
+      .hero {
+        margin: 0 auto;
+      }
+
+      /* Styles only */
+      .hero__heading {}
+      .hero__paragraph{
+        margin-top: 16px;
+        margin-bottom: 2em;
+        color: #a6c9d8;
+      }
+      .hero__btn{
+        display: inline-block;
+        background-color: hsl(190, 65%, 55%);
+        color: #05495e;
+        padding: 0.75em 2em;
+        border-radius: 1000px;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      .hero__btn:hover{
+        opacity: .9;
+      }
+
+      /* Section */
+      .row {
+        display: flex;
+      }
+
+      .col {
+        width: 100%;
+        background-color: #a6c9d8;
+      }
+
+      .col + .col {
+        margin-left: 20px;
+        background-color: #a6c9d8;
+        border: 1px solid green;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="content">
+        <div class="hero">
+          <h1 class="hero__heading"> Lorem ipsum dolor sit amet consectetur.</h1>
+          <p class="hero__paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi autem molestiae ab excepturi, dicta aliquid commodi cumque totam quisquam laborum dolore repellendus voluptatibus reprehenderit eveniet nam perspiciatis ut magni eius.</p>
+          <a class="hero__btn" href="#">Learn More</a>
+        </div>
+      </div>
+    </div>
+    
+    <section class="content">
+      <div class="row">
+        <div class="col">
+          <h2>Cheap</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In et voluptatum accusamus id natus. Nulla laboriosam odit doloribus dolorum facere neque, doloremque suscipit magni rerum, natus dolorem autem at est.</p>
+        </div>
+        <div class="col">
+          <h2> Quick </h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In et voluptatum accusamus id natus. Nulla laboriosam odit doloribus dolorum facere neque, doloremque suscipit magni rerum, natus dolorem autem at est.</p>
+        </div>
+        <div class="col">
+          <h2> Affordable </h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In et voluptatum accusamus id natus. Nulla laboriosam odit doloribus dolorum facere neque, doloremque suscipit magni rerum, natus dolorem autem at est.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

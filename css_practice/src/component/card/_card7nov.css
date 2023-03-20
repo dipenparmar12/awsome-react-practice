@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 65.62%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ebebeb;
+}
+
+.inlineCard {
+  display: flex;
+  justify-content: center;
+}
+
+.light {
+  background-color: rgba(247, 247, 247, 0.918) !important;
+  color: #000;
+}
+
+.dark {
+  background-color: rgba(37, 37, 37, 0.918) !important;
+  color: #fff;
+}
+
+.card7 {
+  width: 320px;
+  height: 480px;
+  padding: 40px;
+  padding-top: 60px;
+  margin: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  box-shadow: 50px 27px 41px -1px #c7c7c7;
+}
+.card7__heading {
+  font-size: 25px;
+  margin-bottom: 70%;
+  text-transform: capitalize;
+}
+.card7__heading span {
+  color: #979797;
+  font-weight: 300;
+  text-transform: lowercase;
+}
+.card7__heading span::before {
+  content: "|";
+}
+.card7__sub_heading {
+  color: inherit;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.card7__sub_heading::after {
+  content: " ";
+  display: block;
+  border-bottom: 4px solid black;
+  width: 30px;
+  height: 29px;
+}
+.card7__content {
+  color: #757575;
+}

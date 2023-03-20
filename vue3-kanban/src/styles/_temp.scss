@@ -1,0 +1,51 @@
+/* ------------------------------------
+  Temp Dev only classes
+ ------------------------------------ */
+.bbg {
+  @apply bg-green-200/80 hover:bg-green-200/90 dark:text-black;
+
+  & .bbg {
+    @apply bg-green-300 dark:text-black;
+  }
+
+  //& :first-child {
+  //  @apply bg-green-300;
+  //}
+  //
+  //& :nth-child(2) {
+  //  @apply bg-green-500;
+  //}
+  //
+  //& :nth-child(3) {
+  //  @apply bg-green-600;
+  //}
+}
+
+.bbgg {
+  @apply bg-pink-200 dark:text-black;
+}
+
+.bb {
+  @apply border-[1.5px] border-red-600;
+}
+
+.res {
+  @apply bg-red-400 sm:bg-green-400 md:bg-blue-500 lg:bg-yellow-300 xl:bg-purple-400 2xl:bg-orange-400 #{!important};
+}
+
+.test {
+  width: 100%;
+
+  tbody {
+    width: 100%;
+    @apply border;
+
+    td {
+      @apply border;
+    }
+  }
+}
+
+.test {
+  @apply bbg h-20 w-20;
+}
