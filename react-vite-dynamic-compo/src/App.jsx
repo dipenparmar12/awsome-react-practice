@@ -18,11 +18,11 @@ export function App() {
     // element. The `children` is just an array of child routes.
     {
       path: '/',
-      element: <Login />,
+      element: <h1> Home Page </h1>,
     },
     {
-      path: '/register',
-      element: <Register />,
+      path: '/login',
+      element: <Login />,
     },
     {
       path: '/users',
@@ -52,13 +52,11 @@ export function App() {
   // const dynamicPageRoutes = useRoutes(getPageRoutes({ mapRoutes: true }))
 
   const links = [
-    { name: 'Login', path: '/' },
-    { name: ' Register ', path: '/register' },
-    { name: 'Users', path: '/users' },
-    { name: 'users/100', path: '/users/100' },
-    { name: 'users/me', path: '/users/me' },
-    { name: 'Notfound', path: '/testing' },
+    { name: 'Login', path: '/login', element: <>Hl</> },
+    { name: 'Users', path: '/users', element: <>Hl</> },
+    { name: 'users/100', path: '/users/100', element: <>Hl</> },
   ]
+
   // console.log('App.jsx::55 getPageRoutes()', getPageRoutes())
 
   return (
@@ -72,8 +70,7 @@ export function App() {
           ))}
         </ul>
       */}
-
-      <Navbar />
+      <Navbar routes={links} />
 
       <>{element}</>
     </Suspense>

@@ -7,22 +7,22 @@ export function getPageRoutes(options) {
   let routes = []
   for (const path of Object.keys(pages)) {
     const fileName = path.match(/\.\/pages\/(.*)\.jsx$/)?.[1]
-    if (!fileName) {
-      continue
-    }
+    // console.log('Navbar.jsx::10 fileName', fileName)
+    if (!fileName) continue
 
     const normalizedPathName = fileName.includes('$')
       ? fileName.replace('$', ':')
       : fileName.replace(/\/index/, '')
 
-    if (fileName === 'index') {
-      continue
-    }
+    // if (fileName === 'index') {
+    //   continue
+    // }
 
     routes.push({
       ...pages[path],
-      path: `/${normalizedPathName.toLowerCase()}`,
-      name: `/${normalizedPathName}`,
+      // path: `/${normalizedPathName.toLowerCase()}`,
+      path: fileName === 'index' ? '/' : `/${normalizedPathName.toLowerCase()}`,
+      name: fileName === 'index' ? '/root' : `/${normalizedPathName}`,
       Element: pages[path].default,
       loader: pages[path]?.loader,
       action: pages[path]?.action,
@@ -41,7 +41,7 @@ export function getPageRoutes(options) {
   return routes
 }
 
-function Navbar() {
+function Navbar({ routes = [] }) {
   // React.useEffect(() => {
   //   console.log('Navbar.jsx::[29]', getPageRoutes())
   // }, [])
@@ -64,7 +64,7 @@ function Navbar() {
               </Link>
             </li>
 
-            {getPageRoutes().map((route, index) => {
+            {[].concat(routes, getPageRoutes()).map((route, index) => {
               return (
                 <li key={index}>
                   <Link
