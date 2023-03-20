@@ -7,32 +7,29 @@
   display: grid;
   --columns: 2;
   grid-template-columns: repeat(auto-fit, minmax(max(22.75rem, 100% / var(--columns)), 1fr));
+  border-radius: 2rem;
+  overflow: hidden;
 }
 .ResultsSummary .backplate > * {
   padding: 1.9rem;
-  border: 1px solid rgba(0, 128, 0, 0.5);
 }
 .ResultsSummary .score * + *:not(:last-child) {
   margin: 1.9rem auto;
-  border: 1px solid rgba(255, 0, 0, 0.5);
 }
 .ResultsSummary .score {
+  border-radius: 2rem;
   background: linear-gradient(#6743ff, #3830c1);
+  overflow: hidden;
 }
 .ResultsSummary .score > * {
-  background: red !important;
-}
-.ResultsSummary .score__title {
-  background: rgba(255, 0, 0, 0.05);
+  text-align: center;
 }
 .ResultsSummary .score__circle {
+  width: 9rem;
+  height: 9rem;
+  border-radius: 11000px;
   background: linear-gradient(#3830c1, transparent);
-}
-.ResultsSummary .score__sub-title {
-  background: rgba(0, 0, 255, 0.05);
-}
-.ResultsSummary .score__content {
-  background: rgba(0, 255, 158, 0.05);
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=ResultsSummary.css.map */
