@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+import { createBrowserRouter, Link } from 'react-router-dom'
 
-export function getPageRoutes() {
+export function getPageRoutes(options) {
+  const { mapRoutes } = options || {}
   const pages = import.meta.glob('../pages/**/*.jsx', { eager: true })
 
   let routes = []
@@ -19,9 +20,22 @@ export function getPageRoutes() {
     }
 
     routes.push({
-      name: `/${normalizedPathName}`,
+      ...pages[path],
       path: `/${normalizedPathName.toLowerCase()}`,
+      name: `/${normalizedPathName}`,
+      Element: pages[path].default,
+      loader: pages[path]?.loader,
+      action: pages[path]?.action,
+      ErrorBoundary: pages[path]?.ErrorBoundary,
     })
+  }
+
+  if (mapRoutes) {
+    return routes.map(({ Element, ErrorBoundary, ...rest }) => ({
+      ...rest,
+      element: <Element />,
+      ...(ErrorBoundary && { errorElement: <ErrorBoundary /> }),
+    }))
   }
 
   return routes
