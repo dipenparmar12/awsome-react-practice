@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+import { createBrowserRouter, Link } from 'react-router-dom'
 
-export function getPageRoutes() {
+export function getPageRoutes(options) {
+  const { mapRoutes } = options || {}
   const pages = import.meta.glob('../pages/**/*.jsx', { eager: true })
 
   let routes = []
@@ -19,9 +20,22 @@ export function getPageRoutes() {
     }
 
     routes.push({
-      name: `/${normalizedPathName}`,
+      ...pages[path],
       path: `/${normalizedPathName.toLowerCase()}`,
+      name: `/${normalizedPathName}`,
+      Element: pages[path].default,
+      loader: pages[path]?.loader,
+      action: pages[path]?.action,
+      ErrorBoundary: pages[path]?.ErrorBoundary,
     })
+  }
+
+  if (mapRoutes) {
+    return routes.map(({ Element, ErrorBoundary, ...rest }) => ({
+      ...rest,
+      element: <Element />,
+      ...(ErrorBoundary && { errorElement: <ErrorBoundary /> }),
+    }))
   }
 
   return routes
@@ -41,13 +55,13 @@ function Navbar() {
         >
           <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <a
-                href="#"
+              <Link
+                to={'/'}
                 className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
 
             {getPageRoutes().map((route, index) => {
