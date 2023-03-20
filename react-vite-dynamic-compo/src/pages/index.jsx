@@ -1,4 +1,4 @@
-import Navbar from '../layout/Navbar'
+import Navbar from '@/layout/Navbar'
 
 function index() {
   return (

@@ -1,9 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Print from '@/components/Print'
+import NotFound from '@/pages/NotFound'
+// import Print from '@/components/Print'
 
 const pages = import.meta.glob('./pages/**/*.jsx', { eager: true })
 
+// NotFound
 const routes = [
+  // {
+  //   path: '/',
+  //   Element: <div> hello wother </div>,
+  // },
   {
     path: '/temp',
     Element: () => <h1> hello world </h1>,
@@ -22,6 +28,10 @@ for (const path of Object.keys(pages)) {
     ? fileName.replace('$', ':')
     : fileName.replace(/\/index/, '')
 
+  // if (fileName === 'index') {
+  //   continue
+  // }
+
   routes.push({
     path: fileName === 'index' ? '/' : `/${normalizedPathName.toLowerCase()}`,
     Element: pages[path].default,
@@ -29,9 +39,13 @@ for (const path of Object.keys(pages)) {
     action: pages[path]?.action,
     ErrorBoundary: pages[path]?.ErrorBoundary,
   })
-
   // console.log('App[25]:router', routes)
 }
+
+routes.push({
+  path: '/*',
+  Element: NotFound,
+})
 
 const router = createBrowserRouter(
   routes.map(({ Element, ErrorBoundary, ...rest }) => ({
