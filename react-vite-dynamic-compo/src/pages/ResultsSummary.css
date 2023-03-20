@@ -16,11 +16,17 @@
   margin: 1.9rem auto;
   border: 1px solid rgba(255, 0, 0, 0.5);
 }
+.ResultsSummary .score {
+  background: linear-gradient(#6743ff, #3830c1);
+}
+.ResultsSummary .score > * {
+  background: red !important;
+}
 .ResultsSummary .score__title {
   background: rgba(255, 0, 0, 0.05);
 }
 .ResultsSummary .score__circle {
-  background: rgba(0, 255, 0, 0.05);
+  background: linear-gradient(#3830c1, transparent);
 }
 .ResultsSummary .score__sub-title {
   background: rgba(0, 0, 255, 0.05);

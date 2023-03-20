@@ -22,17 +22,25 @@
     border: 1px solid rgba(0, 128, 0, 0.5);
   }
 
+  // set Margin, every child except first:top-margin and last:bottom-margin
   .score * + *:not(:last-child) {
     margin: 1.9rem auto;
     border: 1px solid rgba(255, 0, 0, 0.5);
   }
 
   .score  {
+    background: linear-gradient(#6743ff, #3830c1);
+
+    // Every child of .score
+    > * {
+      background: red !important;
+    }
+
     &__title {
       background: rgba(255, 0, 0, 0.05);
     }
     &__circle {
-      background: rgba(0, 255, 0, 0.05);
+      background: linear-gradient(#3830c1, transparent);
     }
     &__sub-title {
       background: rgba(0, 0, 255, 0.05);
