@@ -1,16 +1,10 @@
 import { BrowserRouter as Router, Link, useRoutes } from 'react-router-dom'
 import NotFound from '@/pages/NotFound'
 import Loading from '@/components/Loading'
-import {
-  Login,
-  OwnUserProfile,
-  Register,
-  UserProfile,
-  Users,
-  UsersIndex,
-} from './screens'
-import { Fragment, Suspense } from 'react'
-import Navbar, { getPageRoutes } from '@/layout/Navbar.jsx'
+import { Login, UserProfile, Users, UsersIndex } from './screens'
+import { Suspense } from 'react'
+import Navbar from '@/layout/Navbar.jsx'
+import getPageRoutes from '@/getPageRoutes.js'
 
 export function App() {
   const routes = [
@@ -18,22 +12,18 @@ export function App() {
     // element. The `children` is just an array of child routes.
     {
       path: '/',
-      element: <Login />,
+      element: <h1> Home Page </h1>,
     },
     {
-      path: '/register',
-      element: <Register />,
+      path: '/login',
+      element: <Login />,
     },
     {
       path: '/users',
       element: <Users />,
       children: [
-        {
-          path: '/users/1',
-          element: <UsersIndex />,
-        },
+        { path: '/users/1', element: <UsersIndex /> },
         { path: '/users/:id', element: <UserProfile /> },
-        { path: '/users/me', element: <OwnUserProfile /> },
       ],
     },
     ...getPageRoutes({ mapRoutes: true }),
@@ -49,30 +39,24 @@ export function App() {
   // you'll need to wrap it in your own <BrowserRouter> element.
   let element = useRoutes(routes)
 
-  // const dynamicPageRoutes = useRoutes(getPageRoutes({ mapRoutes: true }))
-
   const links = [
-    { name: 'Login', path: '/' },
-    { name: ' Register ', path: '/register' },
-    { name: 'Users', path: '/users' },
-    { name: 'users/100', path: '/users/100' },
-    { name: 'users/me', path: '/users/me' },
-    { name: 'Notfound', path: '/testing' },
+    { name: 'Login', path: '/login', element: <>Hl</> },
+    { name: 'Users', path: '/users', element: <>Hl</> },
+    { name: 'users/100', path: '/users/100', element: <>Hl</> },
   ]
-  // console.log('App.jsx::55 getPageRoutes()', getPageRoutes())
 
   return (
     <Suspense fallback={Loading}>
-      <ul>
-        {links.map((li) => (
-          <Fragment key={li.path}>
-            <Link to={li.path}>{li.name}</Link> |{' '}
-          </Fragment>
-        ))}
-      </ul>
-
-      <Navbar />
-      {/*{dynamicPageRoutes}*/}
+      {/*
+        <ul>
+          {links.map((li) => (
+            <Fragment key={li.path}>
+              <Link to={li.path}>{li.name}</Link> |{' '}
+            </Fragment>
+          ))}
+        </ul>
+      */}
+      <Navbar routes={links} />
 
       <>{element}</>
     </Suspense>
