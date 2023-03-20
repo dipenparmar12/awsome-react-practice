@@ -6,19 +6,22 @@ import './ResultsSummary.scss'
 function ResultsSummary() {
   return (
     <Container className={'ResultsSummary'}>
-      <div className="backplate ">
+      <div className="backplate">
         <div className="score">
-          <h6 className="score__title margin-y-1">Your Result</h6>
-          <div className="score__circle margin-y-1">
-            <span className="big_number">76</span>
+          <h6 className="score__title">Your Result</h6>
+          <div className="score__circle">
+            <span>76</span>
             <span>of 100</span>
           </div>
-          <h3 className="score__sub-title margin-y-1">Great</h3>
-          <p className="score__content margin-y-1">
+          <h3 className="score__sub-title">Great</h3>
+          <p className="score__content">
             You scored higher than 65% of the people who have taken these tests.
           </p>
         </div>
-        <div className="summary">Summary</div>
+
+        <div className="summary">
+          <h2>Summary</h2>
+        </div>
       </div>
     </Container>
   )
