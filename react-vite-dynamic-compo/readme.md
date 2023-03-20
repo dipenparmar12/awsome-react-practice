@@ -32,3 +32,4 @@ EsLint + Prettier
     ```[plugin:vite:import-analysis]
     Failed to parse source for import analysis because the content contains invalid JS syntax.
     If you are using JSX, make sure to name the file with the .jsx or .tsx extension.```
+  - `Fake API's Auth and Projects`: https://dummyjson.com/docs/auth
