@@ -1,11 +1,45 @@
-.ResultsSummary{
+.ResultsSummary {
 
 
   .backplate {
     margin: 0 auto;
     max-width: 45.5rem;
-    box-shadow: inset 0 1px 1px 0 hsl(0deg 0% 100% / 10%), 0 50px 100px -20px rgb(50 50 93 / 25%),
+    box-shadow: inset 0 1px 1px 0 hsl(0deg 0% 100% / 10%),
+    0 50px 100px -20px rgb(50 50 93 / 25%),
     0 30px 60px -30px rgb(0 0 0 / 30%);
+  }
+
+  .backplate {
+    display: grid;
+    --columns: 2;
+    //--padding: 1.9rem;
+    //grid-template-columns: repeat(auto-fit, minmax(max( calc(22.75rem - var(--padding)), 100% / var(--columns)), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(max(22.75rem, 100% / var(--columns)), 1fr));
+  }
+
+  .backplate > * {
+    padding: 1.9rem;
+    border: 1px solid rgba(0, 128, 0, 0.5);
+  }
+
+  .score * + *:not(:last-child) {
+    margin: 1.9rem auto;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+  }
+
+  .score  {
+    &__title {
+      background: rgba(255, 0, 0, 0.05);
+    }
+    &__circle {
+      background: rgba(0, 255, 0, 0.05);
+    }
+    &__sub-title {
+      background: rgba(0, 0, 255, 0.05);
+    }
+    &__content {
+      background: rgba(0, 255, 158, 0.05);
+    }
   }
 
   //.margin-y-1 {

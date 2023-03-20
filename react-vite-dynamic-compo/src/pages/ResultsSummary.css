@@ -3,5 +3,30 @@
   max-width: 45.5rem;
   box-shadow: inset 0 1px 1px 0 hsla(0deg, 0%, 100%, 0.1), 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
 }
+.ResultsSummary .backplate {
+  display: grid;
+  --columns: 2;
+  grid-template-columns: repeat(auto-fit, minmax(max(22.75rem, 100% / var(--columns)), 1fr));
+}
+.ResultsSummary .backplate > * {
+  padding: 1.9rem;
+  border: 1px solid rgba(0, 128, 0, 0.5);
+}
+.ResultsSummary .score * + *:not(:last-child) {
+  margin: 1.9rem auto;
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+.ResultsSummary .score__title {
+  background: rgba(255, 0, 0, 0.05);
+}
+.ResultsSummary .score__circle {
+  background: rgba(0, 255, 0, 0.05);
+}
+.ResultsSummary .score__sub-title {
+  background: rgba(0, 0, 255, 0.05);
+}
+.ResultsSummary .score__content {
+  background: rgba(0, 255, 158, 0.05);
+}
 
 /*# sourceMappingURL=ResultsSummary.css.map */
