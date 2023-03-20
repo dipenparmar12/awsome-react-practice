@@ -1,8 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function getPages() {
+export function getPageRoutes() {
   const pages = import.meta.glob('../pages/**/*.jsx', { eager: true })
 
   let routes = []
@@ -31,7 +29,7 @@ function getPages() {
 
 function Navbar() {
   // React.useEffect(() => {
-  //   console.log('Navbar.jsx::[29]', getPages())
+  //   console.log('Navbar.jsx::[29]', getPageRoutes())
   // }, [])
 
   return (
@@ -52,7 +50,7 @@ function Navbar() {
               </a>
             </li>
 
-            {getPages().map((route, index) => {
+            {getPageRoutes().map((route, index) => {
               return (
                 <li key={index}>
                   <Link

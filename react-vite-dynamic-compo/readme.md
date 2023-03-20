@@ -27,3 +27,8 @@ EsLint + Prettier
 ### MISC
   - `React Dynamic routes`: https://dev.to/franciscomendes10866/file-based-routing-using-vite-and-react-router-3fdo
   - `Vite Path aliases`: https://dev.to/avxkim/setup-path-aliases-w-react-vite-ts-poa
+  - `Route OutLet example`: https://codesandbox.io/s/react-router-dom-v6-ieqpg?file=/src/App.js
+  - `Resolve Error` https://github.com/vitejs/vite/discussions/3448#discussioncomment-749919
+    ```[plugin:vite:import-analysis]
+    Failed to parse source for import analysis because the content contains invalid JS syntax.
+    If you are using JSX, make sure to name the file with the .jsx or .tsx extension.```
