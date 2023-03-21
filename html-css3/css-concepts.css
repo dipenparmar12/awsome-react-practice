@@ -1,0 +1,21 @@
+.container {
+  width: min(95%, 45rem);
+  margin: 0 auto;
+}
+
+/* 
+========================================================
+  CSS Debug
+======================================================== 
+*/
+:root {
+  --debug: 0.5px solid rgba(237, 213, 1, 0.978);
+  --debug-hover: 2px solid rgba(244, 10, 10, 0.831);
+}
+
+* {
+  outline: var(--debug);
+}
+*:hover {
+  outline: var(--debug-hover);
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Page</title>
+
+  <link rel="stylesheet" href="./test.css">
+
+  <style>
+    .container {
+      background-color: rgba(169, 169, 169, 0.169);
+      margin: 0 auto;
+    }
+
+    /* 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+    background-color: pink;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    background-color: coral;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+    background-color: blue;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+    background-color: red;
+  }
+} */
+
+    /* Required only 1-media query. */
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+        background-color: greenyellow;
+      }
+    }
+
+    .card_responsive {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      /* align-items: flex-end; */
+      /* flex-wrap: wrap; */
+    }
+
+    .card__img {
+      /* flex: 1 1 400px; */
+      flex-basis: 400px;
+    }
+
+    .card__content {
+      /* flex: 1 1 300px; */
+      flex-grow: 1;
+      flex-basis: 300px;
+    }
+
+    .title {
+      border-bottom: 1px solid #ccc;
+      max-width: 500px;
+      margin: 40px auto;
+    }
+
+    .title-note {
+      font-size: 60%;
+      color: #999;
+    }
+
+    .abs-title {
+      position: relative;
+    }
+
+    .abs-title .title-note {
+      position: absolute;
+      bottom: 2px;
+      right: 0;
+    }
+
+    .float-title .title-note {
+      float: right;
+      position: relative;
+      top: 12px;
+    }
+
+    .table-title {
+      display: table;
+      width: 100%;
+    }
+
+    .table-title>span {
+      display: table-cell;
+      white-space: nowrap;
+    }
+
+    .table-title .title-main {
+      width: 99%;
+    }
+
+    .flex-title {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .flex-title>span {
+      white-space: nowrap;
+    }
+
+    .flex-title .title-main {
+      flex-grow: 1;
+    }
+
+    .justify-title {
+      text-align: justify;
+      line-height: 0;
+    }
+
+    .justify-title>span {
+      white-space: nowrap;
+      text-align: left;
+      display: inline-block;
+      line-height: normal;
+    }
+
+    .justify-title:after {
+      display: inline-block;
+      width: 100%;
+      content: '';
+      vertical-align: top;
+    }
+
+    /* 
+========================================================
+  Extra not important
+======================================================== 
+*/
+    .card_responsive {
+      margin: 30px auto;
+    }
+  </style>
+</head>
+
+<!-- 
+  @src: https://ishadeed.com/article/responsive-design
+  @src: https://css-tricks.com/useful-flexbox-technique-alignment-shifting-wrapping/  https://jsfiddle.net/phloe/ao989zs7/
+ -->
+
+<body>
+  <main class="container">
+    This is Simple container for practice and testing purpose's
+  </main>
+
+  <section class="container">
+    <div class="card_responsive">
+      <div class="card__img">
+        <img src="https://picsum.photos/300" alt="picsum.photos" style="display: block;" height="300">
+      </div>
+
+      <div class="card__content">
+        <small>
+          This is dipen 2023
+        </small>
+        <h2>
+          How to write CSS the right way in 2023 and beyond
+        </h2>
+        <p>
+          As with the previous example, flexbox works perfectly for that as a foundation. Assuming that I wrote the
+          basic styling for the title, image, spacing.. etc, we can end up with something like the following:
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Src: https://css-tricks.com/useful-flexbox-technique-alignment-shifting-wrapping/ -->
+  <section class="container">
+    <h3 class="title abs-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This is absolutely positioned.</span>
+    </h3>
+
+    <h3 class="title float-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This subtitle is floated.</span>
+    </h3>
+
+    <h3 class="title table-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">I am a table cell.</span>
+    </h3>
+
+    <h3 class="title flex-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This is a good look, right here.</span>
+    </h3>
+
+    <h3 class="title justify-title">
+      <span class="title-main">Main Title Here</span>
+      <span class="title-note">This is a good look, right here.</span>
+    </h3>
+  </section>
+</body>
+
+</html>
