@@ -1,6 +1,7 @@
 .ResultsSummary {
   --breack-point: 768px;
   --b-radius: 2rem;
+  --pading: 2.2rem;
 }
 @font-face {
   .ResultsSummary {
@@ -25,10 +26,11 @@
 }
 .ResultsSummary .backplate .result {
   flex: 1;
-  border-radius: var(--b-radius);
+  padding: var(--pading);
   background: linear-gradient(#6743ff, #3830c1);
   color: white;
   text-align: center;
+  border-radius: var(--b-radius);
 }
 @media (max-width: 768px) {
   .ResultsSummary .backplate .result {
@@ -37,6 +39,7 @@
 }
 .ResultsSummary .backplate .summary {
   flex: 1;
+  padding: var(--pading);
 }
 
 /*# sourceMappingURL=ResultsSummary.css.map */

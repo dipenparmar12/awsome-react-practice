@@ -2,6 +2,7 @@
 
   --breack-point: 768px;
   --b-radius: 2rem;
+  --pading: 2.2rem;
 
   @font-face {
     font-family: 'HankenGrotesk';
@@ -28,11 +29,12 @@
 
     .result {
       flex: 1;
-      border-radius: var(--b-radius);
+      padding: var(--pading);
       background: linear-gradient(#6743ff, #3830c1);
       color: white;
       text-align: center;
 
+      border-radius: var(--b-radius);
       @media (max-width: 768px) {
         border-radius: 0 0 var(--b-radius) var(--b-radius);
       }
@@ -40,6 +42,7 @@
 
     .summary {
       flex: 1;
+      padding: var(--pading);
     }
 
   }
