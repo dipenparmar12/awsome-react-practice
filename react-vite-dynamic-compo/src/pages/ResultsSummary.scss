@@ -1,8 +1,17 @@
 .ResultsSummary {
 
+
+  --size-step-0: 1rem;
+  --size-step-1: 1.15rem;
+  //--size-step-2: 1.56rem;
+  //--size-step-3: 1.95rem;
+  //--size-step-4: 2.43rem;
+
   --breack-point: 768px;
   --b-radius: 2rem;
   --pading: 2.2rem;
+
+  line-height: 1.5;
 
   @font-face {
     font-family: 'HankenGrotesk';
@@ -10,6 +19,7 @@
     font-weight: 100 900;
     src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
   }
+;
 
   .backplate {
     font-family: HankenGrotesk, serif;
@@ -38,6 +48,16 @@
       @media (max-width: 768px) {
         border-radius: 0 0 var(--b-radius) var(--b-radius);
       }
+
+      &__title {
+        font-size: var(--size-step-1);
+        font-weight: 700;
+      }
+
+      &__content {
+        font-size: var(--size-step-0);
+      }
+
     }
 
     .summary {

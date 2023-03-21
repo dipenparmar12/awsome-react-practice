@@ -1,7 +1,10 @@
 .ResultsSummary {
+  --size-step-0: 1rem;
+  --size-step-1: 1.15rem;
   --breack-point: 768px;
   --b-radius: 2rem;
   --pading: 2.2rem;
+  line-height: 1.5;
 }
 @font-face {
   .ResultsSummary {
@@ -36,6 +39,13 @@
   .ResultsSummary .backplate .result {
     border-radius: 0 0 var(--b-radius) var(--b-radius);
   }
+}
+.ResultsSummary .backplate .result__title {
+  font-size: var(--size-step-1);
+  font-weight: 700;
+}
+.ResultsSummary .backplate .result__content {
+  font-size: var(--size-step-0);
 }
 .ResultsSummary .backplate .summary {
   flex: 1;
