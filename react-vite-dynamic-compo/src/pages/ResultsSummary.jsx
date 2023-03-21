@@ -3,6 +3,7 @@ import './ResultsSummary.scss'
 
 // @src: https://www.frontendmentor.io/solutions/react-results-summary-solution-Msq92SYd2h
 // @Src: https://main--cosmic-otter-6bc648.netlify.app/
+// @Src: https://github.com/kevin-powell/results-summary-component-main/blob/master/style.css
 
 /**
  *
@@ -28,11 +29,20 @@ function ResultsSummary() {
 
         <div className="summary">
           <h2>Summary</h2>
-          <div className="">
-            <div className="summary__item"></div>
-            <div className="summary__item"></div>
-            <div className="summary__item"></div>
-            <div className="summary__item"></div>
+          <div className="summary__items">
+            {[1, 2, 3, 4].map((i) => {
+              return (
+                <div className="summary__item" key={i}>
+                  <div>
+                    <span>CON</span>
+                    <div>Reaction</div>
+                  </div>
+                  <div>
+                    <span> 80 </span> / 100
+                  </div>
+                </div>
+              )
+            })}
           </div>
           <button className="button">Continue</button>
         </div>
