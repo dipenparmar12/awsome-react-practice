@@ -15,20 +15,26 @@ function ResultsSummary() {
   return (
     <Container className={'ResultsSummary'}>
       <div className="backplate">
-        <div className="score">
-          <h6 className="score__title"> Your Result </h6>
-          <div className="score__circle">
-            <span> 76 </span>
-            <span> of 100 </span>
+        <div className="result">
+          <h1 className="result__title"> Your Result </h1>
+          <div className="result__circle">
+            <span> 76 </span> of 100
           </div>
-          <h3 className="score__sub-title"> Great </h3>
-          <p className="score__content">
+          <h3 className="result__sub_title"> Great </h3>
+          <p className="result__content">
             You scored higher than 65% of the people who have taken these tests.
           </p>
         </div>
 
         <div className="summary">
           <h2>Summary</h2>
+          <div className="">
+            <div className="summary__item"></div>
+            <div className="summary__item"></div>
+            <div className="summary__item"></div>
+            <div className="summary__item"></div>
+          </div>
+          <button className="button">Continue</button>
         </div>
       </div>
     </Container>
