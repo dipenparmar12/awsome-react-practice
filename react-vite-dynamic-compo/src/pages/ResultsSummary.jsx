@@ -15,10 +15,10 @@ import './ResultsSummary.scss'
  */
 function ResultsSummary() {
   const items = [
-    { title: 'Reaction', score: 80, outOf: 100 },
-    { title: 'Memory', score: 92, outOf: 100 },
-    { title: 'Verbal', score: 61, outOf: 100 },
-    { title: 'Visual', score: 72, outOf: 100 },
+    { title: 'Reaction', score: 80, outOf: 100, svg: 'Reaction' },
+    { title: 'Memory', score: 92, outOf: 100, svg: 'Memory' },
+    { title: 'Verbal', score: 61, outOf: 100, svg: 'Verbal' },
+    { title: 'Visual', score: 72, outOf: 100, svg: 'Visual' },
   ]
 
   return (

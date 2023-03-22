@@ -144,15 +144,34 @@
       }
 
       &__items {
-
+        display: grid;
+        gap: 15px;
       }
 
       &__item {
-          display: flex;
-          justify-content: space-between;
-          padding: 0.62rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.62rem 1rem;
+        border-radius: 10px;
 
-          border: 1px solid;
+        //border: 1px solid;
+
+        &:nth-child(1) {
+          background-color: #fff6f5;
+          color: #f55;
+        }
+        &:nth-child(2) {
+          background-color: #fffbf2;
+          color: #ffb21e;
+        }
+        &:nth-child(3) {
+          background-color: #f2fbfa;
+          color: #00bb8f;
+        }
+        &:nth-child(4) {
+          background-color: #f3f3fd;
+          color: #1125d6;
+        }
       }
 
     }
