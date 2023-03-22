@@ -1,6 +1,7 @@
 import Container from '@/components/Container.jsx'
 import './ResultsSummary.scss'
 
+// @src: https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV
 // @src: https://www.frontendmentor.io/solutions/react-results-summary-solution-Msq92SYd2h
 // @Src: https://main--cosmic-otter-6bc648.netlify.app/
 // @Src: https://github.com/kevin-powell/results-summary-component-main/blob/master/style.css
@@ -21,10 +22,13 @@ function ResultsSummary() {
           <div className="result__circle">
             <span> 76 </span> of 100
           </div>
-          <h3 className="result__sub_title"> Great </h3>
-          <p className="result__content">
-            You scored higher than 65% of the people who have taken these tests.
-          </p>
+          <div>
+            <h3 className="result__sub_title"> Great </h3>
+            <p className="result__content">
+              You scored higher than 65% of the people who have taken these
+              tests.
+            </p>
+          </div>
         </div>
 
         <div className="summary">

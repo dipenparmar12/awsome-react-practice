@@ -1,6 +1,45 @@
+:root {
+  --clr-primary-hsl-400: 252, 100%, 67%;
+  --clr-primary-hsl-500: 256, 72%, 46%;
+  --clr-secondary-hsl-400: 241, 81%, 54%;
+  --clr-secondary-hsl-500: 241, 72%, 46%;
+  --clr-neutral-hsl-100: 0, 0%, 100%;
+  --clr-neutral-hsl-200: 221, 100%, 96%;
+  --clr-neutral-hsl-300: 241, 100%, 89%;
+  --clr-neutral-hsl-700: 224, 30%, 27%;
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+  --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+  --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+  --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+  --gradient-primary: linear-gradient(
+      var(--clr-primary-400),
+      var(--clr-secondary-400));
+  --gradient-to-transparent: linear-gradient(
+      var(--clr-primary-500),
+      hsl(var(--clr-secondary-hsl-500), 0));
+  --clr-accent-1: 0, 100%, 67%;
+  --clr-accent-2: 39, 100%, 56%;
+  --clr-accent-3: 166, 100%, 37%;
+  --clr-accent-4: 234, 85%, 45%;
+  --font-family-default: "HankenGrotesk", sans-serif;
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 800;
+  --fs-400: 1.125rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-700: 1.75rem;
+  --fs-800: 2rem;
+  --fs-900: 5rem;
+}
+
 .ResultsSummary {
   --size-step-0: 1rem;
   --size-step-1: 1.15rem;
+  --size-step-5: 3.03rem;
   --breack-point: 768px;
   --b-radius: 2rem;
   --pading: 2.2rem;
@@ -17,7 +56,7 @@
 .ResultsSummary .backplate {
   font-family: HankenGrotesk, serif;
   margin: 0 auto;
-  max-width: 45.5rem;
+  max-width: 42rem;
   box-shadow: inset 0 1px 1px 0 hsla(0deg, 0%, 100%, 0.1), 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
   display: flex;
   border-radius: var(--b-radius);
@@ -31,6 +70,8 @@
   flex: 1;
   padding: var(--pading);
   background: linear-gradient(#6743ff, #3830c1);
+  display: grid;
+  justify-items: center;
   color: white;
   text-align: center;
   border-radius: var(--b-radius);
@@ -43,6 +84,21 @@
 .ResultsSummary .backplate .result__title {
   font-size: var(--size-step-1);
   font-weight: 700;
+}
+.ResultsSummary .backplate .result__circle {
+  width: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 100vh;
+  background: linear-gradient(#3830c1, rgba(103, 67, 255, 0.1));
+  display: grid;
+  place-content: center;
+  margin-inline: auto;
+}
+.ResultsSummary .backplate .result__circle span {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
 }
 .ResultsSummary .backplate .result__content {
   font-size: var(--size-step-0);
