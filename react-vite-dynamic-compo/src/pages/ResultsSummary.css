@@ -44,6 +44,7 @@
   --b-radius: 2rem;
   --pading: 2.2rem;
   line-height: 1.5;
+  margin-top: 100px;
 }
 @font-face {
   .ResultsSummary {
@@ -106,6 +107,16 @@
 .ResultsSummary .backplate .summary {
   flex: 1;
   padding: var(--pading);
+}
+.ResultsSummary .backplate .summary__title {
+  font-size: var(--size-step-1);
+  font-weight: 800;
+}
+.ResultsSummary .backplate .summary__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.62rem 1rem;
+  border: 1px solid;
 }
 
 /*# sourceMappingURL=ResultsSummary.css.map */

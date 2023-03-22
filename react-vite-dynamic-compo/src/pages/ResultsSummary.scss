@@ -69,6 +69,8 @@
   }
 ;
 
+  margin-top: 100px;
+
   .backplate {
     font-family: HankenGrotesk, serif;
     margin: 0 auto;
@@ -135,6 +137,24 @@
     .summary {
       flex: 1;
       padding: var(--pading);
+
+      &__title {
+        font-size: var(--size-step-1);
+        font-weight: 800;
+      }
+
+      &__items {
+
+      }
+
+      &__item {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.62rem 1rem;
+
+          border: 1px solid;
+      }
+
     }
 
   }

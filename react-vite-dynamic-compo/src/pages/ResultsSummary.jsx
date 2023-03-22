@@ -14,6 +14,13 @@ import './ResultsSummary.scss'
  *  - https://stackoverflow.com/a/55290215/8592918
  */
 function ResultsSummary() {
+  const items = [
+    { title: 'Reaction', score: 80, outOf: 100 },
+    { title: 'Memory', score: 92, outOf: 100 },
+    { title: 'Verbal', score: 61, outOf: 100 },
+    { title: 'Visual', score: 72, outOf: 100 },
+  ]
+
   return (
     <Container className={'ResultsSummary'}>
       <div className="backplate">
@@ -32,17 +39,17 @@ function ResultsSummary() {
         </div>
 
         <div className="summary">
-          <h2>Summary</h2>
+          <h2 className="summary__title">Summary</h2>
           <div className="summary__items">
-            {[1, 2, 3, 4].map((i) => {
+            {items.map((_, i) => {
               return (
                 <div className="summary__item" key={i}>
                   <div>
-                    <span>CON</span>
-                    <div>Reaction</div>
+                    <span> {_?.icon} </span>
+                    <span> {_?.title} </span>
                   </div>
                   <div>
-                    <span> 80 </span> / 100
+                    <span> {_?.score} </span> / {_?.outOf}
                   </div>
                 </div>
               )
