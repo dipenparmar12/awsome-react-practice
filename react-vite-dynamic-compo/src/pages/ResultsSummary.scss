@@ -1,0 +1,167 @@
+
+.ResultsSummary {
+  --size-step-0: 1rem;
+  --size-step-1: 1.15rem;
+  --size-step-2: 1.56rem;
+  --size-step-3: 1.95rem;
+  --size-step-4: 2.43rem;
+
+  --clr-accent-1: 0, 100%, 67%;
+  --clr-accent-2: 39, 100%, 56%;
+  --clr-accent-3: 166, 100%, 37%;
+  --clr-accent-4: 234, 85%, 45%;
+  --clr-neutral-700: 224, 30%, 27%;
+
+  --breack-point: 768px;
+  --b-radius: 2rem;
+  --pading: 2.2rem;
+
+  line-height: 1.5;
+
+  @font-face {
+    font-family: 'HankenGrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url("../assets/fonts/HankenGrotesk-VariableFont_wght.ttf") format("truetype");
+  }
+;
+
+  margin-top: 100px;
+
+  .backplate {
+    font-family: HankenGrotesk, serif;
+    margin: 0 auto;
+    max-width: 42rem;
+    box-shadow: inset 0 1px 1px 0 hsl(0deg 0% 100% / 10%),
+    0 50px 100px -20px rgb(50 50 93 / 25%),
+    0 30px 60px -30px rgb(0 0 0 / 30%);
+
+
+    display: flex;
+    border-radius: var(--b-radius);
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+
+    .result {
+      flex: 1;
+      padding: var(--pading);
+      background: linear-gradient(#6743ff, #3830c1);
+      display: grid;
+      justify-items: center;
+      color: white;
+      text-align: center;
+      border-radius: var(--b-radius);
+      @media (max-width: 768px) {
+        border-radius: 0 0 var(--b-radius) var(--b-radius);
+      }
+
+      &__title {
+        font-size: var(--size-step-1);
+        font-weight: 700;
+      }
+      &__sub_title {
+        font-size: var(--size-step-2);
+        font-weight: 500;
+      }
+      &__content {
+        line-height: 1.4;
+      }
+
+      &__circle {
+        width: 10rem;
+        aspect-ratio: 1/1;
+        border-radius: 100vh;
+        background: linear-gradient(#3830c1, rgba(103, 67, 255, 0.1));
+
+        display: grid;
+        place-content: center;
+        margin-inline: auto;
+
+        & span {
+          font-size: 3.5rem;
+          font-weight: 700;
+          line-height: 1;
+          display: block;
+        }
+      }
+
+      &__content {
+        font-size: var(--size-step-0);
+      }
+    }
+
+    .summary {
+      flex: 1;
+      padding: var(--pading);
+
+      &__title {
+        font-size: var(--size-step-1);
+        font-weight: 800;
+      }
+
+      &__items {
+        display: grid;
+        gap: 1.05rem;
+        margin: 1.5rem 0;
+      }
+
+      &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.62rem 1rem;
+        border-radius: 10px;
+        background: hsl(var(--color), 0.1);
+
+        font-weight: 500;
+
+        .details--title {
+          color: hsl(var(--color));
+        }
+
+        .details--score {
+          font-weight: 700;
+
+          & :first-child {
+            color: #2a2c3d;
+          }
+
+          & :last-child {
+            color: gray;
+          }
+        }
+
+        &[data-item="0"] {
+          --color: var(--clr-accent-1);
+        }
+
+        &[data-item="1"] {
+          --color: var(--clr-accent-2);
+        }
+
+        &[data-item="2"] {
+          --color: var(--clr-accent-3);
+        }
+
+        &[data-item="3"] {
+          --color: var(--clr-accent-4);
+        }
+
+      }
+
+      .button {
+        width: 100%;
+        padding: 1rem 2rem;
+        background: linear-gradient(180deg,#6743ff,#3830c1);
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-radius: 100rem;
+      }
+    }
+
+  }
+
+
+}
