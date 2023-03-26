@@ -4,7 +4,7 @@ export default function ErrorPage() {
   // const error = useRouteError()
 
   return (
-    <body className="bg-gray-100 flex flex-col items-center justify-center h-[400px]">
+    <div className="bg-gray-100 flex flex-col items-center justify-center h-[400px]">
       <div className="bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold mb-4">Oops!</h1>
         <p className="text-lg mb-4">
@@ -17,7 +17,7 @@ export default function ErrorPage() {
           Go to Home Page
         </a>
       </div>
-    </body>
+    </div>
   )
 
   return (
