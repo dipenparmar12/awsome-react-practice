@@ -1,6 +1,14 @@
 .ResultsSummary {
   --size-step-0: 1rem;
   --size-step-1: 1.15rem;
+  --size-step-2: 1.56rem;
+  --size-step-3: 1.95rem;
+  --size-step-4: 2.43rem;
+  --clr-accent-1: 0, 100%, 67%;
+  --clr-accent-2: 39, 100%, 56%;
+  --clr-accent-3: 166, 100%, 37%;
+  --clr-accent-4: 234, 85%, 45%;
+  --clr-neutral-700: 224, 30%, 27%;
   --breack-point: 768px;
   --b-radius: 2rem;
   --pading: 2.2rem;
@@ -47,6 +55,13 @@
   font-size: var(--size-step-1);
   font-weight: 700;
 }
+.ResultsSummary .backplate .result__sub_title {
+  font-size: var(--size-step-2);
+  font-weight: 500;
+}
+.ResultsSummary .backplate .result__content {
+  line-height: 1.4;
+}
 .ResultsSummary .backplate .result__circle {
   width: 10rem;
   aspect-ratio: 1/1;
@@ -75,14 +90,10 @@
 }
 .ResultsSummary .backplate .summary__items {
   display: grid;
-  gap: 15px;
+  gap: 1.05rem;
+  margin: 1.5rem 0;
 }
 .ResultsSummary .backplate .summary__item {
-  --clr-accent-1: 0, 100%, 67%;
-  --clr-accent-2: 39, 100%, 56%;
-  --clr-accent-3: 166, 100%, 37%;
-  --clr-accent-4: 234, 85%, 45%;
-  --clr-neutral-700: 224, 30%, 27%;
   display: flex;
   justify-content: space-between;
   padding: 0.62rem 1rem;
@@ -113,6 +124,15 @@
 }
 .ResultsSummary .backplate .summary__item[data-item="3"] {
   --color: var(--clr-accent-4);
+}
+.ResultsSummary .backplate .summary .button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(180deg, #6743ff, #3830c1);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 100rem;
 }
 
 /*# sourceMappingURL=ResultsSummary.css.map */

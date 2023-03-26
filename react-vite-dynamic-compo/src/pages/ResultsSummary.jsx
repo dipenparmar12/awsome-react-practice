@@ -136,5 +136,71 @@ export default ResultsSummary
   </div>
 </div>
 
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(103, 67, 255, 1) 0%,
+    rgba(56, 48, 193, 1) 100%
+  );
+  height: 356px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  justify-content: space-evenly;
+  padding: 20px 60px;
+}
+
+@media (min-width: 750px) {
+  .score {
+    height: auto;
+    border-radius: 30px;
+    flex: 0 0 50%;
+  }
+}
+
+.score--title {
+  color: hsl(241, 100%, 89%);
+}
+
+.score--rating {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  background-color: green;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(74, 35, 204, 1) 0%,
+    rgba(74, 35, 204, 0) 100%
+  );
+  gap: 5px;
+}
+
+.score--rating p:first-child {
+  color: white;
+  font-size: 36pt;
+  font-weight: 700;
+}
+
+.score--rating p:last-child {
+  color: hsl(241, 100%, 89%);
+  font-weight: 600;
+}
+
+.score--superlative {
+  color: white;
+}
+
+.score--description {
+  color: hsl(241, 100%, 89%);
+  text-align: center;
+}
+
 
 */
