@@ -1,0 +1,31 @@
+.CustomInputs {
+
+
+  ._radio {
+    appearance: none;
+    cursor: pointer;
+
+    --size: 30px;
+    //--color: #cbcbcb;
+
+    width: var(--size);
+    aspect-ratio: 1;
+    //height: var(--size);
+    padding: calc(var(--size) / 8);
+    border: calc(var(--size) / 8) solid var(--color, #cbcbcb);
+    background: var(--color, #cbcbcb) content-box;
+    //background-image: greenyellow;
+    //background-origin: content-box;
+
+    &:checked {
+      --color:greenyellow;
+      border-color: #cbcbcb;
+    }
+
+    &.round {
+      border-radius: 50%;
+    }
+
+    transition: .2s;
+  }
+}

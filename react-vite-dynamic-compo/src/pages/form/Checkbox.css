@@ -1,0 +1,20 @@
+.CustomInputs ._radio {
+  appearance: none;
+  cursor: pointer;
+  --size: 30px;
+  width: var(--size);
+  aspect-ratio: 1;
+  padding: calc(var(--size) / 8);
+  border: calc(var(--size) / 8) solid var(--color, #cbcbcb);
+  background: var(--color, #cbcbcb) content-box;
+  transition: 0.2s;
+}
+.CustomInputs ._radio:checked {
+  --color:greenyellow;
+  border-color: #cbcbcb;
+}
+.CustomInputs ._radio.round {
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=Checkbox.css.map */
