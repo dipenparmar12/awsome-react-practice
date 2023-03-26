@@ -14,8 +14,8 @@ export default function NotFound() {
         <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
         <p className="text-lg mb-4">
           Sorry, the page you requested could not be found.
-          <p>Location: {location?.pathname || ''}</p>
         </p>
+        <p>Location: {location?.pathname || ''}</p>
         <a
           href="#"
           className="mt-8 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
