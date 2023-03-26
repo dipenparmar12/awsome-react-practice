@@ -64,7 +64,7 @@ export function App() {
           ))}
         </ul>
       */}
-      {/*<Navbar routes={links} />*/}
+      <Navbar routes={links} />
 
       <>{element}</>
     </Suspense>
