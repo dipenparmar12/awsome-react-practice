@@ -12,6 +12,7 @@
     "npm_remove_global": "TODO",
     "dev": "vite",
     "build": "vite build",
+    "deploy:server": "script build && scp -r ./dist/* root@137.184.145.168:/var/www/test/",
     "preview": "vite preview --port 5050",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "api": "json-server --watch ./server/db.json --port 8000",
