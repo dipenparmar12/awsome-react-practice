@@ -44,11 +44,11 @@ function ResultsSummary() {
             {items.map((_, i) => {
               return (
                 <div className="summary__item" data-item={i} key={i}>
-                  <div data-item-title={i}>
-                    <span> {_?.icon} </span>
-                    <span> {_?.title} </span>
-                  </div>
                   <div>
+                    <span> {_?.icon} </span>
+                    <p className="summary__item_title"> {_?.title} </p>
+                  </div>
+                  <div className={'summary__item_score'}>
                     <span> {_?.score} </span> / {_?.outOf}
                   </div>
                 </div>

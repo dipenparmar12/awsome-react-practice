@@ -148,51 +148,40 @@
       }
 
       &__item {
+        
+        --clr-accent-1: 0, 100%, 67%;
+        --clr-accent-2: 39, 100%, 56%;
+        --clr-accent-3: 166, 100%, 37%;
+        --clr-accent-4: 234, 85%, 45%;
+
         display: flex;
         justify-content: space-between;
         padding: 0.62rem 1rem;
         border-radius: 10px;
+        color: #49515f;
+        //border: .5px solid lightgray;
+        p {
+          color: hsl(var(--color));
+        }
 
-        --color: 0, 100%, 67%;
-        color: hsl(var(--color));
-
-        border: .5px solid lightgray;
+        background: hsl(var(--color), 0.1);
 
         &[data-item="0"] {
-            --color: hsl(var(--color), .1);
+          --color: var(--clr-accent-1);
         }
 
         &[data-item="1"] {
-          --color: #ffb21e;
+          --color: var(--clr-accent-2);
         }
 
         &[data-item="2"] {
-          --color: #00bb8f;
+          --color: var(--clr-accent-3);
         }
 
         &[data-item="3"] {
-          --color: #1125d6;
+          --color: var(--clr-accent-4);
         }
 
-        //&:nth-child(1) {
-        //  background-color: #fff6f5;
-        //  color: #f55;
-        //}
-        //
-        //&:nth-child(2) {
-        //  background-color: #fffbf2;
-        //  color: #ffb21e;
-        //}
-        //
-        //&:nth-child(3) {
-        //  background-color: #f2fbfa;
-        //  color: #00bb8f;
-        //}
-        //
-        //&:nth-child(4) {
-        //  background-color: #f3f3fd;
-        //  color: #1125d6;
-        //}
       }
 
     }
