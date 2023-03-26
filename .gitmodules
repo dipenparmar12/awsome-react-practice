@@ -10,3 +10,6 @@
 [submodule "vue-examples/node-vue-chat"]
 	path = vue-examples/node-vue-chat
 	url = git@github.com:luvuong-le/node-vue-chat.git
+[submodule "react-examples/transform"]
+	path = react-examples/transform
+	url = git@github.com:ritz078/transform.git
