@@ -148,23 +148,35 @@
       }
 
       &__item {
-        
         --clr-accent-1: 0, 100%, 67%;
         --clr-accent-2: 39, 100%, 56%;
         --clr-accent-3: 166, 100%, 37%;
         --clr-accent-4: 234, 85%, 45%;
+        --clr-neutral-700: 224, 30%, 27%;
 
         display: flex;
         justify-content: space-between;
         padding: 0.62rem 1rem;
         border-radius: 10px;
-        color: #49515f;
-        //border: .5px solid lightgray;
-        p {
+        background: hsl(var(--color), 0.1);
+
+        font-weight: 500;
+
+        .details--title {
           color: hsl(var(--color));
         }
 
-        background: hsl(var(--color), 0.1);
+        .details--score {
+          font-weight: 700;
+
+          & :first-child {
+            color: #2a2c3d;
+          }
+
+          & :last-child {
+            color: gray;
+          }
+        }
 
         &[data-item="0"] {
           --color: var(--clr-accent-1);

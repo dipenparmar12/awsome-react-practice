@@ -44,12 +44,13 @@ function ResultsSummary() {
             {items.map((_, i) => {
               return (
                 <div className="summary__item" data-item={i} key={i}>
-                  <div>
+                  <div className="details--title">
                     <span> {_?.icon} </span>
-                    <p className="summary__item_title"> {_?.title} </p>
+                    <span> {_?.title} </span>
                   </div>
-                  <div className={'summary__item_score'}>
-                    <span> {_?.score} </span> / {_?.outOf}
+                  <div className="details--score">
+                    <span> {_?.score} </span>
+                    <span> / {_?.outOf} </span>
                   </div>
                 </div>
               )
@@ -63,3 +64,77 @@ function ResultsSummary() {
 }
 
 export default ResultsSummary
+
+/*
+<div className="backplate">
+  <div className="score">
+    <h4 className="score--title">Your Result</h4>
+    <div className="score--rating">
+      <p>76</p>
+      <p>of 100</p>
+    </div>
+    <h2 className="score--superlative">Great</h2>
+    <p className="score--description">
+      You scored higher than 65% of the people who have taken these tests.
+    </p>
+  </div>
+  <div className="summary">
+    <h3>Summary</h3>
+    <div className="details red">
+      <div className="details--title">
+        <img
+          src="/static/media/icon-reaction.0c1d6b98b4559ba72276d9ceda14692d.svg"
+          alt="Reaction"
+        />
+        <p className="red">Reaction</p>
+      </div>
+      <div className="details--score">
+        <span>80&nbsp;</span>
+        <span>/ 100</span>
+      </div>
+    </div>
+    <div className="details orange">
+      <div className="details--title">
+        <img
+          src="/static/media/icon-memory.22a9e0501e58960f3c349cd96fcf108f.svg"
+          alt="Memory"
+        />
+        <p className="orange">Memory</p>
+      </div>
+      <div className="details--score">
+        <span>92&nbsp;</span>
+        <span>/ 100</span>
+      </div>
+    </div>
+    <div className="details green">
+      <div className="details--title">
+        <img
+          src="/static/media/icon-verbal.cc1204a0b0559da591a3ea6e99c5cf50.svg"
+          alt="Verbal"
+        />
+        <p className="green">Verbal</p>
+      </div>
+      <div className="details--score">
+        <span>61&nbsp;</span>
+        <span>/ 100</span>
+      </div>
+    </div>
+    <div className="details blue">
+      <div className="details--title">
+        <img
+          src="/static/media/icon-visual.61fc2697d5094b6e396276b1a1597c86.svg"
+          alt="Visual"
+        />
+        <p className="blue">Visual</p>
+      </div>
+      <div className="details--score">
+        <span>72&nbsp;</span>
+        <span>/ 100</span>
+      </div>
+    </div>
+    <button type="submit">Continue</button>
+  </div>
+</div>
+
+
+*/

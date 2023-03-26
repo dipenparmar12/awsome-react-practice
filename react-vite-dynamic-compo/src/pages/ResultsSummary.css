@@ -82,15 +82,25 @@
   --clr-accent-2: 39, 100%, 56%;
   --clr-accent-3: 166, 100%, 37%;
   --clr-accent-4: 234, 85%, 45%;
+  --clr-neutral-700: 224, 30%, 27%;
   display: flex;
   justify-content: space-between;
   padding: 0.62rem 1rem;
   border-radius: 10px;
-  color: #49515f;
   background: hsl(var(--color), 0.1);
+  font-weight: 500;
 }
-.ResultsSummary .backplate .summary__item p {
+.ResultsSummary .backplate .summary__item .details--title {
   color: hsl(var(--color));
+}
+.ResultsSummary .backplate .summary__item .details--score {
+  font-weight: 700;
+}
+.ResultsSummary .backplate .summary__item .details--score :first-child {
+  color: #2a2c3d;
+}
+.ResultsSummary .backplate .summary__item .details--score :last-child {
+  color: gray;
 }
 .ResultsSummary .backplate .summary__item[data-item="0"] {
   --color: var(--clr-accent-1);
