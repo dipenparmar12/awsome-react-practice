@@ -22,6 +22,12 @@ Start wth new project or concept.
 > `git submodule add GIT_URL [FOLDER_NAME/GIT_REPO_NAME]` 
 
 > `git submodule add git@github.com:dipenparmar12/javascript_utils.git example_repos/javascript_utils` 
+## Remove submodule
+> `git submodule deinit -f [FOLDER_NAME/GIT_REPO_NAME]`
+> `git rm -f [FOLDER_NAME/GIT_REPO_NAME]`
+
+> `git submodule deinit -f example_repo`
+> `git rm -f example_repo`
 
 
 ```
