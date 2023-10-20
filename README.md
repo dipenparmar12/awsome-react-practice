@@ -22,6 +22,11 @@ Start wth new project or concept.
 > `git submodule add GIT_URL [FOLDER_NAME/GIT_REPO_NAME]` 
 
 > `git submodule add git@github.com:dipenparmar12/javascript_utils.git example_repos/javascript_utils` 
+
+add submodule with specific branch 
+> `git submodule add -b branch_name repository_url path/to/submodule`
+> `git submodule add -b test_branch git@github.com:dipenparmar12/javascript_utils.git javascript_utils`
+
 ## Remove submodule
 > `git submodule deinit -f [FOLDER_NAME/GIT_REPO_NAME]`
 > `git rm -f [FOLDER_NAME/GIT_REPO_NAME]`
