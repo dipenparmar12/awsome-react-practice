@@ -1,0 +1,4 @@
+.container {
+  width: min(95%, 45rem);
+  margin: 0 auto;
+}
